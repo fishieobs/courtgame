@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#15100c">
+<meta name="apple-mobile-web-app-title" content="容積的代價">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAJF0lEQVR42m1We4wdVRn/vjNn3jP3MffevXd3u93t0jetlFJKCy0SUFBBUoxWSrBgNCFRSkg0SAxG1ASigcQarECiIKLBiEpBLBQsjz6kpeW17bZsadnubnf37u59zZ07987jnOMfu92twElmzneSye/3fb/fNzkfzs8nYwaGRnRFEgAIAIgIAAg4fZp5PmsJELP7dCzENEgr5I0WowRozKAtrTg2jWJBJQLnQ8/hIuKnwQGEOC+eJQHGOKVY9eLxckgNlTg27e1yDveXiuWGIkuzWeMs1VwROAs49xLng4soFpmkum5F5tRwpe4zXNGbTVu03oQgYkHICMFPoX9G+jOJi7lKZvXhXCgy0VRqqeD6MQEBEsFiuRmE8XlInw5mqMgn2VB84owYRrxYakoSCgEUEABRkQlBMqc3AgLO2nvOdQhiAQJUeRZUTFcrABCEABRCIAAiKjKZdpHibLHnsLgAwQFRnNdRAgFiBovm6YgwMNKkZFb9GWmEAERARDFnPwIgnW4WPKeOANAVoilkro8QEEAAIsCNV2QkAk++VGR8OuU5DhDQingz5HhOBgRAAHq+fISgH/Dr1qTn57VKPabSzMfTHFyIMOKIcPXqFEGcNRgAYi6SpjRWCp/bO6WrhHMxYx/OeACSRCQJo1h0ZLQpl4+WvONDPsE5owkBr8mvW5NWFXz+QNnSCecgZhoHGBNL5uuqTAoZZbIayRRnuhiATOvjVmt1v9mMoqQRvnlkZHSslFbDuuuzOELOCUFKJEqpRKkkSRIhBMl0WYRgFIv2jBLF4oPTjfltGvn/LqOI2PSbm7Z87YaN64jvBxgeGy7XvJpB/UN9o7VqteHWfd/nYVRvhJ6LXJWavq8SFQgSIiFBVSHtWf34mUbMwGvyjqw6PBGQc38o9rZpd961dfPCS4794SmfgKbbmWxKSyblVAJtq6WqnkQqjJWD5tCU25GJ3Xr1X3sHWw3XrbjNhteot3raKOdicDzQVUopvWih3T/UCiLR26FNVgNKDWPDgu59D2x/LPJ9lfjlj21EGzAJ0GHIKSo7quKYRi6VXJxJyzVbTrV96csXhLrWkKQaZ0W/BTQ4Pjg5NlUulUvj4+VS3FT1cHSymjUjRJWaqSQfOnsyCOatKly6qDfgzPdrnlcPwoAj232iXmuEFudSqczePXbZAjuFMD7cymuyo6q5hFVI2iknudJKSvO6YdmFka75MvWRT8Z8aGzgT089R52MYwI0g7AWkG33Pey5fsuraLrcqJV8r/zm4cEXdr44MVE0c1m1N41Zv8zCPcUpS5MJQGNoxDH09UJfEFFlnNEW0xjyJglDWjCtjV+9rOdn95J8LhvU6hcBX+QrTaaMjRSHz0xZheUTZSkkXbfd8YOUaVUajVTC2rF9exoxb9nbH3xwy/VfMVFsu/P7WiJxYJTvLoo3I3LAtneq+mOBeMTz7xscee6JZ65KJmghnxV+U4/jrd2duuFMjo1l2wsAwi0VOxYsaLlFb+DkjRs23Hzn3ZZtXnX9ZiNpL1p5+RXr12z65s2Ll3+uzUn/6qGHdKNbNuyTH50Mmk0BHKMgNIwhTZo68j7pbC/InIMiV+revp3PXnLllZIknenvy8+bZzvZcr2+oeHdVHN5vX7yWL+I7eH9faePn5CoUsi1vbPvgDd01pss3fKtLU/8+ZmuznzRr333e3c88vjvU8m0GYVWR4G05zKsFbAwWnjrrV2LF6maJhg/cfDgwlWry2Pjf//NDkfTojDUZFQ1LW76q665LpHQVV0LW75maFateg+VVplm3Z/KDQ59EciVF69av/HyRa67ilKWy5CMaXgTEx2Xrhno6x8+OQAoTQwPz1+6RMRRMpO6dsvmkFLZSXOiAkJ5aHhkfEIxzf5Db48OjcRBqHR3a0LkE4kzp04vq1Vv05RuXe97/721panOhF0hhKZk2S2V87ff1v75LxhSLFiU75rXqlaFgIG3jwye/Fi1bdnJRAyqk+Omba28ZDUxtKnhkXTSrnuN2htv6Ija/K7SkXdpENQtU06mJg4eoq0AE3aNMWLFDLgY+u9bHx39INO7sFKr7d/5AhoWka2LLl+38aaviyVLUhev4ixavHSx6Tj1MJBldeHKFdn2jo6FyzPLlqmMHdn5/KFn/5E1TUAIBB/pO2ojqAm75DcJK1XCIMiqSkdPz98effy32+4u7/jdh7/4+dG39pFUbuDwvqE9r+eWLlUFVyQJTVPX9cD3jh86KKh6+LXdh5/5a9vatdROLwmaqkwVRX3p4V9P7NqVTCQEpWeLk9QfK8qGWdy/f+DfL2IULzcMp7cnOHPmyNZbzt7+7Y/rXqdCz46OjoJ69L133NOn1t1w04l3Dhr5QiLjdHTNW9OeT6y9dPnW74QK+fDV/6y//6dX33VP3wM/GXjkUS7Ts6PjtLB+TfmVXSzAFRmHSDRGDBkjptltGpUnn9CjqDOb3X/vj8u1qsWhd+MVT99/f+PUh6lCe1ws8s6u/jCyX979dCvuf2X3+nTKmygODp/ZPXBqASJY1uipUXz4lz/c1GZP7Xo7dN3QrccNPw5CHsccgMoylaQIhCrLsqIAIX7Dq3meoWpREISa/lErWKLKjqZNVSq2ZamaFgZBf8zsOO6VlcSWa3706kHsSCubv3FtrnN5wdKyhpZAYsSx4jfRrfNqLSpX42otcOuR14hbgeCcEMKFIDIlSFQqRZLEAWRZZoxxzhFB4ULItFnxjK3XbvvLizSdSux5+bXxykuCSCApdtJOplOZrNOWzeSzTn7JBbmEldG0BCEpxpRmi7h1XnVZpRpWakHNRa8hWkEzdgUXgIiSFFEqfM8oZPTeHq9apX4r7ikkLludPdg3MTrZaJRrtWLpdDwQM8a5AAQiU1XTDNtKppNOxslNE3d15S5cnjG0lCRZjKutFql7ouqySjWYLNO0tmDbpj++sLdebWBb2i44StqWw4hL0swVfW7NDD2cc8YYi1kcxfEMMyCliqbqppFIJdNOOpd12rKOY9ttSZtq+ut79/9z5x4/UrAjY8ccTE3SVSLEuQFpbi6dnXpnBr7pDQAEF5xzFrMoiuMomqEGIBIVnEUxypopofgfCA6h8uuThHQAAAAASUVORK5CYII=">
+<title>容積的代價 — 律師×檢察官 雙視角法庭推理</title>
+<style>
+:root{
+  --ink:#15100c; --wood:#6f4526; --wood2:#8a5a33; --gold:#d9a441; --gold2:#f0c469;
+  --paper:#f6ecd4; --paper2:#eaddc0; --defense:#2e6fd8; --pros:#b8322a;
+  --testi:#7ee08a; --think:#8fc7ff; --sys:#ffd479;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;overflow:hidden;background:#000;}
+body{
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  color:var(--paper); user-select:none; -webkit-user-select:none; touch-action:manipulation;
+}
+button{font-family:inherit;border:none;cursor:pointer;}
+#app{position:fixed;inset:0;max-width:560px;margin:0 auto;background:var(--ink);
+  display:flex;flex-direction:column;overflow:hidden;
+  padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);}
+
+/* ---------- screens ---------- */
+.screen{position:absolute;inset:0;display:none;flex-direction:column;}
+.screen.on{display:flex;}
+
+/* ---------- title ---------- */
+#scr-title{background:
+  radial-gradient(120% 70% at 50% 0%, #2a2017 0%, #15100c 60%),
+  var(--ink); align-items:center;justify-content:center;text-align:center;gap:18px;}
+#scr-title .scale{font-size:64px;filter:drop-shadow(0 6px 14px rgba(217,164,65,.35));animation:bob 3s ease-in-out infinite;}
+#scr-title h1{font-size:54px;font-weight:900;letter-spacing:10px;color:var(--gold2);
+  text-shadow:0 3px 0 #7a5a1d,0 8px 24px rgba(0,0,0,.6);margin-left:10px;}
+#scr-title .sub{font-size:15px;letter-spacing:8px;color:var(--paper2);opacity:.85;margin-left:8px;}
+#scr-title .rule{width:180px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.menu-btn{display:block;width:240px;padding:14px 0;margin:6px auto;border-radius:6px;
+  background:linear-gradient(180deg,var(--wood2),var(--wood));color:var(--paper);
+  font-size:18px;font-weight:700;letter-spacing:6px;border:1px solid #3a2412;
+  box-shadow:0 4px 0 #3a2412,0 8px 16px rgba(0,0,0,.4);}
+.menu-btn:active{transform:translateY(3px);box-shadow:0 1px 0 #3a2412;}
+.tiny{font-size:11px;color:#9c8c70;letter-spacing:2px;}
+
+/* ---------- case select ---------- */
+#scr-select{background:var(--ink);padding:18px 16px;gap:12px;overflow-y:auto;}
+#scr-select h2{font-size:20px;letter-spacing:6px;color:var(--gold2);text-align:center;padding:8px 0 4px;}
+.case-card{position:relative;border:1px solid #4a3520;border-radius:10px;padding:14px 16px;
+  background:linear-gradient(135deg,#241a11,#1a130c);text-align:left;color:var(--paper);width:100%;}
+.case-card .ep{font-size:11px;letter-spacing:3px;color:var(--gold);}
+.case-card h3{font-size:19px;font-weight:900;letter-spacing:2px;margin:4px 0 6px;}
+.case-card p{font-size:12.5px;line-height:1.7;color:#cdbfa4;}
+.case-card .stars{position:absolute;top:12px;right:14px;font-size:13px;color:var(--gold2);}
+.case-card.locked{opacity:.45;filter:grayscale(.6);}
+.case-card.locked h3::after{content:"　🔒";}
+.case-card .done-badge{display:inline-block;margin-top:8px;font-size:11px;color:var(--testi);letter-spacing:2px;}
+.back-btn{align-self:center;margin-top:4px;background:none;color:#9c8c70;font-size:13px;letter-spacing:3px;padding:10px;}
+
+/* ---------- game ---------- */
+#scr-game{background:var(--ink);}
+#hud{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;gap:8px;z-index:30;}
+.hud-btn{background:rgba(0,0,0,.45);border:1px solid #5a472c;color:var(--gold2);
+  border-radius:6px;padding:7px 12px;font-size:13px;font-weight:700;letter-spacing:1px;}
+#penalty{display:flex;gap:3px;font-size:15px;filter:drop-shadow(0 1px 2px #000);}
+#penalty .p{transition:opacity .3s;}
+#penalty .p.lost{opacity:.18;filter:grayscale(1);}
+
+#scene{position:relative;flex:1;overflow:hidden;}
+#bg{position:absolute;inset:0;}
+#sprite{position:absolute;left:50%;bottom:-4px;transform:translateX(-50%);
+  width:min(76vw,340px);transition:opacity .18s;}
+#sprite svg{width:100%;height:auto;display:block;filter:drop-shadow(0 8px 18px rgba(0,0,0,.55));}
+#sprite.bob{animation:bob 3.2s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
+#sprite .mouth-open{opacity:0;}
+#sprite.talking .mouth-open{animation:talk .26s steps(2) infinite;}
+#sprite.talking .mouth-closed{animation:talkc .26s steps(2) infinite;}
+@keyframes talk{0%,100%{opacity:0}50%{opacity:1}}
+@keyframes talkc{0%,100%{opacity:1}50%{opacity:0}}
+
+.shake{animation:shake .42s;}
+@keyframes shake{0%,100%{transform:translate(0,0)}15%{transform:translate(-9px,4px)}30%{transform:translate(8px,-5px)}45%{transform:translate(-7px,-3px)}60%{transform:translate(6px,4px)}75%{transform:translate(-4px,2px)}90%{transform:translate(3px,-2px)}}
+
+#fx-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:40;}
+#fx-flash.go{animation:flash .2s;}
+@keyframes flash{0%{opacity:.95}100%{opacity:0}}
+
+/* objection bubble */
+#fx-obj{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:50;pointer-events:none;}
+#fx-obj.hidden{display:none;}
+#fx-obj .bubble{
+  font-size:64px;font-weight:900;font-style:italic;letter-spacing:4px;
+  color:#fff;background:var(--pros);padding:18px 34px;border-radius:14px;
+  border:5px solid #fff;box-shadow:0 0 0 5px var(--pros),0 18px 40px rgba(0,0,0,.6);
+  transform:rotate(-7deg);animation:slam .5s cubic-bezier(.2,2.2,.4,1);
+  text-shadow:3px 3px 0 rgba(0,0,0,.35);}
+#fx-obj.blue .bubble{background:var(--defense);box-shadow:0 0 0 5px var(--defense),0 18px 40px rgba(0,0,0,.6);}
+@keyframes slam{0%{transform:scale(2.4) rotate(-7deg);opacity:0}60%{transform:scale(.92) rotate(-7deg);opacity:1}100%{transform:scale(1) rotate(-7deg)}}
+
+/* testimony banner */
+#t-banner{position:absolute;top:10px;left:50%;transform:translateX(-50%);z-index:25;
+  font-size:13px;letter-spacing:3px;color:var(--testi);background:rgba(0,0,0,.55);
+  border:1px solid rgba(126,224,138,.5);border-radius:20px;padding:6px 16px;white-space:nowrap;}
+#t-banner.hidden{display:none;}
+#t-count{color:#bfe8c5;font-size:11px;margin-left:6px;}
+
+/* testimony controls */
+#t-controls{display:flex;gap:8px;padding:8px 10px;z-index:30;background:linear-gradient(180deg,transparent,rgba(0,0,0,.3));}
+#t-controls.hidden{display:none;}
+#t-controls button{flex:1;padding:13px 0;border-radius:8px;font-size:15px;font-weight:900;letter-spacing:2px;
+  border:1px solid rgba(255,255,255,.15);box-shadow:0 3px 0 rgba(0,0,0,.45);color:#fff;}
+#t-controls button:active{transform:translateY(2px);box-shadow:none;}
+#t-prev,#t-next{flex:0 0 56px;background:#3a3a44;font-size:17px;}
+#t-press{background:linear-gradient(180deg,#3f8f55,#2e6e40);}
+#t-present{background:linear-gradient(180deg,#d05050,#a93636);}
+
+/* dialog box */
+#dialog{position:relative;min-height:152px;margin:0 8px 8px;border-radius:10px;
+  background:linear-gradient(180deg,var(--paper),var(--paper2));
+  border:2px solid #5c4322;box-shadow:0 -6px 18px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.4);
+  padding:30px 16px 26px;color:#2a1d10;z-index:20;}
+#dialog::before,#dialog::after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,var(--gold2),#7a5a1d);top:8px;}
+#dialog::before{left:9px}#dialog::after{right:9px}
+#nameplate{position:absolute;top:-14px;left:14px;background:linear-gradient(180deg,#3b3b46,#23232c);
+  color:#fff;font-size:13.5px;font-weight:900;letter-spacing:2px;padding:6px 16px;border-radius:6px;
+  border:1px solid rgba(255,255,255,.25);box-shadow:0 3px 8px rgba(0,0,0,.4);}
+#nameplate.hidden{display:none;}
+#dtext{font-size:16.5px;line-height:1.85;font-weight:500;min-height:90px;letter-spacing:.5px;}
+#dtext.testi{color:#1d6b32;font-weight:700;}
+#dtext.think{color:#2a5e9c;font-style:italic;}
+#dtext.sys{color:#7a5a1d;font-weight:700;}
+#cursor{position:absolute;right:14px;bottom:8px;color:#8a5a33;font-size:14px;animation:cur .8s ease-in-out infinite;opacity:0;}
+#cursor.on{opacity:1;}
+@keyframes cur{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* ---------- overlays ---------- */
+.overlay{position:absolute;inset:0;z-index:60;display:flex;flex-direction:column;
+  background:rgba(8,6,4,.86);backdrop-filter:blur(3px);}
+.overlay.hidden{display:none;}
+.ov-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;}
+.ov-head h3{font-size:17px;letter-spacing:4px;color:var(--gold2);}
+.ov-close{background:none;color:#cdbfa4;font-size:22px;padding:4px 10px;}
+
+/* evidence record */
+#ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 16px 16px;overflow-y:auto;}
+.ev-card{background:linear-gradient(135deg,#241a11,#191209);border:1px solid #4a3520;border-radius:10px;
+  padding:12px 6px;text-align:center;color:var(--paper);}
+.ev-card .ic{font-size:30px;display:block;margin-bottom:6px;}
+.ev-card .nm{font-size:12px;font-weight:700;letter-spacing:1px;}
+#ev-detail{padding:6px 18px 18px;display:none;flex-direction:column;gap:10px;}
+#ev-detail.on{display:flex;}
+#ev-detail .big{font-size:46px;text-align:center;}
+#ev-detail h4{font-size:18px;font-weight:900;letter-spacing:2px;text-align:center;color:var(--gold2);}
+#ev-detail p{font-size:14px;line-height:1.9;color:#e8dcc2;background:rgba(255,255,255,.05);
+  border:1px solid #4a3520;border-radius:8px;padding:12px 14px;}
+.present-btn{padding:14px 0;border-radius:8px;background:linear-gradient(180deg,#d05050,#a93636);
+  color:#fff;font-size:16px;font-weight:900;letter-spacing:6px;box-shadow:0 3px 0 rgba(0,0,0,.4);}
+.ghost-btn{padding:12px 0;border-radius:8px;background:#33291c;color:#cdbfa4;font-size:14px;letter-spacing:3px;}
+
+/* choice */
+#ov-choice{justify-content:flex-end;background:rgba(8,6,4,.55);}
+#choice-box{margin:0 14px 170px;display:flex;flex-direction:column;gap:10px;}
+#choice-prompt{text-align:center;color:var(--gold2);font-size:14px;letter-spacing:3px;margin-bottom:4px;text-shadow:0 2px 6px #000;}
+.choice-btn{padding:14px 16px;border-radius:8px;font-size:15px;font-weight:700;letter-spacing:1px;
+  background:linear-gradient(180deg,#2f4d86,#23355c);color:#fff;border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 3px 0 rgba(0,0,0,.45);text-align:center;}
+.choice-btn:active{transform:translateY(2px);box-shadow:none;}
+.choice-btn.dim{opacity:.4;}
+
+/* toast (evidence get) */
+#ov-toast{align-items:center;justify-content:center;background:rgba(8,6,4,.7);}
+#toast-card{width:78%;max-width:340px;background:linear-gradient(135deg,#2a1f12,#1b1309);
+  border:2px solid var(--gold);border-radius:12px;padding:20px;text-align:center;
+  box-shadow:0 0 30px rgba(217,164,65,.25);animation:pop .35s cubic-bezier(.2,1.6,.4,1);}
+#toast-card .lab{font-size:12px;letter-spacing:4px;color:var(--gold);}
+#toast-card .ic{font-size:44px;margin:10px 0;}
+#toast-card .nm{font-size:19px;font-weight:900;letter-spacing:2px;}
+#toast-card .ds{font-size:12.5px;line-height:1.8;color:#cdbfa4;margin-top:8px;}
+#toast-card .tap{margin-top:12px;font-size:11px;color:#9c8c70;letter-spacing:2px;}
+@keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+
+/* chapter title card */
+#ov-title{align-items:center;justify-content:center;background:#000;text-align:center;gap:14px;}
+#ov-title .ep{font-size:14px;letter-spacing:8px;color:var(--gold);}
+#ov-title h2{font-size:34px;font-weight:900;letter-spacing:6px;color:var(--paper);}
+#ov-title .rule{width:140px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+#ov-title .tap{font-size:11px;color:#777;letter-spacing:3px;margin-top:18px;}
+
+/* verdict stamp */
+#ov-verdict{align-items:center;justify-content:center;background:rgba(8,6,4,.8);}
+#stamp{font-size:84px;font-weight:900;letter-spacing:14px;color:var(--gold2);padding:18px 30px 18px 44px;
+  border:7px solid var(--gold2);border-radius:14px;transform:rotate(-9deg);
+  text-shadow:0 0 26px rgba(240,196,105,.5);box-shadow:0 0 0 3px rgba(240,196,105,.3),0 0 60px rgba(240,196,105,.3);
+  animation:stampin .55s cubic-bezier(.3,2,.4,1);background:rgba(0,0,0,.35);}
+#stamp.guilty{color:#ff6b5e;border-color:#ff6b5e;text-shadow:0 0 26px rgba(255,107,94,.5);box-shadow:0 0 0 3px rgba(255,107,94,.3),0 0 60px rgba(255,107,94,.3);}
+@keyframes stampin{0%{transform:scale(3) rotate(-9deg);opacity:0}60%{transform:scale(.9) rotate(-9deg);opacity:1}100%{transform:scale(1) rotate(-9deg)}}
+.spark{position:absolute;font-size:22px;animation:spark 1.4s ease-out forwards;}
+@keyframes spark{0%{transform:translateY(0) scale(.6);opacity:1}100%{transform:translateY(-90px) scale(1.4);opacity:0}}
+
+/* game over */
+#ov-gameover{align-items:center;justify-content:center;gap:16px;background:rgba(10,2,2,.93);text-align:center;}
+#ov-gameover h2{font-size:40px;font-weight:900;letter-spacing:6px;color:#ff6b5e;text-shadow:0 0 30px rgba(255,80,60,.4);}
+#ov-gameover p{font-size:13.5px;line-height:2;color:#cdbfa4;}
+
+/* settings */
+#ov-settings{justify-content:center;align-items:center;}
+#set-card{width:84%;max-width:360px;background:#241a11;border:1px solid #4a3520;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px;}
+#set-card h3{text-align:center;letter-spacing:5px;color:var(--gold2);font-size:17px;margin-bottom:4px;}
+.set-row{display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,.25);border-radius:8px;padding:12px 14px;}
+.set-row span{font-size:14px;letter-spacing:2px;}
+.set-row button{background:#3b2d1b;border:1px solid #5a472c;color:var(--gold2);border-radius:6px;padding:8px 16px;font-size:13px;font-weight:700;min-width:74px;}
+
+/* ending */
+#scr-end{background:radial-gradient(120% 70% at 50% 0%, #2a2017 0%, #15100c 60%);align-items:center;justify-content:center;text-align:center;padding:24px;overflow-y:auto;}
+#end-inner{display:flex;flex-direction:column;gap:14px;align-items:center;}
+#scr-end h2{font-size:30px;font-weight:900;letter-spacing:6px;color:var(--gold2);}
+#scr-end p{font-size:13.5px;line-height:2.1;color:#dccfb2;}
+.credits{font-size:12px;line-height:2.4;color:#9c8c70;letter-spacing:2px;}
+
+/* rain fx */
+#fx-rain{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .6s;z-index:5;
+  background:repeating-linear-gradient(108deg,rgba(190,210,255,.16) 0 1px,transparent 1px 26px);
+  background-size:200% 200%;animation:rain .5s linear infinite;}
+#fx-rain.on{opacity:1;}
+@keyframes rain{0%{background-position:0 0}100%{background-position:-60px 110px}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01s !important;animation-iteration-count:1 !important;transition-duration:.01s !important;}
+}
+@media (min-height:760px){#dtext{font-size:17.5px;}#dialog{min-height:168px;}}
+
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- ===== 標題畫面 ===== -->
+  <section id="scr-title" class="screen on">
+    <div class="scale">⚖️</div>
+    <h1 style="font-size:44px">容積的代價</h1>
+    <div class="sub">— 律師 × 檢察官 雙視角法庭推理 —</div>
+    <div class="rule"></div>
+    <button id="btn-start" class="menu-btn">開 始 遊 戲</button>
+    <div class="tiny">取材真實司法案件改編・建議直式持機・點擊畫面開啟音效</div>
+  </section>
+
+  <!-- ===== 立場選擇畫面 ===== -->
+  <section id="scr-select" class="screen">
+    <h2>— 選 擇 你 的 立 場 —</h2>
+    <p style="text-align:center;font-size:12px;color:#9c8c70;letter-spacing:1px;line-height:1.8">同一座法庭，兩種戰場。<br>無論你站在哪一側——判決，只會有一份。</p>
+    <div id="case-list"></div>
+    <button id="btn-back-title" class="back-btn">← 返回標題</button>
+  </section>
+
+  <!-- ===== 遊戲畫面 ===== -->
+  <section id="scr-game" class="screen">
+    <div id="scene">
+      <div id="bg"></div>
+      <div id="sprite"></div>
+      <div id="fx-rain"></div>
+      <div id="t-banner" class="hidden"></div>
+      <div id="hud">
+        <button id="btn-record" class="hud-btn">🗂 證物</button>
+        <div id="penalty"></div>
+        <button id="btn-settings" class="hud-btn">⚙</button>
+      </div>
+      <div id="fx-flash"></div>
+      <div id="fx-obj" class="hidden"><div class="bubble"><span>異議！！</span></div></div>
+    </div>
+    <div id="t-controls" class="hidden">
+      <button id="t-prev">◀</button>
+      <button id="t-press">等一下</button>
+      <button id="t-present">出示證物</button>
+      <button id="t-next">▶</button>
+    </div>
+    <div id="dialog">
+      <div id="nameplate" class="hidden"></div>
+      <div id="dtext"></div>
+      <div id="cursor">▼</div>
+    </div>
+
+    <!-- ===== 證物欄 ===== -->
+    <div id="ov-record" class="overlay hidden">
+      <div class="ov-head"><h3>證物一覽</h3><button class="ov-close">✕</button></div>
+      <div id="ev-grid"></div>
+      <div id="ev-detail"></div>
+    </div>
+
+    <!-- ===== 設定 ===== -->
+    <div id="ov-settings" class="overlay hidden">
+      <div id="set-card">
+        <div class="ov-head"><h3>設　定</h3><button id="ov-settings-close" class="ov-close">✕</button></div>
+        <div class="set-row"><span>背景音樂</span><button id="set-bgm">開啟</button></div>
+        <div class="set-row"><span>音效</span><button id="set-sfx">開啟</button></div>
+        <div class="set-row"><span>文字速度</span><button id="set-speed">慢</button></div>
+        <div class="set-row"><span>放棄本案</span><button id="set-quit">回標題</button></div>
+      </div>
+    </div>
+
+    <!-- ===== 選項 ===== -->
+    <div id="ov-choice" class="overlay hidden">
+      <div id="choice-box"><div id="choice-prompt"></div></div>
+    </div>
+
+    <!-- ===== 取得證物 ===== -->
+    <div id="ov-toast" class="overlay hidden"><div id="toast-card"></div></div>
+
+    <!-- ===== 章節標題卡 ===== -->
+    <div id="ov-title" class="overlay hidden"></div>
+
+    <!-- ===== 判決印章 ===== -->
+    <div id="ov-verdict" class="overlay hidden"><div id="stamp">無罪</div></div>
+
+    <!-- ===== 詰問失敗 ===== -->
+    <div id="ov-gameover" class="overlay hidden">
+      <div style="font-size:50px">⚖️</div>
+      <h2 id="go-h2">辯 護 失 敗</h2>
+      <p id="go-p">法庭對辯方失去了信任……<br>但真相，值得再試一次。</p>
+      <button id="go-retry" class="menu-btn">重新詰問（罰則回滿）</button>
+      <button id="go-title" class="back-btn">回標題畫面</button>
+    </div>
+  </section>
+
+  <!-- ===== 結局畫面 ===== -->
+  <section id="scr-end" class="screen">
+    <div id="end-inner"></div>
+    <button id="btn-end-title" class="menu-btn">返回立場選擇</button>
+  </section>
+
+</div>
+<script>
+/* ===== sprites.js : parametric SVG avatars & backgrounds ===== */
+
+function _hair(style, c){
+  switch(style){
+    case 'spiky': return `<path d="M48 78 Q44 30 70 28 L66 14 80 26 88 8 96 26 108 10 112 28 L128 22 Q156 32 152 78 Q150 52 128 46 L120 56 108 44 96 56 84 44 72 56 Q52 50 48 78 Z" fill="${c}"/>`;
+    case 'part': return `<path d="M48 80 Q44 28 100 26 Q156 28 152 80 Q150 48 116 46 Q86 46 74 56 Q54 56 48 80 Z" fill="${c}"/>`;
+    case 'slick': return `<path d="M46 76 Q42 24 100 22 Q158 24 154 76 Q152 44 100 42 Q48 44 46 76 Z" fill="${c}"/><path d="M46 76 Q48 58 60 52 L56 76 Z" fill="${c}"/>`;
+    case 'long': return `<path d="M44 150 Q36 36 100 30 Q164 36 156 150 L138 150 Q146 80 128 58 Q108 50 92 52 Q62 58 60 92 L58 150 Z" fill="${c}"/><path d="M48 78 Q56 50 86 48 L78 60 Q60 62 56 80 Z" fill="${c}"/>`;
+    case 'pony': return `<path d="M48 80 Q44 28 100 26 Q156 28 152 80 Q150 46 100 44 Q50 46 48 80 Z" fill="${c}"/><path d="M148 60 Q172 66 166 110 Q160 140 148 146 Q158 110 150 84 Z" fill="${c}"/>`;
+    case 'cap': return `<path d="M46 70 Q46 30 100 28 Q154 30 154 70 L46 70 Z" fill="${c}"/><rect x="38" y="64" width="124" height="12" rx="6" fill="${c}" />`;
+    case 'old': return `<path d="M46 80 Q46 60 62 54 L60 80 Z" fill="${c}"/><path d="M154 80 Q154 60 138 54 L140 80 Z" fill="${c}"/><path d="M62 50 Q80 34 120 36 L116 46 Q86 44 70 54 Z" fill="${c}" opacity=".9"/>`;
+    case 'judgewig': return `<path d="M44 84 Q40 56 60 50 Q56 92 50 104 Q42 96 44 84 Z" fill="${c}"/><path d="M156 84 Q160 56 140 50 Q144 92 150 104 Q158 96 156 84 Z" fill="${c}"/>`;
+    case 'shortf': return `<path d="M46 86 Q42 28 100 26 Q158 28 154 86 Q152 50 122 48 L114 60 Q92 48 76 58 Q52 56 46 86 Z" fill="${c}"/>`;
+    case 'bowl': return `<path d="M46 72 Q44 28 100 26 Q156 28 154 72 Q154 56 100 54 Q46 56 46 72 Z" fill="${c}"/>`;
+    default: return '';
+  }
+}
+
+function _face(exp, opt){
+  const e = [];
+  // brows
+  if(exp==='angry') e.push(`<path d="M66 80 L92 90" stroke="#332" stroke-width="5" stroke-linecap="round"/><path d="M134 80 L108 90" stroke="#332" stroke-width="5" stroke-linecap="round"/>`);
+  else if(exp==='sad') e.push(`<path d="M66 88 L92 80" stroke="#332" stroke-width="4.5" stroke-linecap="round"/><path d="M134 88 L108 80" stroke="#332" stroke-width="4.5" stroke-linecap="round"/>`);
+  else if(exp==='shock') e.push(`<path d="M66 74 L92 72" stroke="#332" stroke-width="4.5" stroke-linecap="round"/><path d="M134 74 L108 72" stroke="#332" stroke-width="4.5" stroke-linecap="round"/>`);
+  else if(exp==='smug') e.push(`<path d="M66 80 L92 86" stroke="#332" stroke-width="4.5" stroke-linecap="round"/><path d="M134 76 L108 80" stroke="#332" stroke-width="4.5" stroke-linecap="round"/>`);
+  else e.push(`<path d="M68 82 L90 82" stroke="#332" stroke-width="4.5" stroke-linecap="round"/><path d="M132 82 L110 82" stroke="#332" stroke-width="4.5" stroke-linecap="round"/>`);
+  // eyes
+  if(exp==='shock') e.push(`<circle cx="79" cy="98" r="9" fill="#fff" stroke="#332" stroke-width="2.5"/><circle cx="121" cy="98" r="9" fill="#fff" stroke="#332" stroke-width="2.5"/><circle cx="79" cy="98" r="3" fill="#332"/><circle cx="121" cy="98" r="3" fill="#332"/>`);
+  else if(exp==='smile'||exp==='laugh') e.push(`<path d="M71 98 Q79 90 87 98" stroke="#332" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M113 98 Q121 90 129 98" stroke="#332" stroke-width="4" fill="none" stroke-linecap="round"/>`);
+  else if(exp==='smug') e.push(`<path d="M71 96 L87 96" stroke="#332" stroke-width="4.5" stroke-linecap="round"/><path d="M113 96 L129 96" stroke="#332" stroke-width="4.5" stroke-linecap="round"/>`);
+  else e.push(`<circle cx="79" cy="97" r="4.6" fill="#332"/><circle cx="121" cy="97" r="4.6" fill="#332"/>`);
+  // mouths (closed + open variants for talk animation)
+  let mc, mo;
+  if(exp==='angry'){ mc=`<path d="M86 128 Q100 120 114 128" stroke="#8a3324" stroke-width="4.5" fill="none" stroke-linecap="round"/>`; mo=`<path d="M84 122 Q100 118 116 122 Q112 140 100 140 Q88 140 84 122 Z" fill="#7d2d20"/>`; }
+  else if(exp==='sad'){ mc=`<path d="M88 130 Q100 122 112 130" stroke="#8a3324" stroke-width="4" fill="none" stroke-linecap="round"/>`; mo=`<ellipse cx="100" cy="129" rx="9" ry="7" fill="#7d2d20"/>`; }
+  else if(exp==='shock'){ mc=`<ellipse cx="100" cy="129" rx="8" ry="6" fill="#7d2d20"/>`; mo=`<ellipse cx="100" cy="131" rx="12" ry="12" fill="#7d2d20"/>`; }
+  else if(exp==='smile'||exp==='laugh'){ mc=`<path d="M84 124 Q100 136 116 124" stroke="#8a3324" stroke-width="4.5" fill="none" stroke-linecap="round"/>`; mo=`<path d="M82 122 Q100 124 118 122 Q114 142 100 142 Q86 142 82 122 Z" fill="#7d2d20"/>`; }
+  else if(exp==='smug'){ mc=`<path d="M88 126 Q102 132 114 122" stroke="#8a3324" stroke-width="4" fill="none" stroke-linecap="round"/>`; mo=`<path d="M86 124 Q102 130 116 122 Q110 138 98 138 Q90 134 86 124 Z" fill="#7d2d20"/>`; }
+  else { mc=`<path d="M90 127 L110 127" stroke="#8a3324" stroke-width="4" stroke-linecap="round"/>`; mo=`<ellipse cx="100" cy="129" rx="10" ry="8" fill="#7d2d20"/>`; }
+  e.push(`<g class="mouth-closed">${mc}</g><g class="mouth-open">${mo}</g>`);
+  // sweat
+  if(opt && opt.sweat) e.push(`<path d="M146 70 Q154 84 146 90 Q138 84 146 70 Z" fill="#7fb8f0" stroke="#4a86c8" stroke-width="1.5"/>`);
+  if(exp==='angry') e.push(`<path d="M140 56 L150 50 M142 64 L154 62 M136 50 L144 40" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>`);
+  return e.join('');
+}
+
+function makeAvatar(cfg){
+  return function(pose){
+    pose = pose || 'normal';
+    const sweat = pose === 'sweat' || pose === 'nervous';
+    const exp = sweat ? (pose==='nervous' ? 'sad' : 'normal') : pose;
+    const skin = cfg.skin || '#f2c9a0';
+    const w = cfg.wide ? 14 : 0;
+    const parts = [];
+    // body / clothes
+    parts.push(`<path d="M${44-w} 260 L${48-w} 196 Q${56-w} 172 84 166 L100 162 L116 166 Q${144+w} 172 ${152+w} 196 L${156+w} 260 Z" fill="${cfg.suit}"/>`);
+    if(cfg.shirt) parts.push(`<path d="M84 166 L100 200 L116 166 L108 164 L100 176 L92 164 Z" fill="${cfg.shirt}"/>`);
+    if(cfg.tie) parts.push(`<path d="M96 172 L104 172 L106 188 L100 224 L94 188 Z" fill="${cfg.tie}"/>`);
+    if(cfg.collar) parts.push(`<path d="M70 172 L130 172 L126 186 L74 186 Z" fill="${cfg.collar}"/>`);
+    if(cfg.apron) parts.push(`<path d="M72 188 L128 188 L132 260 L68 260 Z" fill="${cfg.apron}"/><path d="M84 188 L84 176 L116 176 L116 188" stroke="${cfg.apron}" stroke-width="7" fill="none"/>`);
+    if(cfg.badge) parts.push(`<circle cx="68" cy="196" r="7" fill="#f0c469" stroke="#7a5a1d" stroke-width="2"/>`);
+    if(cfg.scarf) parts.push(`<path d="M78 168 Q100 184 122 168 L120 182 Q100 196 80 182 Z" fill="${cfg.scarf}"/>`);
+    // neck & head
+    parts.push(`<rect x="88" y="138" width="24" height="32" rx="8" fill="${skin}"/>`);
+    parts.push(`<ellipse cx="100" cy="92" rx="54" ry="58" fill="${skin}"/>`);
+    parts.push(`<ellipse cx="46" cy="96" rx="8" ry="11" fill="${skin}"/><ellipse cx="154" cy="96" rx="8" ry="11" fill="${skin}"/>`);
+    // hair behind handled in style; front:
+    parts.push(_hair(cfg.hair, cfg.hairC || '#2b2018'));
+    // face
+    parts.push(_face(exp, {sweat}));
+    // accessories
+    if(cfg.glasses) parts.push(`<rect x="64" y="86" width="32" height="22" rx="8" fill="rgba(180,220,255,.25)" stroke="#3a3a44" stroke-width="3.5"/><rect x="104" y="86" width="32" height="22" rx="8" fill="rgba(180,220,255,.25)" stroke="#3a3a44" stroke-width="3.5"/><path d="M96 96 L104 96" stroke="#3a3a44" stroke-width="3.5"/>`);
+    if(cfg.beard) parts.push(`<path d="M58 110 Q60 162 100 166 Q140 162 142 110 Q142 146 100 150 Q58 146 58 110 Z" fill="${cfg.beard}"/>`);
+    if(cfg.stache) parts.push(`<path d="M78 116 Q100 110 122 116 Q112 122 100 121 Q88 122 78 116 Z" fill="${cfg.stache}"/>`);
+    if(cfg.wrinkle) parts.push(`<path d="M66 70 Q100 62 134 70" stroke="rgba(0,0,0,.18)" stroke-width="2.5" fill="none"/><path d="M70 116 Q76 120 80 118 M130 116 Q124 120 120 118" stroke="rgba(0,0,0,.18)" stroke-width="2.5" fill="none"/>`);
+    if(cfg.capPeak) parts.push(`<path d="M36 66 L100 60 L164 66 L160 78 L40 78 Z" fill="${cfg.capPeak}"/>`);
+    if(cfg.gavel) parts.push(`<g transform="translate(146,206) rotate(-24)"><rect x="-6" y="0" width="12" height="44" rx="5" fill="#8a5a33"/><rect x="-24" y="-18" width="48" height="22" rx="8" fill="#6f4526"/></g>`);
+    return `<svg viewBox="0 0 200 264" xmlns="http://www.w3.org/2000/svg">${parts.join('')}</svg>`;
+  };
+}
+
+const CHARS = {
+  lin:  { name:'林辯',   color:'#2e6fd8', voice:'m',  av: makeAvatar({skin:'#f2c9a0', hair:'spiky', hairC:'#1d1812', suit:'#274d9e', shirt:'#fff', tie:'#c0392b', badge:true}) },
+  mei:  { name:'小梅',   color:'#2da3a0', voice:'f',  av: makeAvatar({skin:'#f6d4ae', hair:'pony',  hairC:'#5a3a22', suit:'#2da3a0', shirt:'#fff'}) },
+  judge:{ name:'審判長', color:'#7a5a1d', voice:'lo', av: makeAvatar({skin:'#eec39a', hair:'judgewig', hairC:'#dcdcd2', suit:'#23232c', collar:'#f2f2ea', beard:'#dcdcd2', wrinkle:true, gavel:true}) },
+  yan:  { name:'嚴正雄', color:'#b8322a', voice:'m',  av: makeAvatar({skin:'#edc197', hair:'slick', hairC:'#14100c', suit:'#5e1f24', shirt:'#f2eada', tie:'#2b2b33', glasses:true}) },
+  hong: { name:'阿宏',   color:'#d98e2b', voice:'m',  av: makeAvatar({skin:'#f0c08c', hair:'cap', hairC:'#caa028', suit:'#d9c23a', shirt:'#fff', capPeak:'#caa028'}) },
+  chen: { name:'陳伯',   color:'#8c7a5a', voice:'lo', av: makeAvatar({skin:'#e8b88a', hair:'old', hairC:'#b8b8ae', suit:'#6e6650', shirt:'#e8e0c8', wrinkle:true}) },
+  jin:  { name:'金老闆', color:'#c2622a', voice:'lo', av: makeAvatar({skin:'#eab27e', hair:'bowl', hairC:'#3a2c1c', suit:'#7d3320', apron:'#b53a2a', stache:'#3a2c1c', wide:true}) },
+  yun:  { name:'小芸',   color:'#c2588a', voice:'f',  av: makeAvatar({skin:'#f6d4ae', hair:'long', hairC:'#33241a', suit:'#46556e', apron:'#3aa08a', shirt:'#fff'}) },
+  kai:  { name:'阿凱',   color:'#4a8ac2', voice:'m',  av: makeAvatar({skin:'#f0c49a', hair:'part', hairC:'#26201a', suit:'#3a4a5e', apron:'#3aa08a', shirt:'#fff'}) },
+  fei:  { name:'阿飛',   color:'#e2598a', voice:'m',  av: makeAvatar({skin:'#eab98e', hair:'cap', hairC:'#e2598a', suit:'#d44a7c', shirt:'#fff', capPeak:'#e2598a'}) },
+  zhou: { name:'老周',   color:'#6e8a4a', voice:'lo', av: makeAvatar({skin:'#e2b184', hair:'old', hairC:'#9a9a90', suit:'#56603a', shirt:'#e8e0c8', scarf:'#8a7a52', wrinkle:true}) },
+  fang: { name:'方瑜',   color:'#7a5ac2', voice:'f',  av: makeAvatar({skin:'#f4cfa8', hair:'shortf', hairC:'#1c1620', suit:'#4a4456', shirt:'#e8e4f0', glasses:true}) },
+  zhao: { name:'趙董',   color:'#9a8a3a', voice:'lo', av: makeAvatar({skin:'#e8bb8e', hair:'slick', hairC:'#4a4640', suit:'#33312b', shirt:'#f2eada', tie:'#b0922e', wrinkle:true}) },
+  qi:   { name:'祁文遠', color:'#3a9aa0', voice:'lo', av: makeAvatar({skin:'#ecc49c', hair:'part',  hairC:'#8a8a84', suit:'#2e3e44', shirt:'#f4f2ec', tie:'#3a9aa0', glasses:true, wrinkle:true}) },
+  qiu:  { name:'厲主席', color:'#a8742a', voice:'lo', av: makeAvatar({skin:'#e6b488', hair:'old',   hairC:'#d6d4cc', suit:'#54382a', shirt:'#f2ead8', tie:'#b0922e', stache:'#cfcdc4', wrinkle:true}) },
+  gong: { name:'龔瑞欽', color:'#5a7a9a', voice:'lo', av: makeAvatar({skin:'#e8be92', hair:'slick', hairC:'#7e7e78', suit:'#3a4452', shirt:'#eef0f2', tie:'#46586a', glasses:true, wrinkle:true}) },
+  quan: { name:'全祕書', color:'#9a6a8a', voice:'f',  av: makeAvatar({skin:'#f4d0aa', hair:'shortf',hairC:'#4a3328', suit:'#6e5a6e', shirt:'#f2eef4'}) },
+  jia:  { name:'賈調查官', color:'#4a6a4a', voice:'m', av: makeAvatar({skin:'#ecc096', hair:'slick', hairC:'#1a1612', suit:'#2e3a2e', shirt:'#eef2ec', tie:'#1e2a1e'}) }
+};
+
+/* ===== backgrounds ===== */
+function _bgWrap(inner, css){
+  return `<div style="position:absolute;inset:0;${css}">${inner}</div>`;
+}
+const BGS = {
+  court: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#3a2817"/>
+    <rect y="0" width="400" height="340" fill="#4a3420"/>
+    <rect x="30" y="40" width="340" height="260" rx="8" fill="#5c4226"/>
+    <circle cx="200" cy="150" r="84" fill="#6f5430" stroke="#d9a441" stroke-width="5"/>
+    <g stroke="#d9a441" stroke-width="7" fill="none" stroke-linecap="round">
+      <path d="M200 100 L200 196"/><path d="M150 122 L250 122"/>
+      <path d="M150 122 L136 158 M150 122 L164 158"/><path d="M136 158 Q150 172 164 158"/>
+      <path d="M250 122 L236 158 M250 122 L264 158"/><path d="M236 158 Q250 172 264 158"/>
+      <path d="M176 198 L224 198"/>
+    </g>
+    <rect y="340" width="400" height="80" fill="#6f4526"/>
+    <rect y="336" width="400" height="10" fill="#8a5a33"/>
+    <rect y="420" width="400" height="180" fill="#2a1c10"/>
+    <rect x="0" y="416" width="400" height="8" fill="#d9a441" opacity=".5"/>
+  </svg>`,''),
+  office: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#33414f"/>
+    <rect x="40" y="50" width="150" height="190" rx="6" fill="#9fc4e8"/>
+    <rect x="44" y="54" width="142" height="182" fill="#bcd9f2"/>
+    <path d="M44 200 L110 140 L150 176 L186 130 L186 236 L44 236 Z" fill="#8aa8c8"/>
+    <circle cx="160" cy="84" r="16" fill="#fff" opacity=".8"/>
+    <rect x="112" y="50" width="6" height="190" fill="#33414f"/><rect x="40" y="140" width="150" height="6" fill="#33414f"/>
+    <rect x="230" y="60" width="130" height="200" rx="4" fill="#5c4226"/>
+    <g fill="#d9a441"><rect x="240" y="80" width="14" height="44"/><rect x="258" y="74" width="14" height="50"/><rect x="276" y="84" width="14" height="40"/><rect x="298" y="78" width="18" height="46" fill="#b8322a"/><rect x="240" y="150" width="20" height="50" fill="#2da3a0"/><rect x="264" y="156" width="14" height="44"/><rect x="282" y="150" width="14" height="50" fill="#46556e"/><rect x="300" y="160" width="16" height="40"/></g>
+    <rect y="380" width="400" height="220" fill="#26303a"/>
+    <rect y="376" width="400" height="8" fill="#4a5a68"/>
+  </svg>`,''),
+  night: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#10141f"/>
+    <rect width="400" height="430" fill="#141a2b"/>
+    <circle cx="320" cy="80" r="30" fill="#f0e8c8" opacity=".85"/>
+    <g fill="#1d2638"><rect x="10" y="180" width="70" height="250"/><rect x="95" y="140" width="60" height="290"/><rect x="170" y="200" width="80" height="230"/><rect x="265" y="160" width="55" height="270"/><rect x="330" y="210" width="60" height="220"/></g>
+    <g fill="#f0c469" opacity=".7"><rect x="22" y="200" width="10" height="12"/><rect x="46" y="230" width="10" height="12"/><rect x="105" y="160" width="10" height="12"/><rect x="130" y="200" width="10" height="12"/><rect x="185" y="220" width="10" height="12"/><rect x="215" y="260" width="10" height="12"/><rect x="276" y="190" width="10" height="12"/><rect x="342" y="230" width="10" height="12"/></g>
+    <rect y="430" width="400" height="170" fill="#0c0f16"/>
+  </svg>`,''),
+  market: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#1a1422"/>
+    <rect width="400" height="420" fill="#241a30"/>
+    <g><circle cx="60" cy="70" r="22" fill="#e8453a"/><circle cx="140" cy="56" r="22" fill="#e8453a"/><circle cx="220" cy="72" r="22" fill="#e8453a"/><circle cx="300" cy="54" r="22" fill="#e8453a"/><circle cx="360" cy="76" r="22" fill="#e8453a"/>
+    <g fill="#f0c469"><circle cx="60" cy="70" r="11"/><circle cx="140" cy="56" r="11"/><circle cx="220" cy="72" r="11"/><circle cx="300" cy="54" r="11"/><circle cx="360" cy="76" r="11"/></g>
+    <path d="M60 48 L60 30 M140 34 L140 18 M220 50 L220 32 M300 32 L300 16 M360 54 L360 36" stroke="#5a3a2a" stroke-width="4"/></g>
+    <rect x="20" y="180" width="170" height="120" fill="#3a2c44"/>
+    <g><path d="M14 180 L196 180 L188 144 L22 144 Z" fill="#d9483a"/><path d="M36 180 L52 144 M76 180 L92 144 M116 180 L132 144 M156 180 L172 144" stroke="#f2eada" stroke-width="12"/></g>
+    <rect x="40" y="210" width="130" height="50" rx="6" fill="#f0c469"/>
+    <text x="105" y="246" font-size="30" font-weight="900" text-anchor="middle" fill="#8a2a1a" font-family="sans-serif">香香雞排</text>
+    <rect x="230" y="190" width="150" height="110" fill="#2c3a44"/>
+    <path d="M224 190 L386 190 L378 156 L232 156 Z" fill="#3a8a5c"/>
+    <rect x="248" y="216" width="114" height="42" rx="6" fill="#e8e0c8"/>
+    <text x="305" y="246" font-size="26" font-weight="900" text-anchor="middle" fill="#1d4a30" font-family="sans-serif">金好滷</text>
+    <rect y="420" width="400" height="180" fill="#141019"/>
+  </svg>`,''),
+  teashop: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#e8dcc4"/>
+    <rect width="400" height="380" fill="#f2e8d2"/>
+    <rect x="30" y="40" width="340" height="120" rx="10" fill="#2c2620"/>
+    <text x="200" y="92" font-size="34" font-weight="900" text-anchor="middle" fill="#f0c469" font-family="sans-serif">春芽手搖</text>
+    <text x="200" y="134" font-size="18" text-anchor="middle" fill="#cdbfa4" font-family="sans-serif">黑糖髒髒珍奶・新品上市</text>
+    <g><rect x="60" y="220" width="44" height="80" rx="14" fill="rgba(140,90,40,.5)" stroke="#8a6a3a" stroke-width="3"/><circle cx="74" cy="288" r="5" fill="#2c2014"/><circle cx="90" cy="292" r="5" fill="#2c2014"/><circle cx="82" cy="278" r="5" fill="#2c2014"/>
+    <rect x="300" y="216" width="44" height="84" rx="14" fill="rgba(200,150,90,.5)" stroke="#8a6a3a" stroke-width="3"/></g>
+    <rect y="380" width="400" height="60" fill="#8a5a33"/>
+    <rect y="376" width="400" height="8" fill="#a8743f"/>
+    <rect y="440" width="400" height="160" fill="#4a3a2a"/>
+  </svg>`,''),
+  site: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#1c1a22"/>
+    <rect width="400" height="420" fill="#2a2632"/>
+    <circle cx="80" cy="80" r="26" fill="#f0e8c8" opacity=".7"/>
+    <g stroke="#d98e2b" stroke-width="8" fill="none"><path d="M300 420 L300 80 L160 80 M300 120 L240 80 M300 170 L230 120"/><path d="M160 80 L160 110"/></g>
+    <rect x="150" y="106" width="22" height="26" fill="#d98e2b"/>
+    <g fill="#3a3644"><rect x="30" y="250" width="120" height="170"/><rect x="180" y="300" width="90" height="120"/></g>
+    <path d="M0 432 L400 432 L400 456 L0 456 Z" fill="#f0c469"/>
+    <path d="M10 456 L40 432 M70 456 L100 432 M130 456 L160 432 M190 456 L220 432 M250 456 L280 432 M310 456 L340 432 M370 456 L398 434" stroke="#1c1a22" stroke-width="14"/>
+    <rect y="456" width="400" height="144" fill="#16141c"/>
+  </svg>`,''),
+  hall: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#d8cfc0"/>
+    <rect width="400" height="400" fill="#e8e0d2"/>
+    <g fill="#c8bca8"><rect x="30" y="40" width="44" height="360"/><rect x="170" y="40" width="44" height="360"/><rect x="320" y="40" width="44" height="360"/></g>
+    <g fill="#b0a48e"><rect x="24" y="30" width="56" height="14" rx="4"/><rect x="164" y="30" width="56" height="14" rx="4"/><rect x="314" y="30" width="56" height="14" rx="4"/></g>
+    <rect x="100" y="120" width="48" height="160" rx="4" fill="#8a6a3a" opacity=".5"/>
+    <rect x="250" y="120" width="48" height="160" rx="4" fill="#8a6a3a" opacity=".5"/>
+    <rect y="400" width="400" height="200" fill="#9a8e78"/>
+    <path d="M0 400 L400 400" stroke="#7a6e58" stroke-width="6"/>
+  </svg>`,''),
+  detention: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#2e3138"/>
+    <rect width="400" height="420" fill="#3a3e48"/>
+    <rect x="40" y="60" width="320" height="260" rx="6" fill="#262932"/>
+    <g stroke="#5a5e6a" stroke-width="10"><path d="M80 60 L80 320 M140 60 L140 320 M200 60 L200 320 M260 60 L260 320 M320 60 L320 320"/></g>
+    <g stroke="#5a5e6a" stroke-width="8"><path d="M40 130 L360 130 M40 240 L360 240"/></g>
+    <rect y="420" width="400" height="180" fill="#22242c"/>
+  </svg>`,'')
+};
+
+/* ===== audio.js : Web Audio SFX + chiptune sequencer ===== */
+const AudioSys = (() => {
+  let ctx = null, master = null, sfxBus = null, bgmBus = null;
+  let ok = false;
+  let bgmOn = true, sfxOn = true;
+  let seqTimer = null, curTrack = null, nextNoteTime = 0, stepIdx = 0;
+
+  function init(){
+    if(ok || ctx) return;
+    try{
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if(!AC) return;
+      ctx = new AC();
+      master = ctx.createGain(); master.gain.value = 0.9; master.connect(ctx.destination);
+      sfxBus = ctx.createGain(); sfxBus.gain.value = 1; sfxBus.connect(master);
+      bgmBus = ctx.createGain(); bgmBus.gain.value = 0.55; bgmBus.connect(master);
+      ok = true;
+    }catch(e){ ok = false; }
+  }
+  function resume(){ init(); if(ok && ctx.state === 'suspended') ctx.resume().catch(()=>{}); }
+
+  const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
+
+  function tone(freq, t0, dur, type, vol, bus, slide){
+    if(!ok) return;
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type; o.frequency.setValueAtTime(freq, t0);
+    if(slide) o.frequency.exponentialRampToValueAtTime(Math.max(slide,1), t0 + dur);
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(vol, t0 + 0.008);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(g); g.connect(bus);
+    o.start(t0); o.stop(t0 + dur + 0.02);
+  }
+  function noise(t0, dur, vol, bus, lp){
+    if(!ok) return;
+    const len = Math.max(1, Math.floor(ctx.sampleRate * dur));
+    const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+    const d = buf.getChannelData(0);
+    for(let i=0;i<len;i++) d[i] = (Math.random()*2-1) * (1 - i/len);
+    const s = ctx.createBufferSource(); s.buffer = buf;
+    const g = ctx.createGain(); g.gain.value = vol;
+    if(lp){ const f = ctx.createBiquadFilter(); f.type='lowpass'; f.frequency.value = lp; s.connect(f); f.connect(g); }
+    else s.connect(g);
+    g.connect(bus); s.start(t0);
+  }
+
+  /* ---- SFX ---- */
+  const SFX = {
+    blip(voice){
+      if(!ok || !sfxOn) return;
+      const t = ctx.currentTime;
+      const f = voice === 'f' ? 540 : voice === 'lo' ? 220 : 330;
+      tone(f, t, 0.045, 'square', 0.045, sfxBus);
+    },
+    gavel(){
+      if(!ok || !sfxOn) return;
+      const t = ctx.currentTime;
+      noise(t, 0.10, 0.5, sfxBus, 900);
+      tone(140, t, 0.12, 'sine', 0.4, sfxBus, 60);
+      noise(t+0.16, 0.10, 0.4, sfxBus, 900);
+      tone(140, t+0.16, 0.12, 'sine', 0.35, sfxBus, 60);
+    },
+    sting(){
+      if(!ok || !sfxOn) return;
+      const t = ctx.currentTime;
+      [[60,0],[64,0.06],[67,0.12],[72,0.18]].forEach(([m,d])=>{
+        tone(mtof(m), t+d, 0.32, 'sawtooth', 0.14, sfxBus);
+        tone(mtof(m)*2, t+d, 0.32, 'square', 0.05, sfxBus);
+      });
+      noise(t, 0.25, 0.18, sfxBus, 3000);
+    },
+    correct(){
+      if(!ok || !sfxOn) return;
+      const t = ctx.currentTime;
+      [[72,0],[76,0.09],[79,0.18],[84,0.27]].forEach(([m,d])=>{
+        tone(mtof(m), t+d, 0.22, 'square', 0.09, sfxBus);
+        tone(mtof(m-12), t+d, 0.22, 'triangle', 0.09, sfxBus);
+      });
+    },
+    wrong(){
+      if(!ok || !sfxOn) return;
+      const t = ctx.currentTime;
+      tone(160, t, 0.22, 'sawtooth', 0.16, sfxBus);
+      tone(110, t+0.24, 0.34, 'sawtooth', 0.16, sfxBus);
+    },
+    thud(){
+      if(!ok || !sfxOn) return;
+      const t = ctx.currentTime;
+      tone(90, t, 0.3, 'sine', 0.4, sfxBus, 40);
+      noise(t, 0.16, 0.25, sfxBus, 400);
+    },
+    swoosh(){
+      if(!ok || !sfxOn) return;
+      noise(ctx.currentTime, 0.22, 0.2, sfxBus, 5000);
+    },
+    stamp(){
+      if(!ok || !sfxOn) return;
+      const t = ctx.currentTime;
+      noise(t, 0.12, 0.5, sfxBus, 1200);
+      tone(110, t, 0.2, 'sine', 0.5, sfxBus, 50);
+      [[76,0.2],[79,0.3],[84,0.4],[88,0.5],[91,0.62]].forEach(([m,d])=>tone(mtof(m), t+d, 0.3, 'square', 0.08, sfxBus));
+    },
+    shock(){
+      if(!ok || !sfxOn) return;
+      const t = ctx.currentTime;
+      tone(70, t, 0.5, 'sawtooth', 0.22, sfxBus, 45);
+      noise(t, 0.3, 0.2, sfxBus, 500);
+    },
+    type(){
+      if(!ok || !sfxOn) return;
+      noise(ctx.currentTime, 0.03, 0.12, sfxBus, 4500);
+    }
+  };
+
+  /* ---- BGM tracks (16/32-step loops, midi numbers, 0 = rest) ---- */
+  const TRACKS = {
+    invest: { bpm:104, lead:'square', lv:0.055,
+      mel:[76,0,72,74, 76,0,79,0, 81,79,76,0, 74,72,74,0, 76,0,72,74, 76,0,79,81, 84,0,81,79, 76,74,72,0],
+      bas:[48,0,55,0, 53,0,55,0, 45,0,52,0, 50,0,55,0, 48,0,55,0, 53,0,55,0, 45,0,52,0, 43,0,50,0],
+      hat:[1,0,1,0, 1,0,1,1, 1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,1, 1,0,1,0, 1,1,1,0] },
+    court: { bpm:96, lead:'square', lv:0.05,
+      mel:[69,0,0,0, 72,0,71,0, 69,0,0,0, 64,0,67,0, 69,0,0,0, 72,0,74,0, 76,0,74,72, 71,0,69,0],
+      bas:[45,0,45,0, 41,0,41,0, 43,0,43,0, 40,0,40,0, 45,0,45,0, 41,0,41,0, 43,0,43,0, 47,0,47,0],
+      hat:[1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,1] },
+    cross: { bpm:138, lead:'square', lv:0.06,
+      mel:[69,69,0,69, 71,72,71,69, 67,67,0,67, 69,71,69,67, 64,64,0,64, 67,69,67,64, 71,0,72,0, 74,72,71,67],
+      bas:[45,45,52,45, 45,45,52,45, 43,43,50,43, 43,43,50,43, 40,40,47,40, 40,40,47,40, 47,47,54,47, 43,43,50,43],
+      hat:[1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1] },
+    corner: { bpm:152, lead:'sawtooth', lv:0.05,
+      mel:[76,0,76,74, 76,0,79,76, 81,0,79,76, 74,76,74,71, 72,0,72,71, 72,0,76,72, 79,0,76,74, 72,74,76,0],
+      bas:[45,45,45,57, 45,45,45,57, 41,41,41,53, 43,43,43,55, 45,45,45,57, 45,45,45,57, 48,48,48,60, 43,43,47,43],
+      hat:[1,0,1,1, 1,0,1,1, 1,0,1,1, 1,0,1,1, 1,0,1,1, 1,0,1,1, 1,0,1,1, 1,1,1,1] },
+    sad: { bpm:76, lead:'triangle', lv:0.08,
+      mel:[69,0,0,0, 67,0,0,0, 64,0,0,0, 62,0,64,0, 60,0,0,0, 62,0,0,0, 64,0,0,0, 0,0,0,0],
+      bas:[45,0,52,0, 43,0,50,0, 41,0,48,0, 38,0,45,0, 36,0,43,0, 38,0,45,0, 40,0,47,0, 40,0,47,0],
+      hat:[0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0] },
+    win: { bpm:120, lead:'square', lv:0.06,
+      mel:[72,0,76,0, 79,0,84,0, 83,81,79,81, 79,0,76,0, 72,0,76,0, 79,0,84,0, 86,84,83,84, 84,0,0,0],
+      bas:[48,0,55,0, 52,0,55,0, 53,0,57,0, 55,0,52,0, 48,0,55,0, 52,0,55,0, 50,0,53,0, 48,0,55,0],
+      hat:[1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0, 1,1,1,0] }
+  };
+
+  function schedule(){
+    if(!ok || !curTrack) return;
+    const tr = TRACKS[curTrack];
+    const spb = 60 / tr.bpm / 2; // 8th notes
+    while(nextNoteTime < ctx.currentTime + 0.14){
+      const i = stepIdx % tr.mel.length;
+      if(bgmOn){
+        if(tr.mel[i]) tone(mtof(tr.mel[i]), nextNoteTime, spb*0.9, tr.lead, tr.lv, bgmBus);
+        if(tr.bas[i]) tone(mtof(tr.bas[i]), nextNoteTime, spb*0.95, 'triangle', 0.10, bgmBus);
+        if(tr.hat[i]) noise(nextNoteTime, 0.03, 0.05, bgmBus, 9000);
+      }
+      nextNoteTime += spb;
+      stepIdx++;
+    }
+  }
+  function playBGM(name){
+    if(curTrack === name) return;
+    stopBGM();
+    if(!name) return;
+    curTrack = name;
+    if(!ok) return;
+    stepIdx = 0; nextNoteTime = ctx.currentTime + 0.06;
+    seqTimer = setInterval(schedule, 50);
+  }
+  function stopBGM(){
+    curTrack = null;
+    if(seqTimer){ clearInterval(seqTimer); seqTimer = null; }
+  }
+
+  return {
+    init, resume, sfx: SFX, playBGM, stopBGM,
+    setBGM(v){ bgmOn = v; if(!v && ok) {} },
+    setSFX(v){ sfxOn = v; },
+    get bgmOn(){ return bgmOn; }, get sfxOn(){ return sfxOn; },
+    get current(){ return curTrack; }
+  };
+})();
+
+
+/* ===== 律師篇：辯護人視角 ===== */
+const CASE_DEF = {
+  title:'辯護律師篇',
+  sub:'立場：被告辯護人・林辯',
+  icon:'⚖️',
+  pId:'lin', pName:'林辯', pColor:'#2e6fd8',
+  goTitle:'辯 護 失 敗', goText:'法庭對辯方失去了信任……<br>但真相，值得再試一次。',
+  desc:'你是辯護律師林辯。把檢方的每一項證據放到放大鏡下檢驗——縱使你贏下每一場詰問，天平，也未必傾向你。',
+  evidence:[
+    {id:'badge',   icon:'⚖️', name:'律師徽章', desc:'林辯的律師徽章。「真相」二字面前，沒有勝負，只有檢驗。'},
+    {id:'file4',   icon:'📋', name:'起訴書卷宗', desc:'北都地檢起訴前市長祁文遠等十一人。罪名：違背職務收賄、圖利、公益侵占、背信四罪，對祁求刑28年6月。檢方主張金鼎城20%容積獎勵不法利益逾百億元。'},
+    {id:'donate',  icon:'💴', name:'政治獻金明細', desc:'容積案審議關鍵期間，威宇集團多名「員工」以個人名義分批匯入合計210萬元政治獻金，均依法申報。檢方主張此為以獻金為名之賄賂。'},
+    {id:'excel',   icon:'💾', name:'行動硬碟EXCEL', desc:'扣案行動硬碟中「工作簿」檔案第12列記載：「日期2022/11/1・姓名 小厲・數字 1500」。檢方主張此即收受1500萬元賄款之紀錄。'},
+    {id:'forensic',icon:'🔬', name:'數位鑑識報告', desc:'該EXCEL檔案建立時間為祁文遠「卸任市長之後」的某日凌晨。該列僅有日期、代號與數字，查無任何憑證、收據或金流文件與之對應。'},
+    {id:'bank',    icon:'🏧', name:'銀行提領紀錄', desc:'厲主席的祕書於約一個月內，自厲之個人帳戶分十餘次密集提領現金，合計1600萬元，每筆均低於大額通報門檻。'},
+    {id:'sched',   icon:'📆', name:'行程比對表', desc:'辯護團隊整理：起訴書所指1500萬元「交付期間」（10/19～11/1），市長公務行程與官邸門禁紀錄，查無與厲主席單獨會面之任何紀錄。'},
+    {id:'minutes', icon:'🏛️', name:'都委會會議紀錄', desc:'第783次會議決議：同意金鼎城申請韌性城市、智慧城市、宜居城市三項貢獻獎勵，合計獎勵容積以基準容積20%為上限。容積率自560%增至840%。'},
+    {id:'report',  icon:'📑', name:'監察院調查報告', desc:'金鼎城為拆除重建之「新建案」，並非都市更新案；比照都更給予20%獎勵容積，於法無據。'},
+    {id:'sign',    icon:'🖊️', name:'公文簽核影本', desc:'關鍵簽呈上，時任龔副市長簽註「依都委會專業決議辦理」；最關鍵之一份，龔於核章欄「未簽名」——該公文最終由市長親自批示。'},
+    {id:'fund',    icon:'📚', name:'基金會帳冊', desc:'「澄望基金會」帳冊顯示，827萬元基金會款項流向競選辦公室人員薪資。檢方主張此為挪用，構成背信。'}
+  ],
+  testimonies:{
+    t1:{
+      title:'一千六百萬的去向', who:'quan',
+      statements:[
+        { text:'從九月下旬開始，主席陸續要我去銀行領現金，前後跑了十幾趟，一共一千六百萬。',
+          press:[
+            {t:'say', c:'lin', text:'為什麼要分十幾趟？一次領出來不是比較省事？'},
+            {t:'sp', v:'quan', pose:'sweat'},
+            {t:'say', c:'quan', text:'單筆金額太大，銀行會關懷提問、要填一堆表……主席說「不要那麼麻煩」。'},
+            {t:'think', text:'（每一筆都壓在通報門檻之下……這個細節，對辯方可不是好消息。先記著。）'}
+          ]},
+        { text:'領回來的現金，主席要我用紙袋裝好。他說：「這是要給祁市長的。」',
+          press:[
+            {t:'say', c:'lin', text:'「要給祁市長的」——這句話，妳是親耳聽到？'},
+            {t:'sp', v:'quan', pose:'normal'},
+            {t:'say', c:'quan', text:'親耳聽到。不過……主席講話常常半開玩笑，真真假假的。'},
+            {t:'think', text:'（轉述他人陳述的傳聞證言，而且語意連證人自己都拿不準。）'}
+          ]},
+        { text:'十月底某個晚上，主席帶著那個紙袋出門——他親手把一千五百萬，交給了祁市長。',
+          ev:'sched',
+          press:[
+            {t:'say', c:'lin', text:'交付的那個晚上——妳人在哪裡？'},
+            {t:'sp', v:'quan', pose:'sweat'},
+            {t:'say', c:'quan', text:'我……我把主席送上車，之後就先回家了。'},
+            {t:'think', text:'（送上車就回家了？那麼「親手交給祁市長」這個畫面——她到底是怎麼「看到」的？）'}
+          ],
+          win:[
+            {t:'sp', v:'quan', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'妳把主席送上車就回家了——「交付的瞬間」，妳根本不在場！'},
+            {t:'say', c:'lin', text:'那句「親手交給祁市長」，是妳親眼所見……還是妳的「想像」？！'},
+            {t:'sp', v:'quan', pose:'sweat'},
+            {t:'say', c:'quan', text:'我……主席那幾天心情特別好，我就以為……一定是送到了……'},
+            {t:'flash'},
+            {t:'say', c:'lin', pose:'angry', text:'再請看辯方提出的行程比對表——起訴書所指的十四天「交付期間」，市長公務行程與官邸門禁紀錄，查無與厲主席「任何一次」單獨會面！'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'obj', c:'yan'},
+            {t:'say', c:'yan', pose:'angry', text:'異議！現金交付，本來就是為了不留痕跡！私下會面當然不會出現在官方行程上！'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'異議之旨可以理解。然證人就「交付」一節既非親見親聞，其證明力即須其他證據補強。'},
+            {t:'sp', v:'yan', pose:'smug'},
+            {t:'say', c:'yan', text:'……很好。那就請庭上看看「其他證據」。檢方聲請傳喚承辦調查官，說明扣案行動硬碟的內容。'},
+            {t:'think', text:'（來了……檢方真正的王牌：那一行EXCEL。）'},
+            {t:'bgm', v:'cross'},
+            {t:'testimony', v:'t2'}
+          ]},
+        { text:'之後幾天，主席心情特別好，還說：「市長那邊，都打點好了。」',
+          press:[
+            {t:'say', c:'lin', text:'「打點好了」——也可能是指陳情案的進度、政策的溝通，不是嗎？'},
+            {t:'sp', v:'quan', pose:'normal'},
+            {t:'say', c:'quan', text:'這我就不知道了。主席就是那麼說的，怎麼解釋是你們的事。'},
+            {t:'think', text:'（語意模糊的傳聞。一句都不能放過——但光憑這種話，也定不了任何人的罪。）'}
+          ]}
+      ]
+    },
+    t2:{
+      title:'第12列的數字', who:'jia',
+      statements:[
+        { text:'我們在被告住處扣得一顆行動硬碟，裡面有一個名為「工作簿」的EXCEL檔案。',
+          press:[
+            {t:'say', c:'lin', text:'硬碟的扣押與保管程序，請說明。'},
+            {t:'sp', v:'jia', pose:'normal'},
+            {t:'say', c:'jia', text:'搜索全程錄影、依法扣押、即時封緘，鑑識過程完整留存。程序面，辯護人挑不出毛病的。'},
+            {t:'think', text:'（程序確實無懈可擊……那就正面進攻「內容」吧。）'}
+          ]},
+        { text:'檔案第12列清楚記載：「日期2022/11/1・姓名 小厲・數字 1500」——這，就是收受一千五百萬賄款的紀錄。',
+          ev:'forensic',
+          press:[
+            {t:'say', c:'lin', text:'「小厲」就一定是厲主席？「1500」就一定是一千五百萬「元」？'},
+            {t:'sp', v:'jia', pose:'normal'},
+            {t:'say', c:'jia', text:'對照全案脈絡，這是最合理的推斷。'},
+            {t:'think', text:'（推斷。又是推斷。——而這份檔案本身，還有一個他沒說出口的「時間問題」。）'}
+          ],
+          win:[
+            {t:'sp', v:'jia', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'請看數位鑑識報告——這個檔案的「建立時間」，是祁文遠「卸任市長之後」的某日凌晨！'},
+            {t:'say', c:'lin', text:'而所謂第12列，只有日期、代號與一個數字。沒有憑證、沒有收據、沒有任何一筆金流文件與它對應！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'一行事後鍵入的數字，可以是備忘、可以是待查款項、可以是任何東西——「帳冊上的記載」，永遠不等於「金錢的交付」！'},
+            {t:'sp', v:'jia', pose:'sweat'},
+            {t:'say', c:'jia', text:'但是配合密集提領紀錄、配合祕書的證詞——'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'提領紀錄證明的，是「錢離開了厲主席的帳戶」。它從來無法證明——「錢進了誰的口袋」。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'……就一千五百萬元部分，交付事實是否達於無合理懷疑之程度，本庭將於評議時嚴格審酌。'},
+            {t:'sp', v:'mei', pose:'smile'},
+            {t:'say', c:'mei', text:'（學長！最大的一筆被我們打下來了！照這個態勢——）'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'think', text:'（不……別高興得太早。看嚴檢察官的表情——從頭到尾，他都沒有慌。）'},
+            {t:'sp', v:'yan', pose:'smug'},
+            {t:'say', c:'yan', text:'辯護人，精彩。一千五百萬，檢方「割愛」也無妨。'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'say', c:'yan', text:'因為本案的地基，從來就不是那一行EXCEL——而是「210萬的對價」，與「20%的容積」。'},
+            {t:'say', c:'yan', text:'檢方傳喚——時任北都市副市長，龔瑞欽。'},
+            {t:'sp', v:'gong', pose:'sad'},
+            {t:'say', c:'gong', text:'……龔瑞欽，到庭。我已經認罪了。今天，我把我知道的，全部說完。'},
+            {t:'bgm', v:'corner'},
+            {t:'testimony', v:'t3'}
+          ]},
+        { text:'被告卸任後深夜整理這份檔案，顯然是在清點任內收受的款項。',
+          press:[
+            {t:'say', c:'lin', text:'「顯然」？這兩個字的依據是什麼？'},
+            {t:'sp', v:'jia', pose:'normal'},
+            {t:'say', c:'jia', text:'多年辦案經驗的合理推斷。'},
+            {t:'think', text:'（經驗是辦案的起點，但不是法庭上的證據。）'}
+          ]},
+        { text:'至於經手保管款項的貼身祕書「柚子」，偵查前即已出境、至今未到案——此即畏罪。',
+          press:[
+            {t:'say', c:'lin', text:'未到案的證人，辯方無從詰問。用一個無法詰問的人，來推論被告有罪——程序上站得住腳嗎？'},
+            {t:'sp', v:'jia', pose:'sweat'},
+            {t:'say', c:'jia', text:'……本案尚有其他補強證據，不以此為唯一依據。'},
+            {t:'think', text:'（「柚子」……全案最大的黑洞。她一天不回來，有些事就一天問不清——對檢方如此，對辯方，何嘗不是。）'}
+          ]}
+      ]
+    },
+    t3:{
+      title:'速審速決', who:'gong',
+      statements:[
+        { text:'那年的便當會上，市長裁示把金鼎城陳情案「送都委會研議」；之後指定我擔任專案PM，要求「速審速決」。',
+          press:[
+            {t:'say', c:'lin', text:'「速審速決」——這四個字的語境是什麼？'},
+            {t:'sp', v:'gong', pose:'normal'},
+            {t:'say', c:'gong', text:'是市長的口頭禪，他對每個案子都求快。但是這個案子……快得不一樣。快得，所有人都不敢喘氣。'},
+            {t:'think', text:'（「快得不一樣」是主觀感受。但「裁示送研議」與「指定PM」，是白紙黑字的事實。）'}
+          ]},
+        { text:'身為工程出身的副市長，我「從頭到尾」都向市長明確示警：給金鼎城容積獎勵，於法無據！',
+          ev:'sign',
+          press:[
+            {t:'say', c:'lin', text:'你所謂的示警——是口頭，還是書面？'},
+            {t:'sp', v:'gong', pose:'sweat'},
+            {t:'say', c:'gong', text:'口頭……很多次口頭。在電梯裡、在會前會、在走廊上……'},
+            {t:'think', text:'（口頭。死無對證的口頭。那麼「書面」上——他親筆寫下的，是什麼？）'}
+          ],
+          win:[
+            {t:'sp', v:'gong', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'公文簽核影本在此——關鍵簽呈上，你親筆簽註的是：「依都委會專業決議辦理」！'},
+            {t:'say', c:'lin', text:'通篇，沒有半個字示警！而最關鍵的那一份，你選擇「不簽名」——一個字都不留！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'你口中「從頭到尾的明確示警」——在白紙黑字上，連一個標點符號都找不到！'},
+            {t:'sp', v:'gong', pose:'sad'},
+            {t:'sfx', v:'thud'},
+            {t:'say', c:'gong', text:'……我不敢寫。寫了，就是公然跟市長作對……'},
+            {t:'say', c:'gong', pose:'sad', text:'我不簽名……不簽名，就已經是我這個做了四十年工程的技術官僚，最大、最大的抗議了啊……'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'think', text:'（證言的可信度，動搖了。──但是，等等。這個「不簽名」……）'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'辯護人，謝謝你。你剛剛，替檢方證明了一件事。'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'flash'},
+            {t:'say', c:'yan', pose:'angry', text:'連副市長都「不敢簽」的公文——是被告，親、自、批、示、的！'},
+            {t:'shake'},
+            {t:'say', c:'yan', text:'監察院調查在卷：金鼎城是新建案，並非都更案，20%容積獎勵於法無據。'},
+            {t:'say', c:'yan', text:'審議關鍵期間，210萬元以集團員工名義分批匯入；澄望基金會827萬元，流向競選辦公室薪資。'},
+            {t:'say', c:'yan', pose:'smug', text:'便當會、專案PM、親簽公文、金流、對價——檢方的主張，自始至終，一以貫之。'},
+            {t:'sp', v:'lin', pose:'angry'},
+            {t:'say', c:'lin', text:'辯方最後陳述！一千五百萬，已證明不能採信；210萬元係依法申報之政治獻金；容積獎勵係經都委會「合議制」之專業決議——'},
+            {t:'say', c:'lin', pose:'normal', text:'以結果回頭推論動機、以行政裁量入人於罪——動搖的，將是整個文官體系依法行政的根基。請庭上，明察。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'兩造辯論終結。本庭定期宣判。'},
+            {t:'bg', v:'night'},
+            {t:'rain', v:true},
+            {t:'bgm', v:null},
+            {t:'narr', text:'宣判之日。\n法院外擠滿了支持者、抗議者，與攝影機。\n所有人都在等待，同一個答案。'},
+            {t:'rain', v:false},
+            {t:'bg', v:'hall'},
+            {t:'sp', v:'qi', pose:'normal'},
+            {t:'say', c:'qi', text:'林律師。不管等一下那扇門裡念出什麼——這段日子，謝謝你。你把能檢驗的，都檢驗了。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'think', text:'（一千五百萬，我們打掉了。傳聞證言，我們擋下了。可是210萬的對價、容積的法源、基金會的帳……法庭會怎麼稱量？）'},
+            {t:'bg', v:'court'},
+            {t:'bgm', v:null},
+            {t:'narr', text:'北都地方法院・刑事大法庭\n——宣判程序——'},
+            {t:'narr', text:'書記官：「全體・起立！」\n\n法袍的衣角掃過木質席位，\n整座法庭，安靜得能聽見呼吸。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'本院115年度訴字第2891號，被告祁文遠違反貪污治罪條例等案件，判決如下。'},
+            {t:'wait', v:900},
+            {t:'say', c:'judge', text:'主文——'},
+            {t:'wait', v:900},
+            {t:'say', c:'judge', text:'被告祁文遠，犯違背職務收受賄賂罪，處有期徒刑十二年，褫奪公權六年。'},
+            {t:'sfx', v:'thud'}, {t:'shake'},
+            {t:'sp', v:'qi', pose:'shock'},
+            {t:'say', c:'qi', text:'……！'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'say', c:'judge', text:'又犯對於主管事務直接圖利罪，處有期徒刑七年，褫奪公權四年。'},
+            {t:'say', c:'judge', text:'又犯公益侵占罪，處有期徒刑四年。又犯背信罪，處有期徒刑二年。'},
+            {t:'wait', v:900},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'上開各罪，定其應執行刑——有期徒刑「十七年」，褫奪公權六年。'},
+            {t:'verdict', v:'有罪', guilty:true},
+            {t:'say', c:'judge', text:'犯罪所得新臺幣210萬元及827萬元，均沒收；於全部或一部不能沒收時，追徵其價額。'},
+            {t:'narr', text:'——應執行有期徒刑　十七年——\n——褫奪公權　六年——\n\n旁聽席炸開的聲浪，被法槌聲壓了下去。'},
+            {t:'sfx', v:'gavel'},
+            {t:'bgm', v:'sad'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'say', c:'judge', text:'茲摘要判決理由如下。第一——被訴收受厲主席一千五百萬元部分。'},
+            {t:'say', c:'judge', text:'扣案EXCEL檔案係卸任後始建立，僅有代號與數字，無金流憑證可資對應；證人之陳述屬傳聞，交付過程非親見親聞。此部分，「不能證明被告犯罪」，不另為無罪之諭知。'},
+            {t:'sp', v:'mei', pose:'normal'},
+            {t:'say', c:'mei', text:'（學長！一千五百萬——法官採納我們的主張了！）'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'say', c:'judge', text:'第二——210萬元部分。該款項於容積案審議關鍵期間，由威宇集團多名員工以個人名義分批匯入，時間密接、金額與匯款人資力顯不相當。'},
+            {t:'say', c:'judge', text:'本庭認定：被告與厲主席間，就金鼎城容積獎勵案存在對價合意，以政治獻金為名、行賄賂之實。違背職務收受賄賂罪——成立。'},
+            {t:'sp', v:'lin', pose:'sweat'},
+            {t:'think', text:'（「依法申報」沒有擋住「對價關係」的認定……這就是法庭對整張「面」的評價。）'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'say', c:'judge', text:'第三——容積獎勵部分。金鼎城為拆除重建之新建案，並非都市更新案；比照都更給予20%獎勵容積，於法無據。'},
+            {t:'say', c:'judge', text:'被告身為市長，明知於法無據，仍裁示專案速審、親自批示，使廠商獲取逾百億元不法利益。對主管事務圖利罪——成立。'},
+            {t:'say', c:'judge', text:'第四——侵占及背信部分。被告將應屬公益之政治獻金結餘，及澄望基金會827萬元，挪充競選辦公室人員薪資。公益侵占罪、背信罪——均成立。'},
+            {t:'wait', v:700},
+            {t:'say', c:'judge', text:'量刑審酌：被告曾任直轄市長，受市民付託，本應廉潔自持，竟以城市容積為對價、侵蝕公益款項，危害公務廉潔與都市計畫公信，犯後復飾詞否認——'},
+            {t:'say', c:'judge', text:'惟念其任內非無建樹，且一千五百萬元部分業經本庭剔除，檢方求刑二十八年六月，尚屬過重。爰定應執行刑十七年。'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'本判決得上訴。如不服本判決，得自送達之翌日起二十日內，向本院提出上訴狀。——退庭。'},
+            {t:'sfx', v:'gavel'},
+            {t:'narr', text:'全體起立。\n審判長收起判決書，法袍的背影消失在門後。\n\n十七年——這個數字，開始在直播與頭條之間奔跑。'},
+            {t:'sp', v:'qi', pose:'normal'},
+            {t:'say', c:'qi', text:'……我不服。我會上訴——二審、三審，上訴到底。'},
+            {t:'say', c:'qi', pose:'sad', text:'歷史會證明我是清白的。或者……證明我錯了。但那要由「確定判決」來說——不是由今天。'},
+            {t:'bg', v:'hall'},
+            {t:'narr', text:'閉庭後・法院走廊'},
+            {t:'sp', v:'mei', pose:'sad'},
+            {t:'say', c:'mei', text:'學長……我不懂。我們明明每一場詰問都贏了。一千五百萬是我們打掉的……為什麼還是十七年……'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'我們贏下了每一個「點」。但法庭評議的，是整張「面」。'},
+            {t:'say', c:'lin', text:'小梅，辯護人的職責，從來不是保證無罪——是確保每一項證據都被檢驗、每一個程序都被質疑、每一句證言都被詰問。今天，我們做到了：一千五百萬，從判決裡消失了。'},
+            {t:'say', c:'lin', pose:'normal', text:'剩下的，交給上訴審。在判決確定之前，無罪推定，仍然有效。這就是法治——不只在你贏的時候。'},
+            {t:'think', text:'（天平不會永遠傾向你。但只要每一次稱量都被全程檢視——下一次開庭，就永遠值得全力以赴。）'},
+            {t:'narr', text:'本案檢辯雙方均已提起上訴，\n現由上訴審法院審理中。\n\n—— 辯護律師篇・完 ——'},
+            {t:'end'}
+          ]},
+        { text:'都委會第783次會議通過了三項貢獻獎勵，合計20%。容積率，從560%一路墊高到840%。',
+          press:[
+            {t:'say', c:'lin', text:'都委會是合議制，十多位專業委員共同決議——這不正代表程序合法、結論專業？'},
+            {t:'sp', v:'gong', pose:'sad'},
+            {t:'say', c:'gong', text:'合議制……主席定了調，幕僚做好了球，委員們……還能說什麼呢。'},
+            {t:'think', text:'（這句話，檢辯雙方都會想拿去引用。合議制是盾牌，也是遮羞布——端看誰在說。）'}
+          ]},
+        { text:'我認罪了。對不起市民，也對不起我自己四十年的工程專業。',
+          press:[
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'……辯方對這句陳述，沒有問題。'},
+            {t:'sp', v:'gong', pose:'sad'},
+            {t:'say', c:'gong', text:'林律師，我知道你在做你的工作。做得很好。……只是有些帳，遲早，要算清楚的。'},
+            {t:'think', text:'（認罪者的懺悔，是真心，還是訴訟策略？……我分不出來。也許，兩者都是。）'}
+          ]}
+      ]
+    }
+  },
+  script:[
+    {t:'title', ep:'容積的代價・律師篇', name:'放大鏡下的天平'},
+    {t:'bgm', v:null},
+    {t:'bg', v:'night'},
+    {t:'narr', text:'【改編聲明】\n本章節為虛構創作，取材自公開報導之司法案件並經改編，\n人物、團體、公司與地名均為虛構。\n現實案件一審宣判後，檢辯雙方均已提起上訴。\n在判決確定之前——無罪推定。'},
+    {t:'bgm', v:'invest'},
+    {t:'bg', v:'office'},
+    {t:'narr', text:'數月後・林辯法律事務所'},
+    {t:'sp', v:'mei', pose:'shock'},
+    {t:'say', c:'mei', text:'學長！！北都市那件「世紀大案」——金鼎城容積案的辯護團，正式來函邀請你加入了！'},
+    {t:'sp', v:'lin', pose:'shock'},
+    {t:'say', c:'lin', text:'……前市長祁文遠的案子？那可是檢方求刑二十八年六個月、整個辯護團十幾位律師的超大型案件。'},
+    {t:'ev', v:'badge'},
+    {t:'ev', v:'file4'},
+    {t:'sp', v:'mei', pose:'normal'},
+    {t:'say', c:'mei', text:'對方說，看了你過去幾件無罪判決的法庭表現，希望借重你「找矛盾」的詰問功力。當事人今天下午就到！'},
+    {t:'think', text:'（違背職務收賄、圖利、公益侵占、背信——四罪併罰。被告是叱吒風雲的前市長。媒體早已開庭千百回……而真正的法庭，才正要開始。）'},
+    {t:'sp', v:'qi', pose:'normal'},
+    {t:'say', c:'qi', text:'林律師，久仰。祁文遠。——抱歉，腳步聲有點吵，腳上這個電子腳環，走到哪響到哪。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'（羈押一年後高額交保、科技監控……眼前這位曾經的市長，語氣平靜得出奇。）'},
+    {t:'say', c:'qi', pose:'normal', text:'我把話說在前面：那210萬，是依法申報的政治獻金，一毛都查得到。容積獎勵，是都委會十幾位委員合議的專業決議。'},
+    {t:'say', c:'qi', pose:'angry', text:'至於那個什麼「小厲1500」——我這輩子記過幾萬筆數字，一行EXCEL也能當成鐵證？笑話。'},
+    {t:'say', c:'qi', pose:'normal', text:'我不要你保證勝訴。我只要求一件事：把檢方的每一項證據，都放到放大鏡底下。辦得到嗎？'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'辦得到。而且不論放大鏡照出什麼——我都會讓法庭看見。'},
+    {t:'say', c:'qi', pose:'smile', text:'很好。我就喜歡這種說話方式。資料都在這裡：獻金的申報明細，還有我們整理的行程比對表。'},
+    {t:'ev', v:'donate'},
+    {t:'ev', v:'sched'},
+    {t:'choice', prompt:'龐大的卷證從何下手？', opts:[
+      {text:'從「錢」下手——金流是貪污案的骨架', s:[
+        {t:'say', c:'lin', text:'貪污案的攻防，從來都在金流。先把每一塊錢的路徑畫出來。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'了解！我去聲請閱卷！'}
+      ]},
+      {text:'從「容積」下手——程序合法性是本案靈魂', s:[
+        {t:'say', c:'lin', text:'20%容積獎勵到底於法有據還是無據——這才是本案真正的戰場。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'法規跟會議紀錄，我來整理對照表！'}
+      ]}
+    ]},
+    {t:'bg', v:'office'},
+    {t:'bgm', v:'invest'},
+    {t:'narr', text:'開庭前・卷證攻防準備'},
+    {t:'menu', prompt:'準備工作——先做哪一項？', exit:'準備完成，前往北都地院', auto:false, opts:[
+      {text:'閱卷：檢方的金流證據', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'閱卷拿到了！檢方的核心物證：扣案行動硬碟裡的EXCEL、厲主席帳戶的提領紀錄——還有基金會的帳冊。'},
+        {t:'ev', v:'excel'},
+        {t:'ev', v:'bank'},
+        {t:'ev', v:'fund'},
+        {t:'think', text:'（「小厲・1500」……一行數字，十四個位元組，壓著二十八年六個月的求刑。這一行字的「身世」，必須查到底。）'}
+      ]},
+      {text:'聲請：數位鑑識與公文調閱', once:true, s:[
+        {t:'sp', v:'mei', pose:'shock'},
+        {t:'say', c:'mei', text:'學長，鑑識報告出來了——那個EXCEL檔的「建立時間」，是祁市長「卸任之後」的某天凌晨！'},
+        {t:'ev', v:'forensic'},
+        {t:'sp', v:'lin', pose:'shock'},
+        {t:'think', text:'（卸任後才建檔……在任收賄、卸任記帳？還是單純的事後備忘？——「記載」與「交付」之間，隔著一條檢方必須自己跨過去的河。）'},
+        {t:'say', c:'mei', text:'另外，市府公文的簽核影本也調到了。學長你看這份——副市長簽註意見之後，核章欄是「空白」的，最後是市長親自批示。'},
+        {t:'ev', v:'sign'},
+        {t:'think', text:'（副市長不簽、市長親簽……這份公文是雙面刃。它會傷到誰，端看在法庭上「誰先亮出它」。）'}
+      ]},
+      {text:'研究：容積獎勵的法源攻防', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'法規對照做好了。都委會第783次會議紀錄：三項「貢獻獎勵」合計20%，容積率從560%墊到840%。'},
+        {t:'ev', v:'minutes'},
+        {t:'say', c:'mei', pose:'sad', text:'可是……監察院的調查報告寫得很硬：金鼎城是「新建案」不是都更案，比照都更給獎勵容積，「於法無據」。'},
+        {t:'ev', v:'report'},
+        {t:'think', text:'（辯方的論述：依都市計畫法授權、合議制專業決議。檢方的論述：於法無據、量身定做。……同一份會議紀錄，兩種讀法。法庭會選哪一種？）'}
+      ]}
+    ]},
+    {t:'bg', v:'hall'},
+    {t:'bgm', v:null},
+    {t:'narr', text:'開庭當日・北都地方法院\n走廊上擠滿了記者與攝影機，快門聲連成一片。'},
+    {t:'sp', v:'qi', pose:'normal'},
+    {t:'say', c:'qi', text:'林律師。今天外面有一萬個人已經寫好了判決——支持我的，和反對我的，各五千。'},
+    {t:'say', c:'qi', pose:'smile', text:'幸好，法庭裡的判決，只能有一份。進去吧。'},
+    {t:'bg', v:'court'},
+    {t:'bgm', v:'court'},
+    {t:'narr', text:'北都地方法院・刑事大法庭\n貪污治罪條例等案件・審理程序'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'現在開庭。本件被告祁文遠等，違反貪污治罪條例等案件，進行審理程序。'},
+    {t:'sp', v:'yan', pose:'normal'},
+    {t:'say', c:'yan', text:'公訴檢察官，嚴正雄。辯護人——你「找矛盾」的名聲，本席早有耳聞。'},
+    {t:'say', c:'yan', pose:'smug', text:'先把醜話說在前面——這不是錢箱失竊，也不是小攤命案。這是一座城市的容積，一百二十億的不法利益。你那套「找矛盾」……盡管使出來。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'think', text:'（嚴正雄……他親自來了。這個案子的份量，由此可見。──不管對手是誰、案子多大，辯護人要做的事，永遠只有一件：檢驗每一項證據。）'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'檢方聲請傳喚證人——厲主席之祕書。請證人入庭，就現金提領與交付經過作證。'},
+    {t:'sp', v:'quan', pose:'normal'},
+    {t:'say', c:'quan', text:'庭上好。我在威宇集團擔任主席祕書十二年……我把我經手的事，照實說。'},
+    {t:'bgm', v:'cross'},
+    {t:'testimony', v:'t1'}
+  ]
+};
+
+
+/* ===== 檢察官篇：公訴人視角 ===== */
+const CASE_PROS = {
+  title:'檢察官篇',
+  sub:'立場：公訴檢察官・嚴正雄',
+  icon:'🔥',
+  pId:'yan', pName:'嚴正雄', pColor:'#b8322a',
+  goTitle:'公 訴 失 敗', goText:'法庭對公訴方失去了信任……<br>但正義，值得再試一次。',
+  desc:'你是公訴檢察官嚴正雄。把犯罪的每一塊拼圖呈上法庭——縱使你贏下每一場詰問，求刑二十八年六月的起訴書，也未必全身而退。',
+  evidence:[
+    {id:'pbadge',  icon:'🔰', name:'檢察官徽章', desc:'嚴正雄的檢察官徽章。公益之代表人。背面刻著四個小字：「勿枉，勿縱」。'},
+    {id:'pfile',   icon:'📋', name:'偵查卷宗', desc:'北都地檢115年度偵字第3322號。被告：前市長祁文遠等十一人。涉嫌：違背職務收賄、圖利、公益侵占、背信。金鼎城20%容積獎勵，不法利益估逾百億元。'},
+    {id:'donate2', icon:'💴', name:'政治獻金明細', desc:'容積案審議關鍵期間，威宇集團多名「員工」以個人名義，分批匯入合計210萬元政治獻金——時間密接、筆筆貼著申報門檻。'},
+    {id:'staffrec',icon:'🗣️', name:'員工訪談筆錄', desc:'三名匯款「捐款人」均為威宇集團基層員工，捐款金額與其薪資顯不相當。其中二人坦承：匯款資金由集團行政部門交付，申報資料也由公司代為填寫。「主席說，就當幫公司一個忙。」'},
+    {id:'lunchrec',icon:'🍱', name:'便當會紀錄', desc:'市長辦公室內部行程紀錄：某日中午，市長與厲主席等人於辦公室內舉行非公開「便當會」。會後三日，金鼎城陳情案裁示送都委會研議，並指定副市長為專案PM，要求「速審速決」。'},
+    {id:'excel2',  icon:'💾', name:'行動硬碟EXCEL', desc:'扣案行動硬碟中「工作簿」檔案第12列：「日期2022/11/1・姓名 小厲・數字 1500」。偵查團隊主張此即1500萬元賄款紀錄——但檔案的「建立時間」，是個隱患。'},
+    {id:'bank2',   icon:'🏧', name:'銀行提領紀錄', desc:'厲主席之祕書於約一個月內，自厲之個人帳戶分十餘次密集提領現金，合計1600萬元——每筆均壓在大額通報門檻之下。'},
+    {id:'sign2',   icon:'🖊️', name:'公文簽核影本', desc:'容積獎勵案關鍵簽呈：時任龔副市長僅簽註「依都委會專業決議辦理」；最關鍵之一份，龔於核章欄「未簽名」——該公文，最終由市長祁文遠親自批示。'},
+    {id:'report2', icon:'📑', name:'監察院調查報告', desc:'金鼎城為拆除重建之「新建案」，並非都市更新案；比照都更給予20%獎勵容積，於法無據。'},
+    {id:'minutes2',icon:'🏛️', name:'都委會會議紀錄', desc:'第783次會議決議：同意金鼎城三項貢獻獎勵合計20%。容積率自560%增至840%。委員多人會後私下表示：「主席定了調，幕僚做好了球。」'},
+    {id:'fund2',   icon:'📚', name:'基金會帳冊', desc:'「澄望基金會」帳冊：827萬元基金會款項，流向競選辦公室人員薪資。捐款人捐的是「公益」，付的卻是「選舉」。'},
+    {id:'salary',  icon:'💳', name:'薪資轉帳紀錄', desc:'競選辦公室十餘名工作人員之薪資，按月自澄望基金會帳戶轉出，前後合計827萬元。轉帳備註欄寫著：「專案顧問費」。'}
+  ],
+  testimonies:{
+    t1:{
+      title:'依法申報的獻金', who:'qi',
+      statements:[
+        { text:'那210萬元，是政治獻金。依法申報、匯入專戶，每一毛錢都查得到。光明正大。', pose:'normal',
+          press:[
+            {t:'say', c:'yan', text:'依法申報——所以你承認，這筆錢你「知情」並「收受」了？'},
+            {t:'sp', v:'qi', pose:'smug'},
+            {t:'say', c:'qi', text:'政治人物收獻金，跟稻子吸水一樣自然。重點是：申報了。檢察官，合法的東西，你起訴不了。'},
+            {t:'think', text:'（合法的「形式」，包不住非法的「對價」。一步一步來。）'}
+          ]},
+        { text:'捐款人是威宇的「員工個人」。市民支持市政，天經地義——與厲主席、與集團，毫無關係。', pose:'normal',
+          ev:'staffrec',
+          press:[
+            {t:'say', c:'yan', text:'「員工個人」——月薪三萬八的倉管人員，一次捐出二十萬元？'},
+            {t:'sp', v:'qi', pose:'normal'},
+            {t:'say', c:'qi', text:'市民的熱情，不能用薪資單衡量。也許他省吃儉用，也許他中了發票——那是他的自由。'},
+            {t:'think', text:'（省吃儉用？那幾位「捐款人」，偵查中跟我們說的，可不是這樣。）'}
+          ],
+          win:[
+            {t:'sp', v:'qi', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'yan', pose:'angry', text:'員工訪談筆錄在此——三名「捐款人」均為威宇基層員工，捐款金額與薪資顯不相當！'},
+            {t:'say', c:'yan', text:'其中二人已到庭具結證稱：匯款資金由「集團行政部門」交付，連申報資料都是公司代填——主席告訴他們：「就當幫公司一個忙」！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'yan', pose:'angry', text:'這不是市民的熱情——這是用十個人頭拆開的「一筆」企業資金！而它的真正出資者，正是容積案的申請人，威宇集團！'},
+            {t:'sp', v:'lin', pose:'angry'},
+            {t:'obj', c:'lin'},
+            {t:'say', c:'lin', pose:'angry', text:'異議！縱使獻金來源是集團資金，那也是「政治獻金法」申報層面的問題！檢方必須證明被告「知情」，更必須證明「對價」——缺一個，都到不了賄賂！'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'異議之旨，本庭理解。檢察官，就「對價關係」，請繼續舉證。'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'think', text:'（辯護人說得沒錯——人頭獻金只是「錢」的一半。另一半，是「權」：錢進來之後，市政府做了什麼。）'},
+            {t:'say', c:'yan', text:'檢方聲請傳喚——威宇集團主席，厲振堂。請主席就「與被告之往來」作證。'},
+            {t:'sp', v:'qiu', pose:'normal'},
+            {t:'say', c:'qiu', text:'……厲振堂，到庭。做生意五十年，我第一次站上證人席。問吧。'},
+            {t:'bgm', v:'cross'},
+            {t:'testimony', v:'t2'}
+          ]},
+        { text:'捐款的時間，純屬巧合。獻金年年都有，難道每一筆，都要被扣上「對價」的帽子？', pose:'smug',
+          press:[
+            {t:'say', c:'yan', text:'年年都有？那麼請問——往年，威宇的員工也這樣「集體熱情」過嗎？'},
+            {t:'sp', v:'qi', pose:'sweat'},
+            {t:'say', c:'qi', text:'這……我哪會去記每一年的捐款人名單。獻金有專戶、有會計師，去問他們。'},
+            {t:'think', text:'（查過了。往年：零筆。只有容積案審議那一季，「熱情」突然集體發作。）'}
+          ]},
+        { text:'我從政三十年，從來沒有為任何一塊錢，出賣過市政府的一枚印章。', pose:'normal',
+          press:[
+            {t:'say', c:'yan', text:'……這句話，本席會記住。待會兒談到「印章」的時候，請你也記住。'},
+            {t:'sp', v:'qi', pose:'normal'},
+            {t:'say', c:'qi', text:'隨時奉陪。我的印章，每一枚都蓋得堂堂正正。'},
+            {t:'think', text:'（堂堂正正……那份「副市長不敢簽、市長親自批」的公文，等著你。）'}
+          ]}
+      ]
+    },
+    t2:{
+      title:'企業家的支持', who:'qiu',
+      statements:[
+        { text:'我做生意五十年。捐獻金給看好的政治人物，是企業家的本分，不是犯罪。', pose:'normal',
+          press:[
+            {t:'say', c:'yan', text:'用十名員工的名義，分批拆開來捐——也是企業家的本分？'},
+            {t:'sp', v:'qiu', pose:'sweat'},
+            {t:'say', c:'qiu', text:'那是行政部門的作業方式，細節我不清楚。我只交代「支持市長」，沒交代怎麼匯。'},
+            {t:'think', text:'（把「手法」推給下面的人……老練。但「動機」推不掉。）'}
+          ]},
+        { text:'金鼎城的容積獎勵，是都委會十幾位委員的專業決議。我一個商人，怎麼可能左右？', pose:'smug',
+          press:[
+            {t:'say', c:'yan', text:'都委會審議前，金鼎城的陳情案，是誰裁示「送研議」的？'},
+            {t:'sp', v:'qiu', pose:'normal'},
+            {t:'say', c:'qiu', text:'那是市政府內部的流程，我怎麼會知道？我們只是依規定遞件陳情，剩下的，公部門自己會走。'},
+            {t:'think', text:'（「依規定遞件」……遞完件之後跟市長吃的那頓便當，也是規定嗎？）'}
+          ]},
+        { text:'我與祁市長，只在公開活動見過幾次面。私底下從無往來——更不曾談過金鼎城半個字。', pose:'normal',
+          ev:'lunchrec',
+          press:[
+            {t:'say', c:'yan', text:'「私底下從無往來」——主席，這句話，你願意具結擔保？'},
+            {t:'sp', v:'qiu', pose:'smug'},
+            {t:'say', c:'qiu', text:'我已經具結了。公開的募款餐會、剪綵、論壇，見過就見過；私下，沒有。我的行程，祕書記得比我清楚。'},
+            {t:'think', text:'（你的祕書記得清楚……市長辦公室的行程紀錄，記得更清楚。）'}
+          ],
+          win:[
+            {t:'sp', v:'qiu', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'yan', pose:'angry', text:'市長辦公室的內部行程紀錄在此——某日中午，市長辦公室，「便當會」。出席者名單上，白紙黑字：威宇集團主席，厲振堂！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'yan', pose:'angry', text:'非公開、無幕僚紀錄的閉門便當會——而會後「三天」，金鼎城陳情案便裁示送都委會，並指定專案PM，要求「速審速決」！這，就是你說的「從無往來」？！'},
+            {t:'sp', v:'qiu', pose:'sweat'},
+            {t:'say', c:'qiu', text:'那、那只是吃個便當！談的是市政建言！企業家關心城市發展，錯了嗎？！'},
+            {t:'sp', v:'lin', pose:'angry'},
+            {t:'obj', c:'lin'},
+            {t:'say', c:'lin', pose:'angry', text:'異議！會面「存在」不等於合意「存在」！便當會談了什麼，無人知曉——檢方是要用一個便當，推定一個對價合意嗎？！'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'單看一個便當？不。請庭上看「序列」——便當會、三日後裁示送件、審議期間210萬人頭獻金分批匯入、決議通過、容積840%。'},
+            {t:'say', c:'yan', pose:'angry', text:'每一個點都可以辯解。但把點連成線，只剩一種讀法：權與錢，完成了交換！'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'雙方論點，本庭均已記明筆錄。檢察官，起訴書另指被告收受「一千五百萬元」現金——此部分，請舉證。'},
+            {t:'sp', v:'yan', pose:'smug'},
+            {t:'think', text:'（來了。1500萬——本案求刑的重心。證據：那顆行動硬碟。）'},
+            {t:'say', c:'yan', text:'檢方提示扣案行動硬碟之EXCEL檔案——第12列：「2022/11/1・小厲・1500」。對照厲主席帳戶同期密集提領之1600萬元現金，此即收賄帳冊！'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'wait', v:600},
+            {t:'sp', v:'lin', pose:'angry'},
+            {t:'obj', c:'lin'},
+            {t:'say', c:'lin', pose:'angry', text:'異議！辯方提示——數位鑑識報告！該檔案的「建立時間」，是被告「卸任市長之後」的某日凌晨！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'一行事後鍵入的數字，沒有憑證、沒有收據、沒有任何金流對應！「帳冊上的記載」，永遠不等於「金錢的交付」！'},
+            {t:'sp', v:'yan', pose:'sweat'},
+            {t:'say', c:'yan', text:'唔……！提領紀錄證明現金離開了厲主席的帳戶——'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'它證明不了現金「進了誰的口袋」。而起訴書所指十四天交付期間，市長行程與門禁紀錄，查無兩人任何一次單獨會面——檢察官，你的「交付」，在哪裡？'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'……就一千五百萬元部分，交付事實是否達於無合理懷疑之程度，本庭將於評議時嚴格審酌。'},
+            {t:'sp', v:'yan', pose:'sweat'},
+            {t:'think', text:'（被打穿了……鑑識報告早就放在卷裡，是我太想用那一行數字壓垮被告。十四個位元組，撐不起一千五百萬。）'},
+            {t:'sp', v:'jia', pose:'normal'},
+            {t:'say', c:'jia', text:'（檢座，穩住。1500萬本來就是高風險打點——我們真正的地基，是210萬的對價，和那枚「親自批示」的印章。）'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'think', text:'（……沒錯。勿枉，勿縱。打點失守，就退回守得住的陣地——容積的「法源」，與市長的「印章」。）'},
+            {t:'say', c:'yan', text:'檢方就一千五百萬元部分之攻防，留待辯論。現在，回到本案的地基——請被告祁文遠，再次上席。就「容積獎勵之批示」，接受詰問。'},
+            {t:'sp', v:'qi', pose:'normal'},
+            {t:'say', c:'qi', text:'……奉陪。我說過了，我的印章，每一枚都蓋得堂堂正正。'},
+            {t:'bgm', v:'corner'},
+            {t:'testimony', v:'t3'}
+          ]},
+        { text:'至於我帳戶提領的現金——做生意的人，天天都在週轉，有什麼好奇怪？', pose:'normal',
+          press:[
+            {t:'say', c:'yan', text:'一個月十幾次、每筆都剛好壓在通報門檻之下——也是週轉？'},
+            {t:'sp', v:'qiu', pose:'sweat'},
+            {t:'say', c:'qiu', text:'門檻又不是我訂的。領多少、分幾次，是祕書安排的，去問她。'},
+            {t:'think', text:'（又推給下面的人。1600萬現金的去向，他一個字都不肯說——這個洞，恐怕要留給上訴審了。）'}
+          ]}
+      ]
+    },
+    t3:{
+      title:'市長的印章', who:'qi',
+      statements:[
+        { text:'容積獎勵的公文，一切依程序：都委會決議、幕僚簽核、層層上呈——我只是流程最後，蓋章的人。', pose:'normal',
+          press:[
+            {t:'say', c:'yan', text:'「只是蓋章的人」——市長的批示，是橡皮圖章嗎？'},
+            {t:'sp', v:'qi', pose:'normal'},
+            {t:'say', c:'qi', text:'市府一年幾萬份公文，每一份我都該逐字推敲？首長本來就是依幕僚與專業單位的意見核章。'},
+            {t:'think', text:'（依幕僚意見？那就看看，幕僚在這份公文上，留了什麼「意見」。）'}
+          ]},
+        { text:'副市長龔瑞欽是工程專業。連他都簽了「依專業決議辦理」——我有什麼理由懷疑這個案子？', pose:'smug',
+          ev:'sign2',
+          press:[
+            {t:'say', c:'yan', text:'龔副市長「每一份」都簽了？你確定？'},
+            {t:'sp', v:'qi', pose:'normal'},
+            {t:'say', c:'qi', text:'公文流程齊備才會到我桌上。沒簽核的公文，根本上不來——這是行政的常識。'},
+            {t:'think', text:'（行政的常識……那麼那份「核章欄空白」卻照樣被批准的公文，就是壓垮常識的鐵證。）'}
+          ],
+          win:[
+            {t:'sp', v:'qi', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'yan', pose:'angry', text:'公文簽核影本在此——容積獎勵案「最關鍵」的一份簽呈，龔副市長的核章欄，一片空白！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'yan', pose:'angry', text:'而它沒有退件、沒有補簽，徑行送進了市長室——由你，親、自、批、示！'},
+            {t:'sp', v:'qi', pose:'sweat'},
+            {t:'say', c:'qi', text:'那是……行政瑕疵！流程上的疏漏，跟犯罪是兩回事！'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'是不是疏漏——請本案污點證人，告訴法庭。檢方聲請傳喚：時任副市長，龔瑞欽。'},
+            {t:'sp', v:'gong', pose:'sad'},
+            {t:'say', c:'gong', text:'……龔瑞欽，到庭。我已經認罪了。今天，我把我知道的，全部說完。'},
+            {t:'say', c:'gong', pose:'sad', text:'金鼎城是新建案，不是都更案。給20%獎勵容積，於法無據——這件事，市府內部，沒有人不知道。'},
+            {t:'say', c:'gong', pose:'sad', text:'我不敢把示警寫進公文，只敢簽「依專業決議辦理」。最關鍵那份……我連名字都不敢簽。不簽名，就是我這個四十年技術官僚，最大、最大的抗議了。'},
+            {t:'sfx', v:'thud'},
+            {t:'say', c:'gong', pose:'sad', text:'可是公文沒有停下來。它跳過我的章，直接上了市長的桌——三天後，批示下來了：「如擬，速辦」。'},
+            {t:'sp', v:'lin', pose:'angry'},
+            {t:'obj', c:'lin'},
+            {t:'say', c:'lin', pose:'angry', text:'異議！證人的「不敢」是主觀感受！容積獎勵經都委會合議決議，市長依決議批示，是行政裁量——以結果回頭推論動機、以裁量入人於罪，動搖的是整個文官體系！'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'say', c:'yan', text:'行政裁量，必須「於法有據」！監察院調查在卷：金鼎城比照都更給獎勵，於法無據！'},
+            {t:'say', c:'yan', text:'便當會、三日後裁示、專案PM「速審速決」、副市長不敢簽的公文由市長親批、審議期間210萬人頭獻金、基金會827萬流向競選辦公室——'},
+            {t:'say', c:'yan', pose:'angry', text:'十一個月，一條完整的因果鏈。檢方的主張，自始至終，一以貫之：這不是裁量——是「對價」！'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'兩造辯論終結。本庭定期宣判。'},
+            {t:'bg', v:'night'},
+            {t:'rain', v:true},
+            {t:'bgm', v:null},
+            {t:'narr', text:'宣判之日。\n法院外擠滿了支持者、抗議者，與攝影機。\n所有人都在等待，同一個答案。'},
+            {t:'rain', v:false},
+            {t:'bg', v:'hall'},
+            {t:'sp', v:'jia', pose:'normal'},
+            {t:'say', c:'jia', text:'檢座。媒體都在賭刑度——有人喊無罪，有人喊三十年。'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'本席不賭。本席只等法庭，把我們呈上去的每一項證據——稱一遍。'},
+            {t:'think', text:'（1500萬，多半保不住了。但210萬的對價、於法無據的容積、827萬的侵占……法庭會怎麼稱量？）'},
+            {t:'bg', v:'court'},
+            {t:'bgm', v:null},
+            {t:'narr', text:'北都地方法院・刑事大法庭\n——宣判程序——'},
+            {t:'narr', text:'書記官：「全體・起立！」\n\n法袍的衣角掃過木質席位，\n整座法庭，安靜得能聽見呼吸。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'本院115年度訴字第2891號，被告祁文遠違反貪污治罪條例等案件，判決如下。'},
+            {t:'wait', v:900},
+            {t:'say', c:'judge', text:'主文——'},
+            {t:'wait', v:900},
+            {t:'say', c:'judge', text:'被告祁文遠，犯違背職務收受賄賂罪，處有期徒刑十二年，褫奪公權六年。'},
+            {t:'sfx', v:'thud'}, {t:'shake'},
+            {t:'sp', v:'qi', pose:'shock'},
+            {t:'say', c:'qi', text:'……！'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'say', c:'judge', text:'又犯對於主管事務直接圖利罪，處有期徒刑七年，褫奪公權四年。'},
+            {t:'say', c:'judge', text:'又犯公益侵占罪，處有期徒刑四年。又犯背信罪，處有期徒刑二年。'},
+            {t:'wait', v:900},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'上開各罪，定其應執行刑——有期徒刑「十七年」，褫奪公權六年。'},
+            {t:'verdict', v:'有罪', guilty:true},
+            {t:'say', c:'judge', text:'犯罪所得新臺幣210萬元及827萬元，均沒收；於全部或一部不能沒收時，追徵其價額。'},
+            {t:'narr', text:'——應執行有期徒刑　十七年——\n——褫奪公權　六年——\n\n旁聽席炸開的聲浪，被法槌聲壓了下去。'},
+            {t:'sfx', v:'gavel'},
+            {t:'bgm', v:'sad'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'say', c:'judge', text:'茲摘要判決理由如下。第一——被訴收受厲主席一千五百萬元部分。'},
+            {t:'say', c:'judge', text:'扣案EXCEL檔案係卸任後始建立，僅有代號與數字，無金流憑證可資對應；所指十四日交付期間，查無單獨會面紀錄。此部分，「不能證明被告犯罪」，不另為無罪之諭知。'},
+            {t:'sp', v:'yan', pose:'sweat'},
+            {t:'think', text:'（……剔除了。果然。求刑二十八年六月的最大一塊，沒能跨過「無合理懷疑」那條河。）'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'say', c:'judge', text:'第二——210萬元部分。該款項於容積案審議關鍵期間，由威宇集團多名員工以個人名義分批匯入，資金實由集團提供，時間密接、金額與匯款人資力顯不相當。'},
+            {t:'say', c:'judge', text:'參以便當會後三日即裁示專案速審等情，本庭認定：被告與厲主席間存在對價合意，以政治獻金為名、行賄賂之實。違背職務收受賄賂罪——成立。'},
+            {t:'sp', v:'jia', pose:'normal'},
+            {t:'say', c:'jia', text:'（檢座——對價，守住了。員工筆錄跟便當會紀錄，法官全採了。）'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'say', c:'judge', text:'第三——容積獎勵部分。金鼎城為拆除重建之新建案，並非都市更新案；比照都更給予20%獎勵容積，於法無據。'},
+            {t:'say', c:'judge', text:'被告身為市長，明知於法無據，仍裁示專案速審、於副市長拒未核章之情形下親自批示，使廠商獲取逾百億元不法利益。對主管事務圖利罪——成立。'},
+            {t:'say', c:'judge', text:'第四——侵占及背信部分。被告將應屬公益之政治獻金結餘，及澄望基金會827萬元，挪充競選辦公室人員薪資。公益侵占罪、背信罪——均成立。'},
+            {t:'wait', v:700},
+            {t:'say', c:'judge', text:'量刑審酌：被告曾任直轄市長，受市民付託，本應廉潔自持，竟以城市容積為對價、侵蝕公益款項，危害公務廉潔與都市計畫公信，犯後復飾詞否認——'},
+            {t:'say', c:'judge', text:'惟念其任內非無建樹，且一千五百萬元部分業經本庭剔除，檢方求刑二十八年六月，尚屬過重。爰定應執行刑十七年。'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'本判決得上訴。如不服本判決，得自送達之翌日起二十日內，向本院提出上訴狀。——退庭。'},
+            {t:'sfx', v:'gavel'},
+            {t:'narr', text:'全體起立。\n審判長收起判決書，法袍的背影消失在門後。\n\n十七年——這個數字，開始在直播與頭條之間奔跑。'},
+            {t:'sp', v:'qi', pose:'normal'},
+            {t:'say', c:'qi', text:'……我不服。我會上訴——二審、三審，上訴到底。歷史會證明我是清白的。'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'那就在上訴審見。被告——本席也一樣，會把每一項證據，再呈一次。'},
+            {t:'bg', v:'hall'},
+            {t:'narr', text:'閉庭後・法院走廊'},
+            {t:'sp', v:'jia', pose:'normal'},
+            {t:'say', c:'jia', text:'檢座……求刑二十八年六月，判十七年。1500萬整筆被剔除。這算……贏了，還是輸了？'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'都不算。檢察官的成績單上，從來沒有「贏」這個字——只有「枉」與「縱」。'},
+            {t:'say', c:'yan', text:'1500萬被剔除，是本席舉證不足，怪不得法庭。但210萬的對價、於法無據的容積、827萬的侵占——每一項，都是靠證據站上判決書的。'},
+            {t:'say', c:'yan', pose:'normal', text:'至於辯護人……他今天拆掉我一根樑柱。下次開庭，本席會把地基打得更深。對手夠強，公訴才不敢偷懶——這是好事。'},
+            {t:'think', text:'（勿枉，勿縱。十七年不是檢方的戰利品，是法庭稱量後的重量。剩下的，交給上訴審——連同那筆消失的1500萬。）'},
+            {t:'narr', text:'本案檢辯雙方均已提起上訴，\n現由上訴審法院審理中。\n\n—— 檢察官篇・完 ——'},
+            {t:'end'}
+          ]},
+        { text:'監察院說於法無據？行政機關本於職權解釋法規，本來就可能與監察院見解不同。', pose:'normal',
+          press:[
+            {t:'say', c:'yan', text:'見解不同——那麼市府的「法律依據」，是哪一條？請具體指出。'},
+            {t:'sp', v:'qi', pose:'sweat'},
+            {t:'say', c:'qi', text:'都市計畫法的授權、自治條例的精神……細節，幕僚比我清楚。'},
+            {t:'think', text:'（問到條號就「幕僚比我清楚」。一個能背出容積率560%到840%的人，記不得法條？）'}
+          ]},
+        { text:'基金會的每一筆錢，都用在公益。我，問心無愧。', pose:'normal',
+          press:[
+            {t:'say', c:'yan', text:'競選辦公室人員的薪資，是「公益」？薪資轉帳紀錄上，827萬元，按月從基金會帳戶轉出。'},
+            {t:'sp', v:'qi', pose:'sweat'},
+            {t:'say', c:'qi', text:'那些人……同時也在做公益專案！備註欄寫得很清楚：「專案顧問費」！'},
+            {t:'think', text:'（捐款人捐的是公益，付出去的是選舉。這一筆，法庭自有公評。）'}
+          ]}
+      ]
+    }
+  },
+  script:[
+    {t:'title', ep:'容積的代價・檢察官篇', name:'勿枉勿縱'},
+    {t:'bgm', v:null},
+    {t:'bg', v:'night'},
+    {t:'narr', text:'【改編聲明】\n本章節為虛構創作，取材自公開報導之司法案件並經改編，\n人物、團體、公司與地名均為虛構。\n現實案件一審宣判後，檢辯雙方均已提起上訴。\n在判決確定之前——無罪推定。'},
+    {t:'bgm', v:'invest'},
+    {t:'bg', v:'office'},
+    {t:'narr', text:'北都地方檢察署・嚴正雄檢察官辦公室'},
+    {t:'sp', v:'jia', pose:'normal'},
+    {t:'say', c:'jia', text:'檢座，金鼎城案的卷證，第三批送到了。加上前兩批——四百多卷宗，堆起來比人高。'},
+    {t:'sp', v:'yan', pose:'normal'},
+    {t:'say', c:'yan', text:'（賈調查官，跟了我七年的搭檔。他搬進來的不是卷宗——是一座城市的容積，和一位前市長的政治生命。）'},
+    {t:'ev', v:'pbadge'},
+    {t:'ev', v:'pfile'},
+    {t:'say', c:'jia', text:'外面媒體已經吵翻天了。挺祁的說是政治追殺，反祁的催著我們押人……檢座，這案子怎麼辦，全看你一支筆。'},
+    {t:'sp', v:'yan', pose:'angry'},
+    {t:'say', c:'yan', text:'媒體開的庭，本席不出席。把輿論關在門外——我們只看一樣東西：證據。'},
+    {t:'think', text:'（違背職務收賄、圖利、侵占、背信……起訴一位前市長，每一個字都必須踩在證據上。起訴書寫錯一行，就是「枉」；該起訴而不起訴，就是「縱」。）'},
+    {t:'choice', prompt:'龐大的偵查從何下手？', opts:[
+      {text:'從「錢」下手——金流是貪污案的骨架', s:[
+        {t:'say', c:'yan', text:'貪污案的偵查，從來都在金流。把每一塊錢的路徑，畫出來。'},
+        {t:'sp', v:'jia', pose:'normal'},
+        {t:'say', c:'jia', text:'了解。獻金專戶、集團帳戶、基金會帳戶——三條線，我分頭去調。'}
+      ]},
+      {text:'從「容積」下手——批示流程是本案靈魂', s:[
+        {t:'say', c:'yan', text:'20%容積獎勵到底於法有據還是無據、是誰讓它過的——這才是本案真正的戰場。'},
+        {t:'sp', v:'jia', pose:'normal'},
+        {t:'say', c:'jia', text:'了解。都委會紀錄、公文簽核、行程紀錄——我去函調閱。'}
+      ]}
+    ]},
+    {t:'bg', v:'office'},
+    {t:'bgm', v:'invest'},
+    {t:'narr', text:'起訴前・偵查作為'},
+    {t:'menu', prompt:'偵查行動——先做哪一項？', exit:'證據齊備，提起公訴', auto:false, opts:[
+      {text:'約談：政治獻金的「捐款人」', once:true, s:[
+        {t:'sp', v:'jia', pose:'normal'},
+        {t:'say', c:'jia', text:'檢座，獻金明細調出來了——審議關鍵期間，威宇「員工」分批匯入210萬，筆筆貼著申報門檻。'},
+        {t:'ev', v:'donate2'},
+        {t:'say', c:'jia', pose:'smile', text:'然後，約談有突破！三名「捐款人」是基層員工，金額跟薪水完全不成比例——其中兩個人鬆口了：錢是公司給的，連申報資料都是公司代填！'},
+        {t:'ev', v:'staffrec'},
+        {t:'think', text:'（人頭獻金……「錢」的一半到手了。剩下的一半，是「權」：錢進來之後，市政府做了什麼。）'}
+      ]},
+      {text:'搜索：扣押硬碟與帳冊', once:true, s:[
+        {t:'sp', v:'jia', pose:'normal'},
+        {t:'say', c:'jia', text:'搜索執行完畢，全程錄影、依法封緘。最大的收穫——這顆行動硬碟。EXCEL第12列：「小厲・1500」。'},
+        {t:'ev', v:'excel2'},
+        {t:'say', c:'jia', text:'對照厲主席帳戶：一個月內密集提領現金1600萬，每筆都壓在通報門檻下。時間，跟那行數字對得上。'},
+        {t:'ev', v:'bank2'},
+        {t:'sp', v:'yan', pose:'normal'},
+        {t:'think', text:'（「小厲・1500」……誘人的一行字。但鑑識報告寫得清楚：檔案是卸任後建立的，而且查無金流對應。把它當主樑，房子會塌——這個風險，本席記下了。）'},
+        {t:'say', c:'jia', text:'另外，澄望基金會的帳冊也扣到了——827萬，按月流向競選辦公室的薪資戶頭，備註「專案顧問費」。'},
+        {t:'ev', v:'fund2'},
+        {t:'ev', v:'salary'}
+      ]},
+      {text:'調閱：公文、法規與行程', once:true, s:[
+        {t:'sp', v:'jia', pose:'shock'},
+        {t:'say', c:'jia', text:'檢座，公文簽核影本——你看這份！副市長龔瑞欽只簽「依專業決議辦理」，而最關鍵那份，他的核章欄是「空白」的，最後由市長親自批示！'},
+        {t:'ev', v:'sign2'},
+        {t:'sp', v:'yan', pose:'angry'},
+        {t:'think', text:'（四十年的技術官僚不敢簽名的公文，市長批得毫不遲疑……這份影本，就是本案的龍骨。）'},
+        {t:'say', c:'jia', text:'監察院報告與都委會紀錄也到了：金鼎城是「新建案」不是都更案，20%獎勵於法無據；容積率560%墊到840%。'},
+        {t:'ev', v:'report2'},
+        {t:'ev', v:'minutes2'},
+        {t:'say', c:'jia', pose:'smile', text:'最後一塊拼圖——市長辦公室行程紀錄：審議啟動前，市長跟厲主席關起門吃了一場「便當會」。三天後，案子就送都委會「速審速決」了。'},
+        {t:'ev', v:'lunchrec'}
+      ]}
+    ]},
+    {t:'bg', v:'night'},
+    {t:'bgm', v:null},
+    {t:'narr', text:'偵查終結。\n北都地檢署起訴前市長祁文遠等十一人，\n對祁文遠——具體求刑「二十八年六月」。\n\n輿論，炸了。'},
+    {t:'bg', v:'hall'},
+    {t:'narr', text:'開庭當日・北都地方法院\n走廊上擠滿了記者與攝影機，快門聲連成一片。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'嚴檢察官，幸會。辯護人，林辯。——我拜讀過起訴書了，寫得很重。'},
+    {t:'say', c:'lin', pose:'smile', text:'我的習慣，是把檢方的每一項證據，都放到放大鏡底下。今天庭上，請多指教。'},
+    {t:'sp', v:'yan', pose:'normal'},
+    {t:'think', text:'（林辯……連續打贏多件無罪案的「找矛盾」律師。他不虛張、不客套——這種對手，最難纏，也最值得。）'},
+    {t:'bg', v:'court'},
+    {t:'bgm', v:'court'},
+    {t:'narr', text:'北都地方法院・刑事大法庭\n貪污治罪條例等案件・審理程序'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'現在開庭。本件被告祁文遠等，違反貪污治罪條例等案件，進行審理程序。檢察官，請陳述起訴要旨。'},
+    {t:'sp', v:'yan', pose:'normal'},
+    {t:'say', c:'yan', text:'公訴檢察官嚴正雄。被告祁文遠於市長任內，就金鼎城容積獎勵案收受賄賂、圖利廠商逾百億元，並侵占公益款項。檢方求刑——二十八年六月。'},
+    {t:'sp', v:'qi', pose:'normal'},
+    {t:'say', c:'qi', text:'被告祁文遠。我，無罪。那210萬是依法申報的獻金，容積是都委會的專業決議——檢察官，你起訴的不是我，是整個依法行政的市政府。'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'被告否認犯罪。本庭就被訴事實逐一調查。首先——210萬元政治獻金部分，請被告陳述，並接受檢察官詰問。'},
+    {t:'narr', text:'——詰問開始。\n\n操作說明：\n◀ ▶ 切換證言／「等一下」追問細節\n「出示證物」戳破陳述與證據的矛盾！\n（出示錯誤會被法庭警告，❗歸零即公訴失敗）'},
+    {t:'bgm', v:'cross'},
+    {t:'testimony', v:'t1'}
+  ]
+};
+
+/* ===== 案件登錄 ===== */
+const CASES = [CASE_DEF, CASE_PROS];
+
+/* ===== engine.js : script runner, testimony system, UI ===== */
+const $ = id => document.getElementById(id);
+
+const G = {
+  screen:'title', caseIdx:-1, kase:null,
+  frames:[], cont:null,
+  mode:'script', testimony:null, tIdx:0, inSub:false, penaltyPending:false,
+  typing:false, typeTimer:null,
+  penalties:5, wrongs:[0,0,0],
+  ev:[], curSprite:null,
+  unlocked:1, done:CASES.map(()=>false), stars:CASES.map(()=>false),
+  settings:{tspeed:1},
+  presentMode:false
+};
+
+/* ---------- helpers ---------- */
+function showScreen(name){
+  G.screen = name;
+  ['title','select','game','end'].forEach(s => $('scr-'+s).classList.toggle('on', s===name));
+}
+function setBG(id){ $('bg').innerHTML = BGS[id] || ''; }
+function setRain(on){ $('fx-rain').classList.toggle('on', !!on); }
+function setSprite(id, pose){
+  G.curSprite = id;
+  const sp = $('sprite');
+  if(!id){ sp.innerHTML=''; return; }
+  sp.innerHTML = CHARS[id].av(pose || 'normal');
+  sp.classList.add('bob');
+}
+function flashFX(){ const f=$('fx-flash'); f.classList.remove('go'); void f.offsetWidth; f.classList.add('go'); }
+function shakeFX(){ const s=$('scene'); s.classList.remove('shake'); void s.offsetWidth; s.classList.add('shake'); }
+function renderPenalty(){
+  $('penalty').innerHTML = Array.from({length:5}, (_,i) =>
+    `<span class="p ${i < 5-G.penalties ? 'lost':''}">❗</span>`).join('');
+}
+function evData(id){ return G.kase.evidence.find(e => e.id===id); }
+
+/* ---------- typewriter ---------- */
+let typeFull='', typeShown=0, typeVoice=null;
+function setText(text, opts){
+  opts = opts || {};
+  const np = $('nameplate'), dt = $('dtext');
+  if(opts.plate){
+    np.classList.remove('hidden');
+    np.textContent = opts.plate;
+    np.style.background = opts.color ? `linear-gradient(180deg, ${opts.color}, #1c1c24)` : '';
+  } else np.classList.add('hidden');
+  dt.className = opts.cls || '';
+  $('cursor').classList.remove('on');
+  clearInterval(G.typeTimer);
+  typeFull = text; typeShown = 0; typeVoice = opts.voice || null;
+  if(G.settings.tspeed === 0){
+    dt.textContent = text; G.typing = false;
+    $('cursor').classList.add('on');
+    $('sprite').classList.remove('talking');
+    return;
+  }
+  G.typing = true;
+  dt.textContent = '';
+  if(typeVoice && opts.speakerOnStage) $('sprite').classList.add('talking');
+  const iv = G.settings.tspeed === 2 ? 14 : 30;
+  G.typeTimer = setInterval(() => {
+    typeShown++;
+    dt.textContent = typeFull.slice(0, typeShown);
+    const ch = typeFull[typeShown-1];
+    if(typeVoice && typeShown % 2 === 0 && ch && !'，。！？…—、：「」 '.includes(ch)) AudioSys.sfx.blip(typeVoice);
+    if(typeShown >= typeFull.length) finishType();
+  }, iv);
+}
+function finishType(){
+  clearInterval(G.typeTimer);
+  $('dtext').textContent = typeFull;
+  G.typing = false;
+  $('cursor').classList.add('on');
+  $('sprite').classList.remove('talking');
+}
+
+/* ---------- script runner ---------- */
+function pushScript(s){ G.frames.push({s, i:0}); }
+function step(){
+  for(;;){
+    const fr = G.frames[G.frames.length-1];
+    if(!fr){ afterFrames(); return; }
+    if(fr.i >= fr.s.length){ G.frames.pop(); continue; }
+    if(exec(fr.s[fr.i], fr)) return;
+  }
+}
+function afterFrames(){
+  if(G.mode === 'testimony' && G.testimony){
+    if(G.penaltyPending){
+      G.penaltyPending = false;
+      G.penalties--;
+      renderPenalty(); shakeFX(); AudioSys.sfx.thud();
+      if(G.penalties <= 0){ openOverlay('ov-gameover'); return; }
+    }
+    showStatement();
+  } else {
+    showScreen('select'); renderSelect();
+  }
+}
+function waitTap(){ G.cont = step; return true; }
+
+function exec(e, fr){
+  switch(e.t){
+    case 'bg': fr.i++; setBG(e.v); return false;
+    case 'rain': fr.i++; setRain(e.v); return false;
+    case 'sp': fr.i++; setSprite(e.v, e.pose); return false;
+    case 'sfx': fr.i++; if(AudioSys.sfx[e.v]) AudioSys.sfx[e.v](); return false;
+    case 'bgm': fr.i++; AudioSys.playBGM(e.v || null); return false;
+    case 'flash': fr.i++; flashFX(); return false;
+    case 'shake': fr.i++; shakeFX(); return false;
+    case 'wait': { fr.i++; G.cont = null; setTimeout(step, e.v || 500); return true; }
+    case 'say': {
+      fr.i++;
+      const c = CHARS[e.c];
+      if(e.pose) setSprite(e.c, e.pose);
+      setText(e.text, {plate: e.name || c.name, color: c.color, voice: c.voice,
+        speakerOnStage: G.curSprite === e.c});
+      return waitTap();
+    }
+    case 'think': fr.i++; setText(e.text, {plate:G.kase.pName, color:G.kase.pColor, cls:'think'}); return waitTap();
+    case 'narr': fr.i++; setText(e.text, {cls:'sys'}); return waitTap();
+    case 'obj': {
+      fr.i++;
+      const box = $('fx-obj');
+      box.querySelector('span').textContent = e.word || '異議！！';
+      box.classList.toggle('blue', e.c === 'lin' || e.c === 'mei');
+      box.classList.remove('hidden');
+      AudioSys.sfx.sting(); shakeFX(); flashFX();
+      let fired = false;
+      const go = () => { if(fired) return; fired = true; box.classList.add('hidden'); step(); };
+      G.cont = go;
+      setTimeout(go, 1000);
+      return true;
+    }
+    case 'ev': {
+      fr.i++;
+      if(G.ev.includes(e.v)) return false;
+      G.ev.push(e.v);
+      const d = evData(e.v);
+      $('toast-card').innerHTML = `<div class="lab">— 取得證物 —</div><div class="ic">${d.icon}</div>
+        <div class="nm">${d.name}</div><div class="ds">${d.desc}</div><div class="tap">▼ 點擊繼續</div>`;
+      AudioSys.sfx.correct();
+      openOverlay('ov-toast');
+      G.cont = () => { closeOverlays(); step(); };
+      return true;
+    }
+    case 'title': {
+      fr.i++;
+      $('ov-title').innerHTML = `<div class="ep">${e.ep}</div><div class="rule"></div>
+        <h2>${e.name}</h2><div class="rule"></div><div class="tap">▼ 點擊繼續</div>`;
+      AudioSys.sfx.swoosh();
+      openOverlay('ov-title');
+      G.cont = () => { closeOverlays(); step(); };
+      return true;
+    }
+    case 'verdict': {
+      fr.i++;
+      const st = $('stamp');
+      st.textContent = e.v;
+      st.classList.toggle('guilty', !!e.guilty);
+      openOverlay('ov-verdict');
+      AudioSys.sfx.stamp();
+      if(!e.guilty) sparkle();
+      G.cont = () => { closeOverlays(); step(); };
+      return true;
+    }
+    case 'choice': {
+      fr.i++;
+      $('choice-prompt').textContent = e.prompt || '';
+      const box = $('choice-box');
+      box.querySelectorAll('.choice-btn').forEach(b => b.remove());
+      e.opts.forEach(opt => {
+        const b = document.createElement('button');
+        b.className = 'choice-btn'; b.textContent = opt.text;
+        b.onclick = ev => { ev.stopPropagation(); AudioSys.resume(); closeOverlays(); if(opt.s) pushScript(opt.s); step(); };
+        box.appendChild(b);
+      });
+      openOverlay('ov-choice');
+      G.cont = null;
+      return true;
+    }
+    case 'menu': {
+      const remaining = e.opts.filter(o => !(o.once && o._used));
+      const onceLeft = e.opts.filter(o => o.once && !o._used);
+      if(e.auto && onceLeft.length === 0){ fr.i++; return false; }
+      $('choice-prompt').textContent = e.prompt || '要做什麼？';
+      const box = $('choice-box');
+      box.querySelectorAll('.choice-btn').forEach(b => b.remove());
+      remaining.forEach(opt => {
+        const b = document.createElement('button');
+        b.className = 'choice-btn'; b.textContent = opt.text;
+        b.onclick = ev => { ev.stopPropagation(); AudioSys.resume(); closeOverlays(); if(opt.once) opt._used = true; pushScript(opt.s); step(); };
+        box.appendChild(b);
+      });
+      if(e.exit){
+        const b = document.createElement('button');
+        b.className = 'choice-btn dim'; b.textContent = e.exit;
+        b.onclick = ev => { ev.stopPropagation(); AudioSys.resume(); closeOverlays(); fr.i++; step(); };
+        box.appendChild(b);
+      }
+      openOverlay('ov-choice');
+      G.cont = null;
+      return true;
+    }
+    case 'addst': {
+      fr.i++;
+      if(G.testimony){
+        G.testimony.statements.splice(e.after + 1, 0, e.st);
+      }
+      return false;
+    }
+    case 'testimony': {
+      fr.i++;
+      enterTestimony(e.v);
+      return true;
+    }
+    case 'end': {
+      fr.i++;
+      caseComplete();
+      return true;
+    }
+    default: fr.i++; return false;
+  }
+}
+
+function sparkle(){
+  const ov = $('ov-verdict');
+  for(let i=0;i<10;i++){
+    const s = document.createElement('div');
+    s.className = 'spark'; s.textContent = ['✦','✧','★'][i%3];
+    s.style.left = (10 + Math.random()*80) + '%';
+    s.style.top = (35 + Math.random()*35) + '%';
+    s.style.color = '#f0c469';
+    s.style.animationDelay = (Math.random()*0.5)+'s';
+    ov.appendChild(s);
+    setTimeout(() => s.remove(), 2200);
+  }
+}
+
+/* ---------- testimony ---------- */
+function enterTestimony(id){
+  G.testimony = G.kase.testimonies[id];
+  G.tIdx = 0; G.mode = 'testimony';
+  $('ov-title').innerHTML = `<div class="ep">～ 證言 ～</div><div class="rule"></div>
+    <h2>${G.testimony.title}</h2><div class="rule"></div><div class="tap">▼ 點擊開始詰問</div>`;
+  AudioSys.sfx.swoosh();
+  openOverlay('ov-title');
+  G.cont = () => { closeOverlays(); showStatement(); };
+}
+function showStatement(){
+  const T = G.testimony;
+  const st = T.statements[G.tIdx];
+  $('t-banner').classList.remove('hidden');
+  $('t-banner').innerHTML = `${T.title}<span id="t-count">${G.tIdx+1} / ${T.statements.length}</span>`;
+  $('t-controls').classList.remove('hidden');
+  setSprite(T.who, st.pose || 'normal');
+  setText(st.text, {plate: CHARS[T.who].name, color: CHARS[T.who].color,
+    voice: CHARS[T.who].voice, cls:'testi', speakerOnStage:true});
+  G.cont = () => { G.tIdx = (G.tIdx + 1) % T.statements.length; showStatement(); };
+}
+function hideTestimonyUI(){
+  $('t-banner').classList.add('hidden');
+  $('t-controls').classList.add('hidden');
+}
+function navStatement(d){
+  if(!G.testimony || G.inSubScript()) return;
+  const n = G.testimony.statements.length;
+  G.tIdx = (G.tIdx + d + n) % n;
+  AudioSys.sfx.swoosh();
+  showStatement();
+}
+function pressStatement(){
+  if(!G.testimony) return;
+  const st = G.testimony.statements[G.tIdx];
+  hideTestimonyUI();
+  AudioSys.sfx.sting();
+  const obj = [{t:'obj', c:G.kase.pId, word:'等一下！！'}];
+  pushScript(obj.concat(st.press || DEFAULT_PRESS(G.testimony.who)));
+  step();
+}
+function presentEvidence(id){
+  if(!G.testimony) return;
+  const st = G.testimony.statements[G.tIdx];
+  hideTestimonyUI();
+  if(st.ev === id){
+    const win = st.win || [];
+    G.testimony = null; G.mode = 'script';
+    pushScript([{t:'obj', c:G.kase.pId}].concat(win));
+  } else {
+    G.penaltyPending = true;
+    G.wrongs[G.caseIdx]++;
+    pushScript(G.testimony.wrong || DEFAULT_WRONG());
+  }
+  step();
+}
+G.inSubScript = function(){ return false; };
+function DEFAULT_PRESS(who){
+  return [
+    {t:'say', c:G.kase.pId, text:'這句證言……可以請你再說清楚一點嗎？'},
+    {t:'sp', v:who, pose:'normal'},
+    {t:'say', c:who, text:'我說的就是我看到、聽到的事實。沒什麼好補充的。'},
+    {t:'think', text:'（嗯……這裡好像問不出什麼。再檢查其他證言吧。）'}
+  ];
+}
+function DEFAULT_WRONG(){
+  if(G.kase.pId === 'yan') return [
+    {t:'sfx', v:'wrong'},
+    {t:'sp', v:'judge', pose:'angry'},
+    {t:'say', c:'judge', text:'檢察官。那項證據……和這句陳述有什麼關係？'},
+    {t:'sp', v:'lin', pose:'smile'},
+    {t:'say', c:'lin', text:'呵。求刑二十八年六月的公訴人，舉證卻是亂槍打鳥——庭上，辯方深感遺憾。'},
+    {t:'sp', v:'judge', pose:'angry'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'請公訴人慎重行事。本庭給予警告！'},
+    {t:'think', text:'（糟糕……再錯下去，公訴的信用就完了。冷靜下來，找出真正的矛盾！）'}
+  ];
+  return [
+    {t:'sfx', v:'wrong'},
+    {t:'sp', v:'judge', pose:'angry'},
+    {t:'say', c:'judge', text:'辯護人。那項證物……和這句證言有什麼關係？'},
+    {t:'sp', v:'yan', pose:'smug'},
+    {t:'say', c:'yan', text:'呵呵。看來辯方已經黔驢技窮，開始亂槍打鳥了。'},
+    {t:'sp', v:'judge', pose:'angry'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'請辯護人慎重行事。本庭給予警告！'},
+    {t:'think', text:'（糟糕……再亂出示證物的話，委託人就完了。冷靜下來，找出真正的矛盾！）'}
+  ];
+}
+
+/* ---------- evidence record ---------- */
+function openRecord(presentMode){
+  G.presentMode = !!presentMode;
+  $('ov-record').querySelector('h3').textContent = presentMode ? '要出示哪項證物？' : '證物一覽';
+  $('ev-detail').classList.remove('on');
+  $('ev-grid').style.display = '';
+  const grid = $('ev-grid');
+  grid.innerHTML = '';
+  G.ev.forEach(id => {
+    const d = evData(id);
+    const b = document.createElement('button');
+    b.className = 'ev-card';
+    b.innerHTML = `<span class="ic">${d.icon}</span><span class="nm">${d.name}</span>`;
+    b.onclick = ev => { ev.stopPropagation(); AudioSys.resume(); showEvDetail(id); };
+    grid.appendChild(b);
+  });
+  openOverlay('ov-record');
+}
+function showEvDetail(id){
+  const d = evData(id);
+  $('ev-grid').style.display = 'none';
+  const det = $('ev-detail');
+  det.classList.add('on');
+  det.innerHTML = `<div class="big">${d.icon}</div><h4>${d.name}</h4><p>${d.desc}</p>`;
+  if(G.presentMode){
+    const pb = document.createElement('button');
+    pb.className = 'present-btn'; pb.textContent = '出示這項證物！';
+    pb.onclick = ev => { ev.stopPropagation(); AudioSys.resume(); closeOverlays(); presentEvidence(id); };
+    det.appendChild(pb);
+  }
+  const back = document.createElement('button');
+  back.className = 'ghost-btn'; back.textContent = '返回列表';
+  back.onclick = ev => { ev.stopPropagation(); openRecord(G.presentMode); };
+  det.appendChild(back);
+}
+
+/* ---------- overlays ---------- */
+const OVERLAYS = ['ov-record','ov-settings','ov-choice','ov-toast','ov-title','ov-verdict','ov-gameover'];
+function openOverlay(id){ closeOverlays(); $(id).classList.remove('hidden'); }
+function closeOverlays(){ OVERLAYS.forEach(o => $(o).classList.add('hidden')); }
+function anyOverlayOpen(){ return OVERLAYS.some(o => !$(o).classList.contains('hidden')); }
+
+/* ---------- case lifecycle ---------- */
+function startCase(i){
+  G.caseIdx = i;
+  G.kase = structuredClone(CASES[i]);
+  G.frames = []; G.cont = null;
+  G.mode = 'script'; G.testimony = null; G.tIdx = 0;
+  G.penalties = 5; G.wrongs[i] = 0; G.penaltyPending = false;
+  G.ev = []; G.presentMode = false;
+  $('go-h2').textContent = G.kase.goTitle;
+  $('go-p').innerHTML = G.kase.goText;
+  renderPenalty(); hideTestimonyUI(); closeOverlays();
+  setSprite(null); setBG('office'); setRain(false);
+  setText('', {});
+  showScreen('game');
+  pushScript(G.kase.script);
+  step();
+}
+function caseComplete(){
+  AudioSys.stopBGM();
+  G.done[G.caseIdx] = true;
+  if(G.wrongs[G.caseIdx] === 0) G.stars[G.caseIdx] = true;
+  hideTestimonyUI();
+  showEnding();
+}
+function retryTestimony(){
+  closeOverlays();
+  G.penalties = 5;
+  renderPenalty();
+  G.penaltyPending = false;
+  showStatement();
+}
+function showEnding(){
+  const k = G.kase;
+  const both = G.done.every(Boolean);
+  $('end-inner').innerHTML = `
+    <div style="font-size:54px">${k.icon}</div>
+    <h2>${k.title}・結案</h2>
+    <p>主文：應執行有期徒刑「十七年」，褫奪公權六年。<br>一千五百萬元部分——不能證明。<br><br>無論你站在天平的哪一側，<br>判決，只會有這一份。</p>
+    <p style="color:#f0c469">${G.stars[G.caseIdx] ? '★ 完美詰問（全程零失誤）！' : '下次挑戰零失誤的詰問吧！'}</p>
+    ${both
+      ? '<p style="color:#7ee08a">★ 兩種立場，皆已結案 ★<br>你已看過天平的兩端：<br>辯方拆下了一千五百萬，檢方守住了對價與容積。<br>真相不會自己走進法庭——<br>是兩造的「檢驗」，把它帶進來的。</p>'
+      : '<p>另一個立場的法庭，正在等你。<br>同一批證據、同一份判決——完全不同的戰場。</p>'}
+    <div class="credits">取材真實司法案件改編・人物與情節均為虛構<br><br>企劃・編劇・程式・美術・音樂<br>Claude<br><br>監製<br>4東<br><br>本作純屬虛構，如有雷同，異議成立。</div>`;
+  showScreen('end');
+}
+
+/* ---------- select screen ---------- */
+function renderSelect(){
+  const wrap = $('case-list');
+  wrap.innerHTML = '';
+  CASES.forEach((c, i) => {
+    const b = document.createElement('button');
+    b.className = 'case-card';
+    b.innerHTML = `<div class="ep">${c.icon}　${c.sub}</div><h3>${c.title}</h3><p>${c.desc}</p>
+      ${G.stars[i] ? '<div class="stars">★ 完美詰問</div>' : ''}
+      ${G.done[i] ? '<div class="done-badge">✓ 已結案（可重新挑戰）</div>' : ''}`;
+    b.onclick = ev => { ev.stopPropagation(); AudioSys.resume(); startCase(i); };
+    wrap.appendChild(b);
+  });
+}
+
+/* ---------- input ---------- */
+function tap(){
+  AudioSys.resume();
+  if(G.typing){ finishType(); return; }
+  if(G.cont){ const f = G.cont; G.cont = null; f(); }
+}
+
+/* ---------- settings ---------- */
+function renderSettings(){
+  $('set-bgm').textContent = AudioSys.bgmOn ? '開啟' : '關閉';
+  $('set-sfx').textContent = AudioSys.sfxOn ? '開啟' : '關閉';
+  $('set-speed').textContent = G.settings.tspeed === 0 ? '瞬間' : G.settings.tspeed === 2 ? '快' : '慢';
+}
+
+/* ---------- boot ---------- */
+function boot(){
+  renderPenalty();
+  renderSelect();
+  $('btn-start').onclick = () => { AudioSys.resume(); showScreen('select'); renderSelect(); };
+  $('btn-back-title').onclick = () => { AudioSys.stopBGM(); showScreen('title'); };
+  $('btn-end-title').onclick = () => { AudioSys.stopBGM(); showScreen('select'); renderSelect(); };
+  $('scene').addEventListener('click', tap);
+  $('dialog').addEventListener('click', tap);
+  $('ov-toast').addEventListener('click', tap);
+  $('ov-title').addEventListener('click', tap);
+  $('ov-verdict').addEventListener('click', tap);
+  $('t-prev').onclick = e => { e.stopPropagation(); AudioSys.resume(); navStatement(-1); };
+  $('t-next').onclick = e => { e.stopPropagation(); AudioSys.resume(); navStatement(1); };
+  $('t-press').onclick = e => { e.stopPropagation(); AudioSys.resume(); pressStatement(); };
+  $('t-present').onclick = e => { e.stopPropagation(); AudioSys.resume(); openRecord(true); };
+  $('btn-record').onclick = e => { e.stopPropagation(); AudioSys.resume(); openRecord(false); };
+  $('btn-settings').onclick = e => { e.stopPropagation(); AudioSys.resume(); renderSettings(); openOverlay('ov-settings'); };
+  $('ov-record').querySelector('.ov-close').onclick = e => { e.stopPropagation(); closeOverlays(); };
+  $('ov-settings-close').onclick = e => { e.stopPropagation(); closeOverlays(); };
+  $('set-bgm').onclick = e => { e.stopPropagation(); AudioSys.setBGM(!AudioSys.bgmOn); renderSettings(); };
+  $('set-sfx').onclick = e => { e.stopPropagation(); AudioSys.setSFX(!AudioSys.sfxOn); renderSettings(); };
+  $('set-speed').onclick = e => { e.stopPropagation();
+    G.settings.tspeed = G.settings.tspeed === 1 ? 2 : G.settings.tspeed === 2 ? 0 : 1;
+    renderSettings(); };
+  $('set-quit').onclick = e => { e.stopPropagation(); AudioSys.stopBGM(); closeOverlays(); hideTestimonyUI(); showScreen('title'); };
+  $('go-retry').onclick = e => { e.stopPropagation(); retryTestimony(); };
+  $('go-title').onclick = e => { e.stopPropagation(); AudioSys.stopBGM(); closeOverlays(); hideTestimonyUI(); showScreen('title'); };
+  document.addEventListener('touchstart', () => AudioSys.resume(), {once:true});
+  document.addEventListener('click', () => AudioSys.resume(), {once:true});
+}
+document.addEventListener('DOMContentLoaded', boot);
+
+/* test hooks */
+window.Game = { G, tap, navStatement, pressStatement, presentEvidence, startCase,
+  showScreen, retryTestimony, closeOverlays, openRecord };
+
+</script>
+</body>
+</html>
