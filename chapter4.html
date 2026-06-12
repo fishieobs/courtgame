@@ -248,6 +248,7 @@ button{font-family:inherit;border:none;cursor:pointer;}
     <div class="rule"></div>
     <button id="btn-start" class="menu-btn">開 始 遊 戲</button>
     <div class="tiny">取材真實司法案件改編・建議直式持機・點擊畫面開啟音效</div>
+    <div class="tiny">v1.2（含凱道抗議結局）</div>
   </section>
 
   <!-- ===== 立場選擇畫面 ===== -->
@@ -534,6 +535,39 @@ const BGS = {
     <g stroke="#5a5e6a" stroke-width="10"><path d="M80 60 L80 320 M140 60 L140 320 M200 60 L200 320 M260 60 L260 320 M320 60 L320 320"/></g>
     <g stroke="#5a5e6a" stroke-width="8"><path d="M40 130 L360 130 M40 240 L360 240"/></g>
     <rect y="420" width="400" height="180" fill="#22242c"/>
+  </svg>`,''),
+  palace: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#0e1220"/>
+    <rect width="400" height="430" fill="#141a2e"/>
+    <circle cx="58" cy="60" r="22" fill="#f0e8c8" opacity=".65"/>
+    <rect x="178" y="62" width="44" height="220" fill="#8a3a2e"/>
+    <path d="M172 66 L200 18 L228 66 Z" fill="#4a3e38"/>
+    <rect x="196" y="4" width="8" height="16" fill="#4a3e38"/>
+    <g fill="#e8e0d2"><rect x="178" y="86" width="44" height="6"/><rect x="178" y="114" width="44" height="6"/><rect x="178" y="142" width="44" height="6"/></g>
+    <rect x="192" y="166" width="16" height="22" rx="3" fill="#f0c469" opacity=".8"/>
+    <rect x="24" y="210" width="352" height="150" fill="#8a3a2e"/>
+    <g fill="#e8e0d2"><rect x="24" y="226" width="352" height="7"/><rect x="24" y="256" width="352" height="7"/><rect x="24" y="286" width="352" height="7"/><rect x="24" y="316" width="352" height="7"/></g>
+    <g fill="#f0c469" opacity=".7">
+      <rect x="44" y="266" width="11" height="14"/><rect x="78" y="266" width="11" height="14"/><rect x="112" y="266" width="11" height="14"/><rect x="146" y="266" width="11" height="14"/>
+      <rect x="243" y="266" width="11" height="14"/><rect x="277" y="266" width="11" height="14"/><rect x="311" y="266" width="11" height="14"/><rect x="345" y="266" width="11" height="14"/>
+    </g>
+    <rect x="20" y="356" width="360" height="8" fill="#5a4a42"/>
+    <g stroke="#7a8294" stroke-width="4" fill="none">
+      <path d="M30 392 L66 368 M66 392 L30 368 M94 392 L130 368 M130 392 L94 368 M158 392 L194 368 M194 392 L158 368 M222 392 L258 368 M258 392 L222 368 M286 392 L322 368 M322 392 L286 368 M348 392 L378 372 M378 392 L348 372"/>
+      <path d="M24 368 L378 368 M24 392 L378 392"/>
+    </g>
+    <g>
+      <rect x="50" y="398" width="62" height="30" rx="3" fill="#e8e0d2"/><rect x="78" y="428" width="5" height="20" fill="#8a6a3a"/>
+      <text x="81" y="420" font-size="15" font-weight="900" text-anchor="middle" fill="#b8322a" font-family="sans-serif">還我公道</text>
+      <rect x="284" y="392" width="62" height="30" rx="3" fill="#e8e0d2"/><rect x="312" y="422" width="5" height="22" fill="#8a6a3a"/>
+      <text x="315" y="414" font-size="15" font-weight="900" text-anchor="middle" fill="#1d2638" font-family="sans-serif">司法已死</text>
+    </g>
+    <g fill="#0a0c14">
+      <circle cx="14" cy="450" r="13"/><circle cx="46" cy="444" r="14"/><circle cx="80" cy="452" r="13"/><circle cx="112" cy="446" r="15"/>
+      <circle cx="146" cy="452" r="13"/><circle cx="178" cy="444" r="14"/><circle cx="212" cy="450" r="13"/><circle cx="246" cy="445" r="15"/>
+      <circle cx="280" cy="452" r="13"/><circle cx="312" cy="444" r="14"/><circle cx="346" cy="451" r="13"/><circle cx="380" cy="446" r="14"/>
+    </g>
+    <rect y="458" width="400" height="142" fill="#080a10"/>
   </svg>`,'')
 };
 
@@ -971,6 +1005,27 @@ const CASE_DEF = {
             {t:'say', c:'lin', text:'我們贏下了每一個「點」。但法庭評議的，是整張「面」。'},
             {t:'say', c:'lin', text:'小梅，辯護人的職責，從來不是保證無罪——是確保每一項證據都被檢驗、每一個程序都被質疑、每一句證言都被詰問。今天，我們做到了：一千五百萬，從判決裡消失了。'},
             {t:'say', c:'lin', pose:'normal', text:'剩下的，交給上訴審。在判決確定之前，無罪推定，仍然有效。這就是法治——不只在你贏的時候。'},
+            {t:'bg', v:'palace'},
+            {t:'bgm', v:null},
+            {t:'narr', text:'數日後・總統府前\n凱達格蘭大道上旗海翻騰，\n前市長的支持者，從四面八方湧來。'},
+            {t:'sp', v:'qi', pose:'angry'},
+            {t:'say', c:'qi', text:'各位！祁文遠從政三十年，今天站上凱道，不是為了我自己——是為了千千萬萬還相信司法的人！'},
+            {t:'say', c:'qi', pose:'angry', text:'一行EXCEL、一場便當會、一枚印章——就能換走十七年！這不是判決，這是政治追殺！'},
+            {t:'narr', text:'「司法不公！司法不公！」\n怒吼一波高過一波，撼動整條凱道。'},
+            {t:'sp', v:'qi', pose:'angry'},
+            {t:'say', c:'qi', text:'他們可以拿走我的自由、拿走我的公權——但他們，拿不走我的意志！'},
+            {t:'narr', text:'他深吸一口氣，舉起拳頭，\n指向拒馬之後、那棟紅磚白牆的建築——'},
+            {t:'obj', c:'qi', word:'賴祥德！！'},
+            {t:'sfx', v:'shock'}, {t:'shake'},
+            {t:'say', c:'qi', pose:'angry', text:'賴祥德！我不會屈服的！！'},
+            {t:'narr', text:'吶喊聲越過層層拒馬，\n撞上總統府的紅磚牆，\n散落在深夜的凱道上空。'},
+            {t:'bg', v:'office'},
+            {t:'bgm', v:'sad'},
+            {t:'sp', v:'mei', pose:'shock'},
+            {t:'say', c:'mei', text:'學長，凱道的直播你看了嗎？幾萬人……當事人連總統的名字都喊出來了。我們做辯護人的，該怎麼看？'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'廣場上的吶喊，是他的言論自由；判決落下的不甘，也是真實的。但能改寫判決的，從來不是音量——是證據。'},
+            {t:'say', c:'lin', text:'他喊他的。我們，準備我們的上訴理由狀。二審的法庭上，每一項證據，都要再被檢驗一次。'},
             {t:'think', text:'（天平不會永遠傾向你。但只要每一次稱量都被全程檢視——下一次開庭，就永遠值得全力以赴。）'},
             {t:'narr', text:'本案檢辯雙方均已提起上訴，\n現由上訴審法院審理中。\n\n—— 辯護律師篇・完 ——'},
             {t:'end'}
@@ -1364,6 +1419,27 @@ const CASE_PROS = {
             {t:'say', c:'yan', text:'都不算。檢察官的成績單上，從來沒有「贏」這個字——只有「枉」與「縱」。'},
             {t:'say', c:'yan', text:'1500萬被剔除，是本席舉證不足，怪不得法庭。但210萬的對價、於法無據的容積、827萬的侵占——每一項，都是靠證據站上判決書的。'},
             {t:'say', c:'yan', pose:'normal', text:'至於辯護人……他今天拆掉我一根樑柱。下次開庭，本席會把地基打得更深。對手夠強，公訴才不敢偷懶——這是好事。'},
+            {t:'bg', v:'palace'},
+            {t:'bgm', v:null},
+            {t:'narr', text:'數日後・總統府前\n凱達格蘭大道上旗海翻騰，\n前市長的支持者，從四面八方湧來。'},
+            {t:'sp', v:'qi', pose:'angry'},
+            {t:'say', c:'qi', text:'各位！祁文遠從政三十年，今天站上凱道，不是為了我自己——是為了千千萬萬還相信司法的人！'},
+            {t:'say', c:'qi', pose:'angry', text:'一行EXCEL、一場便當會、一枚印章——就能換走十七年！這不是判決，這是政治追殺！'},
+            {t:'narr', text:'「司法不公！司法不公！」\n怒吼一波高過一波，撼動整條凱道。'},
+            {t:'sp', v:'qi', pose:'angry'},
+            {t:'say', c:'qi', text:'他們可以拿走我的自由、拿走我的公權——但他們，拿不走我的意志！'},
+            {t:'narr', text:'他深吸一口氣，舉起拳頭，\n指向拒馬之後、那棟紅磚白牆的建築——'},
+            {t:'obj', c:'qi', word:'賴祥德！！'},
+            {t:'sfx', v:'shock'}, {t:'shake'},
+            {t:'say', c:'qi', pose:'angry', text:'賴祥德！我不會屈服的！！'},
+            {t:'narr', text:'吶喊聲越過層層拒馬，\n撞上總統府的紅磚牆，\n散落在深夜的凱道上空。'},
+            {t:'bg', v:'office'},
+            {t:'bgm', v:'sad'},
+            {t:'sp', v:'jia', pose:'sweat'},
+            {t:'say', c:'jia', text:'檢座，凱道的直播……幾萬人喊「司法不公」，連總統的名字都被點出來了。這把火，會燒到地檢署嗎？'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'讓他喊。凱道有凱道的麥克風，法庭有法庭的筆錄。'},
+            {t:'say', c:'yan', pose:'angry', text:'如果吶喊聲就能改寫判決，那還要法庭做什麼？二審開庭那天——能說話的，仍然只有證據。'},
             {t:'think', text:'（勿枉，勿縱。十七年不是檢方的戰利品，是法庭稱量後的重量。剩下的，交給上訴審——連同那筆消失的1500萬。）'},
             {t:'narr', text:'本案檢辯雙方均已提起上訴，\n現由上訴審法院審理中。\n\n—— 檢察官篇・完 ——'},
             {t:'end'}
