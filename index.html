@@ -429,7 +429,12 @@ const CHARS = {
   fei:  { name:'阿飛',   color:'#e2598a', voice:'m',  av: makeAvatar({skin:'#eab98e', hair:'cap', hairC:'#e2598a', suit:'#d44a7c', shirt:'#fff', capPeak:'#e2598a'}) },
   zhou: { name:'老周',   color:'#6e8a4a', voice:'lo', av: makeAvatar({skin:'#e2b184', hair:'old', hairC:'#9a9a90', suit:'#56603a', shirt:'#e8e0c8', scarf:'#8a7a52', wrinkle:true}) },
   fang: { name:'方瑜',   color:'#7a5ac2', voice:'f',  av: makeAvatar({skin:'#f4cfa8', hair:'shortf', hairC:'#1c1620', suit:'#4a4456', shirt:'#e8e4f0', glasses:true}) },
-  zhao: { name:'趙董',   color:'#9a8a3a', voice:'lo', av: makeAvatar({skin:'#e8bb8e', hair:'slick', hairC:'#4a4640', suit:'#33312b', shirt:'#f2eada', tie:'#b0922e', wrinkle:true}) }
+  zhao: { name:'趙董',   color:'#9a8a3a', voice:'lo', av: makeAvatar({skin:'#e8bb8e', hair:'slick', hairC:'#4a4640', suit:'#33312b', shirt:'#f2eada', tie:'#b0922e', wrinkle:true}) },
+  qi:   { name:'祁文遠', color:'#3a9aa0', voice:'lo', av: makeAvatar({skin:'#ecc49c', hair:'part',  hairC:'#8a8a84', suit:'#2e3e44', shirt:'#f4f2ec', tie:'#3a9aa0', glasses:true, wrinkle:true}) },
+  qiu:  { name:'厲主席', color:'#a8742a', voice:'lo', av: makeAvatar({skin:'#e6b488', hair:'old',   hairC:'#d6d4cc', suit:'#54382a', shirt:'#f2ead8', tie:'#b0922e', stache:'#cfcdc4', wrinkle:true}) },
+  gong: { name:'龔瑞欽', color:'#5a7a9a', voice:'lo', av: makeAvatar({skin:'#e8be92', hair:'slick', hairC:'#7e7e78', suit:'#3a4452', shirt:'#eef0f2', tie:'#46586a', glasses:true, wrinkle:true}) },
+  quan: { name:'全祕書', color:'#9a6a8a', voice:'f',  av: makeAvatar({skin:'#f4d0aa', hair:'shortf',hairC:'#4a3328', suit:'#6e5a6e', shirt:'#f2eef4'}) },
+  jia:  { name:'賈調查官', color:'#4a6a4a', voice:'m', av: makeAvatar({skin:'#ecc096', hair:'slick', hairC:'#1a1612', suit:'#2e3a2e', shirt:'#eef2ec', tie:'#1e2a1e'}) }
 };
 
 /* ===== backgrounds ===== */
@@ -1693,9 +1698,341 @@ const CASE3 = {
   ]
 };
 
+/* ===== case4.js : 第四話「容積的代價」(特別篇・取材真實案件改編) ===== */
+const CASE4 = {
+  title:'容積的代價',
+  sub:'北都市・金鼎城容積弊案',
+  desc:'北都市前市長因「金鼎城」20%容積獎勵案遭起訴，檢方求刑28年6月。取材自真實司法案件改編——這一次，結局未必如你所願。',
+  evidence:[
+    {id:'badge',   icon:'⚖️', name:'律師徽章', desc:'林辯的律師徽章。「真相」二字面前，沒有勝負，只有檢驗。'},
+    {id:'file4',   icon:'📋', name:'起訴書卷宗', desc:'北都地檢起訴前市長祁文遠等十一人。罪名：違背職務收賄、圖利、公益侵占、背信四罪，對祁求刑28年6月。檢方主張金鼎城20%容積獎勵不法利益逾百億元。'},
+    {id:'donate',  icon:'💴', name:'政治獻金明細', desc:'容積案審議關鍵期間，威宇集團多名「員工」以個人名義分批匯入合計210萬元政治獻金，均依法申報。檢方主張此為以獻金為名之賄賂。'},
+    {id:'excel',   icon:'💾', name:'行動硬碟EXCEL', desc:'扣案行動硬碟中「工作簿」檔案第12列記載：「日期2022/11/1・姓名 小厲・數字 1500」。檢方主張此即收受1500萬元賄款之紀錄。'},
+    {id:'forensic',icon:'🔬', name:'數位鑑識報告', desc:'該EXCEL檔案建立時間為祁文遠「卸任市長之後」的某日凌晨。該列僅有日期、代號與數字，查無任何憑證、收據或金流文件與之對應。'},
+    {id:'bank',    icon:'🏧', name:'銀行提領紀錄', desc:'厲主席的祕書於約一個月內，自厲之個人帳戶分十餘次密集提領現金，合計1600萬元，每筆均低於大額通報門檻。'},
+    {id:'sched',   icon:'📆', name:'行程比對表', desc:'辯護團隊整理：起訴書所指1500萬元「交付期間」（10/19～11/1），市長公務行程與官邸門禁紀錄，查無與厲主席單獨會面之任何紀錄。'},
+    {id:'minutes', icon:'🏛️', name:'都委會會議紀錄', desc:'第783次會議決議：同意金鼎城申請韌性城市、智慧城市、宜居城市三項貢獻獎勵，合計獎勵容積以基準容積20%為上限。容積率自560%增至840%。'},
+    {id:'report',  icon:'📑', name:'監察院調查報告', desc:'金鼎城為拆除重建之「新建案」，並非都市更新案；比照都更給予20%獎勵容積，於法無據。'},
+    {id:'sign',    icon:'🖊️', name:'公文簽核影本', desc:'關鍵簽呈上，時任龔副市長簽註「依都委會專業決議辦理」；最關鍵之一份，龔於核章欄「未簽名」——該公文最終由市長親自批示。'},
+    {id:'fund',    icon:'📚', name:'基金會帳冊', desc:'「澄望基金會」帳冊顯示，827萬元基金會款項流向競選辦公室人員薪資。檢方主張此為挪用，構成背信。'}
+  ],
+  testimonies:{
+    t1:{
+      title:'一千六百萬的去向', who:'quan',
+      statements:[
+        { text:'從九月下旬開始，主席陸續要我去銀行領現金，前後跑了十幾趟，一共一千六百萬。',
+          press:[
+            {t:'say', c:'lin', text:'為什麼要分十幾趟？一次領出來不是比較省事？'},
+            {t:'sp', v:'quan', pose:'sweat'},
+            {t:'say', c:'quan', text:'單筆金額太大，銀行會關懷提問、要填一堆表……主席說「不要那麼麻煩」。'},
+            {t:'think', text:'（每一筆都壓在通報門檻之下……這個細節，對辯方可不是好消息。先記著。）'}
+          ]},
+        { text:'領回來的現金，主席要我用紙袋裝好。他說：「這是要給祁市長的。」',
+          press:[
+            {t:'say', c:'lin', text:'「要給祁市長的」——這句話，妳是親耳聽到？'},
+            {t:'sp', v:'quan', pose:'normal'},
+            {t:'say', c:'quan', text:'親耳聽到。不過……主席講話常常半開玩笑，真真假假的。'},
+            {t:'think', text:'（轉述他人陳述的傳聞證言，而且語意連證人自己都拿不準。）'}
+          ]},
+        { text:'十月底某個晚上，主席帶著那個紙袋出門——他親手把一千五百萬，交給了祁市長。',
+          ev:'sched',
+          press:[
+            {t:'say', c:'lin', text:'交付的那個晚上——妳人在哪裡？'},
+            {t:'sp', v:'quan', pose:'sweat'},
+            {t:'say', c:'quan', text:'我……我把主席送上車，之後就先回家了。'},
+            {t:'think', text:'（送上車就回家了？那麼「親手交給祁市長」這個畫面——她到底是怎麼「看到」的？）'}
+          ],
+          win:[
+            {t:'sp', v:'quan', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'妳把主席送上車就回家了——「交付的瞬間」，妳根本不在場！'},
+            {t:'say', c:'lin', text:'那句「親手交給祁市長」，是妳親眼所見……還是妳的「想像」？！'},
+            {t:'sp', v:'quan', pose:'sweat'},
+            {t:'say', c:'quan', text:'我……主席那幾天心情特別好，我就以為……一定是送到了……'},
+            {t:'flash'},
+            {t:'say', c:'lin', pose:'angry', text:'再請看辯方提出的行程比對表——起訴書所指的十四天「交付期間」，市長公務行程與官邸門禁紀錄，查無與厲主席「任何一次」單獨會面！'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'obj', c:'yan'},
+            {t:'say', c:'yan', pose:'angry', text:'異議！現金交付，本來就是為了不留痕跡！私下會面當然不會出現在官方行程上！'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'異議之旨可以理解。然證人就「交付」一節既非親見親聞，其證明力即須其他證據補強。'},
+            {t:'sp', v:'yan', pose:'smug'},
+            {t:'say', c:'yan', text:'……很好。那就請庭上看看「其他證據」。檢方聲請傳喚承辦調查官，說明扣案行動硬碟的內容。'},
+            {t:'think', text:'（來了……檢方真正的王牌：那一行EXCEL。）'},
+            {t:'bgm', v:'cross'},
+            {t:'testimony', v:'t2'}
+          ]},
+        { text:'之後幾天，主席心情特別好，還說：「市長那邊，都打點好了。」',
+          press:[
+            {t:'say', c:'lin', text:'「打點好了」——也可能是指陳情案的進度、政策的溝通，不是嗎？'},
+            {t:'sp', v:'quan', pose:'normal'},
+            {t:'say', c:'quan', text:'這我就不知道了。主席就是那麼說的，怎麼解釋是你們的事。'},
+            {t:'think', text:'（語意模糊的傳聞。一句都不能放過——但光憑這種話，也定不了任何人的罪。）'}
+          ]}
+      ]
+    },
+    t2:{
+      title:'第12列的數字', who:'jia',
+      statements:[
+        { text:'我們在被告住處扣得一顆行動硬碟，裡面有一個名為「工作簿」的EXCEL檔案。',
+          press:[
+            {t:'say', c:'lin', text:'硬碟的扣押與保管程序，請說明。'},
+            {t:'sp', v:'jia', pose:'normal'},
+            {t:'say', c:'jia', text:'搜索全程錄影、依法扣押、即時封緘，鑑識過程完整留存。程序面，辯護人挑不出毛病的。'},
+            {t:'think', text:'（程序確實無懈可擊……那就正面進攻「內容」吧。）'}
+          ]},
+        { text:'檔案第12列清楚記載：「日期2022/11/1・姓名 小厲・數字 1500」——這，就是收受一千五百萬賄款的紀錄。',
+          ev:'forensic',
+          press:[
+            {t:'say', c:'lin', text:'「小厲」就一定是厲主席？「1500」就一定是一千五百萬「元」？'},
+            {t:'sp', v:'jia', pose:'normal'},
+            {t:'say', c:'jia', text:'對照全案脈絡，這是最合理的推斷。'},
+            {t:'think', text:'（推斷。又是推斷。——而這份檔案本身，還有一個他沒說出口的「時間問題」。）'}
+          ],
+          win:[
+            {t:'sp', v:'jia', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'請看數位鑑識報告——這個檔案的「建立時間」，是祁文遠「卸任市長之後」的某日凌晨！'},
+            {t:'say', c:'lin', text:'而所謂第12列，只有日期、代號與一個數字。沒有憑證、沒有收據、沒有任何一筆金流文件與它對應！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'一行事後鍵入的數字，可以是備忘、可以是待查款項、可以是任何東西——「帳冊上的記載」，永遠不等於「金錢的交付」！'},
+            {t:'sp', v:'jia', pose:'sweat'},
+            {t:'say', c:'jia', text:'但是配合密集提領紀錄、配合祕書的證詞——'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'提領紀錄證明的，是「錢離開了厲主席的帳戶」。它從來無法證明——「錢進了誰的口袋」。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'……就一千五百萬元部分，交付事實是否達於無合理懷疑之程度，本庭將於評議時嚴格審酌。'},
+            {t:'sp', v:'mei', pose:'smile'},
+            {t:'say', c:'mei', text:'（學長！最大的一筆被我們打下來了！照這個態勢——）'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'think', text:'（不……別高興得太早。看嚴檢察官的表情——從頭到尾，他都沒有慌。）'},
+            {t:'sp', v:'yan', pose:'smug'},
+            {t:'say', c:'yan', text:'辯護人，精彩。一千五百萬，檢方「割愛」也無妨。'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'say', c:'yan', text:'因為本案的地基，從來就不是那一行EXCEL——而是「210萬的對價」，與「20%的容積」。'},
+            {t:'say', c:'yan', text:'檢方傳喚——時任北都市副市長，龔瑞欽。'},
+            {t:'sp', v:'gong', pose:'sad'},
+            {t:'say', c:'gong', text:'……龔瑞欽，到庭。我已經認罪了。今天，我把我知道的，全部說完。'},
+            {t:'bgm', v:'corner'},
+            {t:'testimony', v:'t3'}
+          ]},
+        { text:'被告卸任後深夜整理這份檔案，顯然是在清點任內收受的款項。',
+          press:[
+            {t:'say', c:'lin', text:'「顯然」？這兩個字的依據是什麼？'},
+            {t:'sp', v:'jia', pose:'normal'},
+            {t:'say', c:'jia', text:'多年辦案經驗的合理推斷。'},
+            {t:'think', text:'（經驗是辦案的起點，但不是法庭上的證據。）'}
+          ]},
+        { text:'至於經手保管款項的貼身祕書「柚子」，偵查前即已出境、至今未到案——此即畏罪。',
+          press:[
+            {t:'say', c:'lin', text:'未到案的證人，辯方無從詰問。用一個無法詰問的人，來推論被告有罪——程序上站得住腳嗎？'},
+            {t:'sp', v:'jia', pose:'sweat'},
+            {t:'say', c:'jia', text:'……本案尚有其他補強證據，不以此為唯一依據。'},
+            {t:'think', text:'（「柚子」……全案最大的黑洞。她一天不回來，有些事就一天問不清——對檢方如此，對辯方，何嘗不是。）'}
+          ]}
+      ]
+    },
+    t3:{
+      title:'速審速決', who:'gong',
+      statements:[
+        { text:'那年的便當會上，市長裁示把金鼎城陳情案「送都委會研議」；之後指定我擔任專案PM，要求「速審速決」。',
+          press:[
+            {t:'say', c:'lin', text:'「速審速決」——這四個字的語境是什麼？'},
+            {t:'sp', v:'gong', pose:'normal'},
+            {t:'say', c:'gong', text:'是市長的口頭禪，他對每個案子都求快。但是這個案子……快得不一樣。快得，所有人都不敢喘氣。'},
+            {t:'think', text:'（「快得不一樣」是主觀感受。但「裁示送研議」與「指定PM」，是白紙黑字的事實。）'}
+          ]},
+        { text:'身為工程出身的副市長，我「從頭到尾」都向市長明確示警：給金鼎城容積獎勵，於法無據！',
+          ev:'sign',
+          press:[
+            {t:'say', c:'lin', text:'你所謂的示警——是口頭，還是書面？'},
+            {t:'sp', v:'gong', pose:'sweat'},
+            {t:'say', c:'gong', text:'口頭……很多次口頭。在電梯裡、在會前會、在走廊上……'},
+            {t:'think', text:'（口頭。死無對證的口頭。那麼「書面」上——他親筆寫下的，是什麼？）'}
+          ],
+          win:[
+            {t:'sp', v:'gong', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'公文簽核影本在此——關鍵簽呈上，你親筆簽註的是：「依都委會專業決議辦理」！'},
+            {t:'say', c:'lin', text:'通篇，沒有半個字示警！而最關鍵的那一份，你選擇「不簽名」——一個字都不留！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'你口中「從頭到尾的明確示警」——在白紙黑字上，連一個標點符號都找不到！'},
+            {t:'sp', v:'gong', pose:'sad'},
+            {t:'sfx', v:'thud'},
+            {t:'say', c:'gong', text:'……我不敢寫。寫了，就是公然跟市長作對……'},
+            {t:'say', c:'gong', pose:'sad', text:'我不簽名……不簽名，就已經是我這個做了四十年工程的技術官僚，最大、最大的抗議了啊……'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'think', text:'（證言的可信度，動搖了。──但是，等等。這個「不簽名」……）'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'辯護人，謝謝你。你剛剛，替檢方證明了一件事。'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'flash'},
+            {t:'say', c:'yan', pose:'angry', text:'連副市長都「不敢簽」的公文——是被告，親、自、批、示、的！'},
+            {t:'shake'},
+            {t:'say', c:'yan', text:'監察院調查在卷：金鼎城是新建案，並非都更案，20%容積獎勵於法無據。'},
+            {t:'say', c:'yan', text:'審議關鍵期間，210萬元以集團員工名義分批匯入；澄望基金會827萬元，流向競選辦公室薪資。'},
+            {t:'say', c:'yan', pose:'smug', text:'便當會、專案PM、親簽公文、金流、對價——檢方的主張，自始至終，一以貫之。'},
+            {t:'sp', v:'lin', pose:'angry'},
+            {t:'say', c:'lin', text:'辯方最後陳述！一千五百萬，已證明不能採信；210萬元係依法申報之政治獻金；容積獎勵係經都委會「合議制」之專業決議——'},
+            {t:'say', c:'lin', pose:'normal', text:'以結果回頭推論動機、以行政裁量入人於罪——動搖的，將是整個文官體系依法行政的根基。請庭上，明察。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'兩造辯論終結。本庭定期宣判。'},
+            {t:'bg', v:'night'},
+            {t:'rain', v:true},
+            {t:'bgm', v:null},
+            {t:'narr', text:'宣判之日。\n法院外擠滿了支持者、抗議者，與攝影機。\n所有人都在等待，同一個答案。'},
+            {t:'rain', v:false},
+            {t:'bg', v:'court'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'主文。被告祁文遠，犯違背職務收受賄賂罪、對主管事務圖利罪、公益侵占罪、背信罪——'},
+            {t:'wait', v:900},
+            {t:'say', c:'judge', text:'應執行有期徒刑，十七年。褫奪公權六年。'},
+            {t:'verdict', v:'有罪', guilty:true},
+            {t:'sfx', v:'thud'},
+            {t:'bgm', v:'sad'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'say', c:'judge', text:'判決理由摘要。一、被訴收受一千五百萬元部分——「不能證明」。辯方所指各節，本庭採認。'},
+            {t:'say', c:'judge', text:'二、210萬元部分，認定於市長辦公室完成對價合意，以政治獻金為名、行賄賂之實，違背職務收賄罪成立。'},
+            {t:'say', c:'judge', text:'三、金鼎城非都市更新案，20%容積獎勵於法無據，圖利罪成立。四、侵占政治獻金及基金會款項，均成立。全案，得上訴。'},
+            {t:'sp', v:'qi', pose:'normal'},
+            {t:'say', c:'qi', text:'……我不服。我會上訴——二審、三審，上訴到底。'},
+            {t:'say', c:'qi', pose:'sad', text:'歷史會證明我是清白的。或者……證明我錯了。但那要由「確定判決」來說——不是由今天。'},
+            {t:'bg', v:'hall'},
+            {t:'narr', text:'閉庭後・法院走廊'},
+            {t:'sp', v:'mei', pose:'sad'},
+            {t:'say', c:'mei', text:'學長……我不懂。我們明明每一場詰問都贏了。一千五百萬是我們打掉的……為什麼……'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'我們贏下了每一個「點」。但法庭評議的，是整張「面」。'},
+            {t:'say', c:'lin', text:'小梅，辯護人的職責，從來不是保證無罪——是確保每一項證據都被檢驗、每一個程序都被質疑、每一句證言都被詰問。今天，我們做到了：一千五百萬，從判決裡消失了。'},
+            {t:'say', c:'lin', pose:'normal', text:'剩下的，交給上訴審。在判決確定之前，無罪推定，仍然有效。這就是法治——不只在你贏的時候。'},
+            {t:'think', text:'（天平不會永遠傾向你。但只要每一次稱量都被全程檢視——下一次開庭，就永遠值得全力以赴。）'},
+            {t:'narr', text:'本案檢辯雙方均已提起上訴，\n現由上訴審法院審理中。\n\n—— 第四話・完 ——'},
+            {t:'end'}
+          ]},
+        { text:'都委會第783次會議通過了三項貢獻獎勵，合計20%。容積率，從560%一路墊高到840%。',
+          press:[
+            {t:'say', c:'lin', text:'都委會是合議制，十多位專業委員共同決議——這不正代表程序合法、結論專業？'},
+            {t:'sp', v:'gong', pose:'sad'},
+            {t:'say', c:'gong', text:'合議制……主席定了調，幕僚做好了球，委員們……還能說什麼呢。'},
+            {t:'think', text:'（這句話，檢辯雙方都會想拿去引用。合議制是盾牌，也是遮羞布——端看誰在說。）'}
+          ]},
+        { text:'我認罪了。對不起市民，也對不起我自己四十年的工程專業。',
+          press:[
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'……辯方對這句陳述，沒有問題。'},
+            {t:'sp', v:'gong', pose:'sad'},
+            {t:'say', c:'gong', text:'林律師，我知道你在做你的工作。做得很好。……只是有些帳，遲早，要算清楚的。'},
+            {t:'think', text:'（認罪者的懺悔，是真心，還是訴訟策略？……我分不出來。也許，兩者都是。）'}
+          ]}
+      ]
+    }
+  },
+  script:[
+    {t:'title', ep:'第四話', name:'容積的代價'},
+    {t:'bgm', v:null},
+    {t:'bg', v:'night'},
+    {t:'narr', text:'【改編聲明】\n本章節為虛構創作，取材自公開報導之司法案件並經改編，\n人物、團體、公司與地名均為虛構。\n現實案件一審宣判後，檢辯雙方均已提起上訴。\n在判決確定之前——無罪推定。'},
+    {t:'bgm', v:'invest'},
+    {t:'bg', v:'office'},
+    {t:'narr', text:'數月後・林辯法律事務所'},
+    {t:'sp', v:'mei', pose:'shock'},
+    {t:'say', c:'mei', text:'學長！！北都市那件「世紀大案」——金鼎城容積案的辯護團，正式來函邀請你加入了！'},
+    {t:'sp', v:'lin', pose:'shock'},
+    {t:'say', c:'lin', text:'……前市長祁文遠的案子？那可是檢方求刑二十八年六個月、整個辯護團十幾位律師的超大型案件。'},
+    {t:'ev', v:'badge'},
+    {t:'ev', v:'file4'},
+    {t:'sp', v:'mei', pose:'normal'},
+    {t:'say', c:'mei', text:'對方說，看了你連續三件無罪的法庭表現，希望借重你「找矛盾」的詰問功力。當事人今天下午就到！'},
+    {t:'think', text:'（違背職務收賄、圖利、公益侵占、背信——四罪併罰。被告是叱吒風雲的前市長。媒體早已開庭千百回……而真正的法庭，才正要開始。）'},
+    {t:'sp', v:'qi', pose:'normal'},
+    {t:'say', c:'qi', text:'林律師，久仰。祁文遠。——抱歉，腳步聲有點吵，腳上這個電子腳環，走到哪響到哪。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'（羈押一年後高額交保、科技監控……眼前這位曾經的市長，語氣平靜得出奇。）'},
+    {t:'say', c:'qi', pose:'normal', text:'我把話說在前面：那210萬，是依法申報的政治獻金，一毛都查得到。容積獎勵，是都委會十幾位委員合議的專業決議。'},
+    {t:'say', c:'qi', pose:'angry', text:'至於那個什麼「小厲1500」——我這輩子記過幾萬筆數字，一行EXCEL也能當成鐵證？笑話。'},
+    {t:'say', c:'qi', pose:'normal', text:'我不要你保證勝訴。我只要求一件事：把檢方的每一項證據，都放到放大鏡底下。辦得到嗎？'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'辦得到。而且不論放大鏡照出什麼——我都會讓法庭看見。'},
+    {t:'say', c:'qi', pose:'smile', text:'很好。我就喜歡這種說話方式。資料都在這裡：獻金的申報明細，還有我們整理的行程比對表。'},
+    {t:'ev', v:'donate'},
+    {t:'ev', v:'sched'},
+    {t:'choice', prompt:'龐大的卷證從何下手？', opts:[
+      {text:'從「錢」下手——金流是貪污案的骨架', s:[
+        {t:'say', c:'lin', text:'貪污案的攻防，從來都在金流。先把每一塊錢的路徑畫出來。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'了解！我去聲請閱卷！'}
+      ]},
+      {text:'從「容積」下手——程序合法性是本案靈魂', s:[
+        {t:'say', c:'lin', text:'20%容積獎勵到底於法有據還是無據——這才是本案真正的戰場。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'法規跟會議紀錄，我來整理對照表！'}
+      ]}
+    ]},
+    {t:'bg', v:'office'},
+    {t:'bgm', v:'invest'},
+    {t:'narr', text:'開庭前・卷證攻防準備'},
+    {t:'menu', prompt:'準備工作——先做哪一項？', exit:'準備完成，前往北都地院', auto:false, opts:[
+      {text:'閱卷：檢方的金流證據', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'閱卷拿到了！檢方的核心物證：扣案行動硬碟裡的EXCEL、厲主席帳戶的提領紀錄——還有基金會的帳冊。'},
+        {t:'ev', v:'excel'},
+        {t:'ev', v:'bank'},
+        {t:'ev', v:'fund'},
+        {t:'think', text:'（「小厲・1500」……一行數字，十四個位元組，壓著二十八年六個月的求刑。這一行字的「身世」，必須查到底。）'}
+      ]},
+      {text:'聲請：數位鑑識與公文調閱', once:true, s:[
+        {t:'sp', v:'mei', pose:'shock'},
+        {t:'say', c:'mei', text:'學長，鑑識報告出來了——那個EXCEL檔的「建立時間」，是祁市長「卸任之後」的某天凌晨！'},
+        {t:'ev', v:'forensic'},
+        {t:'sp', v:'lin', pose:'shock'},
+        {t:'think', text:'（卸任後才建檔……在任收賄、卸任記帳？還是單純的事後備忘？——「記載」與「交付」之間，隔著一條檢方必須自己跨過去的河。）'},
+        {t:'say', c:'mei', text:'另外，市府公文的簽核影本也調到了。學長你看這份——副市長簽註意見之後，核章欄是「空白」的，最後是市長親自批示。'},
+        {t:'ev', v:'sign'},
+        {t:'think', text:'（副市長不簽、市長親簽……這份公文是雙面刃。它會傷到誰，端看在法庭上「誰先亮出它」。）'}
+      ]},
+      {text:'研究：容積獎勵的法源攻防', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'法規對照做好了。都委會第783次會議紀錄：三項「貢獻獎勵」合計20%，容積率從560%墊到840%。'},
+        {t:'ev', v:'minutes'},
+        {t:'say', c:'mei', pose:'sad', text:'可是……監察院的調查報告寫得很硬：金鼎城是「新建案」不是都更案，比照都更給獎勵容積，「於法無據」。'},
+        {t:'ev', v:'report'},
+        {t:'think', text:'（辯方的論述：依都市計畫法授權、合議制專業決議。檢方的論述：於法無據、量身定做。……同一份會議紀錄，兩種讀法。法庭會選哪一種？）'}
+      ]}
+    ]},
+    {t:'bg', v:'hall'},
+    {t:'bgm', v:null},
+    {t:'narr', text:'開庭當日・北都地方法院\n走廊上擠滿了記者與攝影機，快門聲連成一片。'},
+    {t:'sp', v:'qi', pose:'normal'},
+    {t:'say', c:'qi', text:'林律師。今天外面有一萬個人已經寫好了判決——支持我的，和反對我的，各五千。'},
+    {t:'say', c:'qi', pose:'smile', text:'幸好，法庭裡的判決，只能有一份。進去吧。'},
+    {t:'bg', v:'court'},
+    {t:'bgm', v:'court'},
+    {t:'narr', text:'北都地方法院・刑事大法庭\n貪污治罪條例等案件・審理程序'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'現在開庭。本件被告祁文遠等，違反貪污治罪條例等案件，進行審理程序。'},
+    {t:'sp', v:'yan', pose:'normal'},
+    {t:'say', c:'yan', text:'……沒想到，會在北都的法庭再見到你，辯護人。本席奉調支援本案公訴。'},
+    {t:'sp', v:'yan', pose:'smug', text:'先把醜話說在前面——這不是夜市的錢箱，也不是手搖店的珍珠。這是一座城市的容積，一百二十億的不法利益。你那套「找矛盾」……盡管使出來。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'think', text:'（嚴正雄……他親自來了。這個案子的份量，由此可見。──不管對手是誰、案子多大，辯護人要做的事，永遠只有一件：檢驗每一項證據。）'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'檢方聲請傳喚證人——厲主席之祕書。請證人入庭，就現金提領與交付經過作證。'},
+    {t:'sp', v:'quan', pose:'normal'},
+    {t:'say', c:'quan', text:'庭上好。我在威宇集團擔任主席祕書十二年……我把我經手的事，照實說。'},
+    {t:'bgm', v:'cross'},
+    {t:'testimony', v:'t1'}
+  ]
+};
+
 
 /* ===== 案件登錄 ===== */
-const CASES = [CASE1, CASE2, CASE3];
+const CASES = [CASE1, CASE2, CASE3, CASE4];
 
 /* ===== engine.js : script runner, testimony system, UI ===== */
 const $ = id => document.getElementById(id);
@@ -1707,7 +2044,7 @@ const G = {
   typing:false, typeTimer:null,
   penalties:5, wrongs:[0,0,0],
   ev:[], curSprite:null,
-  unlocked:1, done:[false,false,false], stars:[false,false,false],
+  unlocked:1, done:CASES.map(()=>false), stars:CASES.map(()=>false),
   settings:{tspeed:1},
   presentMode:false
 };
@@ -2094,8 +2431,8 @@ function showEnding(){
   $('end-inner').innerHTML = `
     <div style="font-size:54px">⚖️</div>
     <h2>全案終結</h2>
-    <p>三場法庭風暴，三次無罪判決。<br>真相不會自己走進法庭——<br>是辯護人把它帶進來的。</p>
-    <p style="color:#f0c469">完美辯護（零失誤）：${perfect} / 3 話<br>${perfect===3?'★ 傳說中的逆轉律師 ★':'下次挑戰零失誤吧！'}</p>
+    <p>${CASES.length} 場法庭風暴。有無罪的歡呼，<br>也有仍在上訴路上的判決。<br>真相不會自己走進法庭——<br>是辯護人把它帶進來的。無論結果如何。</p>
+    <p style="color:#f0c469">完美辯護（零失誤）：${perfect} / ${CASES.length} 話<br>${perfect===CASES.length?'★ 傳說中的逆轉律師 ★':'下次挑戰零失誤吧！'}</p>
     <div class="credits">企劃・編劇・程式・美術・音樂<br>Claude<br><br>監製<br>4東<br><br>本作純屬虛構，如有雷同，異議成立。</div>`;
   showScreen('end');
 }
@@ -2155,7 +2492,7 @@ function boot(){
   $('set-speed').onclick = e => { e.stopPropagation();
     G.settings.tspeed = G.settings.tspeed === 1 ? 2 : G.settings.tspeed === 2 ? 0 : 1;
     renderSettings(); };
-  $('set-unlock').onclick = e => { e.stopPropagation(); G.unlocked = 3; renderSelect(); closeOverlays(); showScreen('select'); };
+  $('set-unlock').onclick = e => { e.stopPropagation(); G.unlocked = CASES.length; renderSelect(); closeOverlays(); showScreen('select'); };
   $('set-quit').onclick = e => { e.stopPropagation(); AudioSys.stopBGM(); closeOverlays(); hideTestimonyUI(); showScreen('title'); };
   $('go-retry').onclick = e => { e.stopPropagation(); retryTestimony(); };
   $('go-title').onclick = e => { e.stopPropagation(); AudioSys.stopBGM(); closeOverlays(); hideTestimonyUI(); showScreen('title'); };
