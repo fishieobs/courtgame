@@ -434,7 +434,11 @@ const CHARS = {
   qiu:  { name:'厲主席', color:'#a8742a', voice:'lo', av: makeAvatar({skin:'#e6b488', hair:'old',   hairC:'#d6d4cc', suit:'#54382a', shirt:'#f2ead8', tie:'#b0922e', stache:'#cfcdc4', wrinkle:true}) },
   gong: { name:'龔瑞欽', color:'#5a7a9a', voice:'lo', av: makeAvatar({skin:'#e8be92', hair:'slick', hairC:'#7e7e78', suit:'#3a4452', shirt:'#eef0f2', tie:'#46586a', glasses:true, wrinkle:true}) },
   quan: { name:'全祕書', color:'#9a6a8a', voice:'f',  av: makeAvatar({skin:'#f4d0aa', hair:'shortf',hairC:'#4a3328', suit:'#6e5a6e', shirt:'#f2eef4'}) },
-  jia:  { name:'賈調查官', color:'#4a6a4a', voice:'m', av: makeAvatar({skin:'#ecc096', hair:'slick', hairC:'#1a1612', suit:'#2e3a2e', shirt:'#eef2ec', tie:'#1e2a1e'}) }
+  jia:  { name:'賈調查官', color:'#4a6a4a', voice:'m', av: makeAvatar({skin:'#ecc096', hair:'slick', hairC:'#1a1612', suit:'#2e3a2e', shirt:'#eef2ec', tie:'#1e2a1e'}) },
+  han:  { name:'韓重霖', color:'#2e7d6e', voice:'m',  av: makeAvatar({skin:'#e8bd92', hair:'slick', hairC:'#100d0a', suit:'#1f2630', shirt:'#f2eada', tie:'#2e7d6e', glasses:true}) },
+  shao: { name:'邵雅婷', color:'#c25888', voice:'f',  av: makeAvatar({skin:'#f6d2ac', hair:'long', hairC:'#3a2820', suit:'#7a4a64', shirt:'#f4ecf0'}) },
+  zhuang:{name:'莊定凱', color:'#9a7a3a', voice:'m',  av: makeAvatar({skin:'#ecc096', hair:'part', hairC:'#2a2018', suit:'#4a4636', shirt:'#f2eada', tie:'#9a7a3a'}) },
+  jian: { name:'簡曉彤', color:'#4a8ac2', voice:'f',  av: makeAvatar({skin:'#f4d0aa', hair:'pony', hairC:'#3a2c20', suit:'#3a5a7a', shirt:'#fff', badge:true}) }
 };
 
 /* ===== backgrounds ===== */
@@ -567,6 +571,36 @@ const BGS = {
       <circle cx="280" cy="452" r="13"/><circle cx="312" cy="444" r="14"/><circle cx="346" cy="451" r="13"/><circle cx="380" cy="446" r="14"/>
     </g>
     <rect y="458" width="400" height="142" fill="#080a10"/>
+  </svg>`,''),
+  trade: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#0a0e16"/>
+    <rect width="400" height="420" fill="#0e141f"/>
+    <g>
+      <rect x="24" y="40" width="160" height="110" rx="6" fill="#060a12" stroke="#1e2a3a" stroke-width="2"/>
+      <polyline points="32,128 48,110 64,118 80,86 96,96 112,70 128,80 144,58 160,66 176,50" fill="none" stroke="#2ec27a" stroke-width="3"/>
+      <g stroke="#2ec27a" stroke-width="6"><path d="M48 110 L48 124"/><path d="M80 86 L80 104"/><path d="M112 70 L112 92"/><path d="M144 58 L144 78"/></g>
+      <g stroke="#e8453a" stroke-width="6"><path d="M64 118 L64 130"/><path d="M96 96 L96 112"/></g>
+    </g>
+    <g>
+      <rect x="216" y="40" width="160" height="110" rx="6" fill="#060a12" stroke="#1e2a3a" stroke-width="2"/>
+      <polyline points="224,70 240,84 256,76 272,98 288,88 304,112 320,100 336,124 352,114 368,134" fill="none" stroke="#e8453a" stroke-width="3"/>
+      <g stroke="#e8453a" stroke-width="6"><path d="M272 98 L272 116"/><path d="M304 112 L304 130"/><path d="M336 124 L336 140"/></g>
+    </g>
+    <g>
+      <rect x="24" y="172" width="352" height="120" rx="6" fill="#060a12" stroke="#1e2a3a" stroke-width="2"/>
+      <g font-family="monospace" font-size="13" font-weight="700">
+        <text x="40" y="200" fill="#2ec27a">臺指期　▲ +128</text>
+        <text x="240" y="200" fill="#e8453a">那斯達克 ▼ -86</text>
+        <text x="40" y="226" fill="#e8453a">黃　金　▼ -1.2%</text>
+        <text x="240" y="226" fill="#2ec27a">原　油　▲ +2.4%</text>
+        <text x="40" y="252" fill="#2ec27a">標普500 ▲ +0.6%</text>
+        <text x="240" y="252" fill="#e8453a">白　銀　▼ -0.9%</text>
+        <text x="40" y="278" fill="#f0c469">小道瓊　── 持平</text>
+        <text x="240" y="278" fill="#2ec27a">黃　豆　▲ +1.1%</text>
+      </g>
+    </g>
+    <rect y="380" width="400" height="220" fill="#12161e"/>
+    <rect y="376" width="400" height="6" fill="#2a3242"/>
   </svg>`,'')
 };
 
@@ -2085,8 +2119,328 @@ const CASE4 = {
 };
 
 
+/* ===== case5.js : 第五話「操盤手的清白」(特別篇・取材真實無罪判決改編) ===== */
+const CASE5 = {
+  title:'操盤手的清白',
+  sub:'鼎峰投資・期貨代操疑雲',
+  desc:'期貨網紅「鬼手」韓重霖被控未經許可、非法經營期貨經理事業。一家投資公司、一個三百萬的帳戶、三十九組IP位址——這一次，辯護人要證明的不是「誰是兇手」，而是「法律的界線」畫在哪裡。取材自真實無罪判決改編。',
+  evidence:[
+    {id:'badge',   icon:'⚖️', name:'律師徽章', desc:'林辯的律師徽章。「真相」二字旁，這次還要再加上一句：「罪刑，法定」。'},
+    {id:'file5',   icon:'📋', name:'案件卷宗', desc:'桃園地院112年度金訴字第1363號。被告韓重霖被訴違反期貨交易法「非法經營期貨經理事業罪」。檢方主張：㈠以鼎峰公司代客操作期貨、抽取一成獲利；㈡全權代操告訴人邵雅婷之期貨帳戶，約定三七分潤。'},
+    {id:'law',     icon:'📜', name:'期貨經理事業定義', desc:'金管會證期局函暨期貨經理事業設置標準第2條：「期貨經理事業」係指接受特定人委任，對委任人「委託之資產」為分析判斷並執行交易者。規範核心——受託「他人」之資金。行為人操作「自己」之資金，不構成。'},
+    {id:'charter', icon:'🏢', name:'公司設立登記表', desc:'鼎峰資本投資股份有限公司設立登記表暨章程：所營事業登記「一般投資業」，依公司法發起設立，址設桃園，並定期召開股東會。'},
+    {id:'roster',  icon:'📇', name:'股東名簿暨出資證明', desc:'鼎峰公司股東名簿：14位股東各出資100萬元。被告韓重霖以配偶江以柔之名義出資100萬（其中含其本人實際出資之50萬元在內），列名股東、與眾人共負盈虧。'},
+    {id:'minutes5',icon:'🗂️', name:'股東會議紀錄', desc:'鼎峰公司股東會議紀錄：投資標的、策略與損益均於股東會討論決議；被告所領之績效獎金，經全體股東同意；期貨須24小時看盤，由被告、莊定凱等多名股東「輪班看盤」共同執行。'},
+    {id:'reward',  icon:'💰', name:'績效獎金明細', desc:'被告按月領取當月公司獲利10%作為績效獎金（110年8月22萬9,813元、110年9月29萬5,164元）——這是「股東會決議的獎金」，不是「受託代操的佣金」。'},
+    {id:'iplog',   icon:'🌐', name:'IP位址清單', desc:'凱鋒期貨函附資料：告訴人邵雅婷之期貨帳戶，於109年12月10日至110年1月12日約一個月間，交易來自「39組不同的IP位址」。'},
+    {id:'chatroom',icon:'💬', name:'三方聊天室截圖', desc:'告訴人邵雅婷、營業員簡曉彤、暱稱「黑桃」三人聊天室。邵雅婷為「分散風險」自行建立此室；「黑桃」於室內要求調高交易額度、並請求協助解鎖密碼——帳號密碼為多人知悉、多處登入。'},
+    {id:'lineHan', icon:'📱', name:'LINE對話紀錄', desc:'被告與告訴人之LINE紀錄：交易標的多經被告與告訴人「逐筆討論、徵得同意」後始下單；且該帳戶自始至終「從未結算、從未實際分潤」。'}
+  ],
+  testimonies:{
+    t1:{
+      title:'代操與抽成', who:'zhuang',
+      statements:[
+        { text:'我們十幾個人，每人拿出一百萬，把錢交給韓重霖去操作期貨。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'「交給韓重霖」——你們是把錢，匯進他的個人帳戶嗎？'},
+            {t:'sp', v:'zhuang', pose:'normal'},
+            {t:'say', c:'zhuang', text:'不是啦，是匯進「鼎峰公司」的戶頭。我們每個人，都是公司的股東。'},
+            {t:'think', text:'（匯進公司、登記成股東……這跟「把錢託給某個人代操」，在法律上是兩回事。）'}
+          ]},
+        { text:'公司買什麼、賣什麼，全是韓重霖一個人說了算，我們只是出錢的。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'真的「全是他一人說了算」？公司，不開股東會的嗎？'},
+            {t:'sp', v:'zhuang', pose:'sweat'},
+            {t:'say', c:'zhuang', text:'會、會開啦……開會的時候大家也會討論，只是他是「鬼手」，分析得最準，我們多半聽他的。'},
+            {t:'think', text:'（「多半聽他的」，不等於「他一人決定」。股東會的紀錄裡，到底寫了什麼？）'}
+          ]},
+        { text:'韓重霖自己一毛錢都沒出，他純粹是收我們的錢、幫我們代操，再抽一成。', pose:'smug',
+          ev:'roster',
+          press:[
+            {t:'say', c:'lin', text:'他「一毛錢都沒出」？這一點，你確定？'},
+            {t:'sp', v:'zhuang', pose:'angry'},
+            {t:'say', c:'zhuang', text:'他出的是「技術」，又不是錢！賺賠，都是我們這些股東在扛的！'},
+            {t:'think', text:'（賺賠都是股東在扛……那如果，他自己「也是」要扛賠的股東呢？）'}
+          ],
+          win:[
+            {t:'sp', v:'zhuang', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'請看鼎峰公司的股東名簿與出資證明！'},
+            {t:'say', c:'lin', text:'被告韓重霖，以配偶江以柔的名義出資一百萬——其中包含他本人實際拿出的五十萬元在內！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'他不只「出了錢」，他還名列股東、和你們一起承擔盈虧！一個用「自己的錢」、跟大家一起投資、一起賠的人——怎麼會是「收別人的錢代操」？！'},
+            {t:'sp', v:'zhuang', pose:'sweat'},
+            {t:'say', c:'zhuang', text:'這……他確實也有出五十萬，賠的時候他自己也賠……我、我一時氣不過才那樣說的……'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'obj', c:'yan'},
+            {t:'say', c:'yan', pose:'angry', text:'異議！縱使被告也出資，他抽取「一成獲利」作為報酬，仍是代他人操作期貨的對價！'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'那一成，是「股東會決議通過」的績效獎金，全體股東都同意——請看績效獎金明細與股東會議紀錄。'},
+            {t:'ev', v:'reward'},
+            {t:'ev', v:'minutes5'},
+            {t:'say', c:'lin', text:'而且，期貨需要24小時盯盤，是由被告、莊定凱「等多名股東輪班看盤」——證人，輪班表上，也有你的名字吧？'},
+            {t:'sp', v:'zhuang', pose:'sad'},
+            {t:'say', c:'zhuang', text:'……有。我也輪過大夜班。標的，是我們開會一起定的。我說的「他一人說了算」，是氣話。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'本庭記明在卷。關於鼎峰公司部分，是否屬「以自有資金共同投資」，本庭將依法認定。檢察官，請就第二項——告訴人帳戶部分，續行舉證。'},
+            {t:'sp', v:'yan', pose:'smug'},
+            {t:'say', c:'yan', text:'……公司那部分，姑且放下。但告訴人的三百萬帳戶，是被告「一個人」全權代操的——這一點，鐵證如山。傳喚告訴人，邵雅婷。'},
+            {t:'bgm', v:'cross'},
+            {t:'testimony', v:'t2'}
+          ]},
+        { text:'賺了他抽一成，賠了算我們的——這不是代操，是什麼？', pose:'angry',
+          press:[
+            {t:'say', c:'lin', text:'賠了「算你們的」？被告自己出資的那五十萬，賠的時候，難道會自己長回來嗎？'},
+            {t:'sp', v:'zhuang', pose:'sweat'},
+            {t:'say', c:'zhuang', text:'這……他那份當然也是跟著賠……'},
+            {t:'think', text:'（共負盈虧——這四個字，正在一點一點瓦解「代操」的指控。）'}
+          ]}
+      ]
+    },
+    t2:{
+      title:'全權委託的真相', who:'shao',
+      statements:[
+        { text:'我存了三百萬到凱鋒期貨帳戶，帳號密碼全部給了韓重霖，從此全權交給他。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'「全權委託」——你們之間，簽過書面的委託契約嗎？'},
+            {t:'sp', v:'shao', pose:'normal'},
+            {t:'say', c:'shao', text:'沒有……是口頭講好的。他是名師，我哪會想到要簽什麼契約。'},
+            {t:'think', text:'（連一紙契約都沒有……「全權委託」目前，只是她單方面的說法。）'}
+          ]},
+        { text:'我們講好，賺錢就三七分潤，他三、我七。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'這個帳戶，實際上「結算、分潤」過幾次？'},
+            {t:'sp', v:'shao', pose:'sweat'},
+            {t:'say', c:'shao', text:'這個……還沒有。帳戶後來……就沒有真的分過。'},
+            {t:'think', text:'（約定了卻從未結算、從未分潤。一個從未履行的口頭「分潤」，能算是代操合意嗎？）'}
+          ]},
+        { text:'那個帳戶，每一筆交易都是韓重霖一個人下的，我自己從沒碰過，更沒讓別人碰過。', pose:'normal',
+          ev:'iplog',
+          press:[
+            {t:'say', c:'lin', text:'「從沒讓別人碰過」——這句話，妳願意擔保？'},
+            {t:'sp', v:'shao', pose:'angry'},
+            {t:'say', c:'shao', text:'我擔保！整個帳戶，從頭到尾，就只有他一個人在操作！'},
+            {t:'think', text:'（整個帳戶只有一個人操作……那麼，帳戶的「登入紀錄」，會不會支持她這句話？）'}
+          ],
+          win:[
+            {t:'sp', v:'shao', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'這是凱鋒期貨提供的IP位址清單！妳的帳戶，在短短一個月內——'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'交易，來自「三十九組」不同的IP位址！一個人、一台電腦，要怎麼變出三十九個上網位置？！'},
+            {t:'sp', v:'shao', pose:'sweat'},
+            {t:'say', c:'shao', text:'三十九組……？我、我不懂這些技術的東西……'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'妳說「只有他一人操作、沒讓任何人碰過」。但這個帳戶，分明是在「許多地方、被許多人」使用過——'},
+            {t:'say', c:'lin', pose:'angry', text:'這已經不是「全權委託一個人」的帳戶了。那麼，到底是誰，在用這個帳戶交易？！'},
+            {t:'sp', v:'yan', pose:'shock'},
+            {t:'say', c:'yan', text:'唔……！IP位址確實有三十九組之多……'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'告訴人之證述，與客觀紀錄不符。為釐清該帳戶實際由何人操作，本庭傳喚開戶之券商營業員，簡曉彤。'},
+            {t:'sp', v:'mei', pose:'normal'},
+            {t:'say', c:'mei', text:'（學長！我把休庭時調到的「三方聊天室」截圖，放進證物欄了——開庭前一定要看！）'},
+            {t:'ev', v:'chatroom'},
+            {t:'think', text:'（聊天室裡那個暱稱「黑桃」……還有告訴人自己的留言。下一場，就能把「全權委託」徹底拆穿。）'},
+            {t:'bgm', v:'corner'},
+            {t:'testimony', v:'t3'}
+          ]},
+        { text:'他是「鬼手」，台上幾萬個粉絲。我當然信任他，把一切都交給他。', pose:'sad',
+          press:[
+            {t:'say', c:'lin', text:'信任一個名師——我能理解。但「信任」，在法律上不等於「全權委託」。'},
+            {t:'sp', v:'shao', pose:'sad'},
+            {t:'say', c:'shao', text:'……我只知道，我虧了錢。我要有人負責。'},
+            {t:'think', text:'（投資虧損的痛，是真的。但把「虧損」直接等於「犯罪」，是檢方必須跨過、卻還沒跨過的那條河。）'}
+          ]}
+      ]
+    },
+    t3:{
+      title:'帳戶的鑰匙', who:'jian',
+      statements:[
+        { text:'邵小姐的凱鋒期貨帳戶，是她本人臨櫃開立的，憑證也是發給她本人。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'憑證發給她本人——那麼，發出去「之後」呢？'},
+            {t:'sp', v:'jian', pose:'normal'},
+            {t:'say', c:'jian', text:'之後她憑證怎麼用、給了誰，老實說……我們營業員，是看不到的。'},
+            {t:'think', text:'（連營業員都看不到「誰在用」——這對檢方的「一人全權代操」，可不是好消息。）'}
+          ]},
+        { text:'依規定，期貨帳戶的憑證一次只能下載一份，所以這個帳戶從頭到尾，只可能有一個人在操作。', pose:'normal',
+          ev:'chatroom',
+          press:[
+            {t:'say', c:'lin', text:'「只可能有一個人」——那麼請問，這個「三方聊天室」，又是怎麼回事？'},
+            {t:'sp', v:'jian', pose:'sweat'},
+            {t:'say', c:'jian', text:'聊天室……？您是說，邵小姐拉我跟那個人……'},
+            {t:'think', text:'（她說「只可能一人」，是憑「規定」推論的。但「實際發生」的事，全寫在這張截圖裡。）'}
+          ],
+          win:[
+            {t:'sp', v:'jian', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'請看這個三人聊天室的截圖——成員是告訴人邵雅婷、營業員妳簡曉彤，還有一個暱稱「黑桃」的人！'},
+            {t:'say', c:'lin', text:'而且，這個聊天室，是邵雅婷「為了分散風險、處理投資」，「自己」建立的！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'室內「黑桃」要求調高交易額度、還請妳協助解鎖被鎖住的密碼——簡小姐，妳當時，是不是真的幫他處理了？'},
+            {t:'sp', v:'jian', pose:'sweat'},
+            {t:'say', c:'jian', text:'……是。我確實依「黑桃」的要求，幫忙調高了額度，也協助解了一次鎖。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'再者——憑證雖然「一次只能下載一份」，但下載之後，是不是可以「複製到別台電腦」，讓多台機器同時操作同一個帳戶？'},
+            {t:'sp', v:'jian', pose:'normal'},
+            {t:'say', c:'jian', text:'……可以。技術上，只要有憑證檔，複製出去，幾台電腦都能同時登入同一個帳戶。'},
+            {t:'sp', v:'lin', pose:'angry'},
+            {t:'say', c:'lin', text:'真相已經很清楚了——'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'這個帳戶，帳號密碼為「多人知悉」、自「多處登入」、由「不只一人」操作！告訴人本人會去公司與被告「逐筆討論、同意後」才下單，她自己也能登入、甚至還可能委由他人交易——'},
+            {t:'say', c:'lin', pose:'angry', text:'這，根本不是「把資產全權交給一個人、任他全權決定」的「全權委託」！'},
+            {t:'sp', v:'yan', pose:'shock'},
+            {t:'sfx', v:'thud'},
+            {t:'say', c:'yan', text:'…………'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'審判長，辯方最後陳述。'},
+            {t:'say', c:'lin', text:'第一，鼎峰公司是以「自有資金」共同投資的投資公司，被告本人也出資、也是股東、也共負盈虧——不是「受託他人資金」，不構成期貨經理事業。'},
+            {t:'say', c:'lin', text:'第二，告訴人的帳戶，由多人、多處操作，雙方更是討論、同意後才交易，從未結算分潤——不該當「全權委託期貨交易業務」的要件。'},
+            {t:'say', c:'lin', pose:'angry', text:'期貨交易法第112條的構成要件，必須嚴格解釋。把「自有資金的共同投資」、把「討論後同意的協力交易」，硬套進「非法代操」的罪名——這已經逾越了罪刑法定的界線！'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'……辯護人。本席承辦公訴多年，求的從來不是「定罪」，是「罪刑相當」。'},
+            {t:'say', c:'yan', pose:'sad', text:'告訴人虧了錢、心有不甘，本席能體會。但證據擺在眼前——「全權委託」與「期貨經理事業」的構成要件，檢方……確實沒能證明到無合理懷疑的程度。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'兩造辯論終結。本庭就被告韓重霖被訴非法經營期貨經理事業案件，宣判如下。'},
+            {t:'bgm', v:null},
+            {t:'narr', text:'——主文——'},
+            {t:'wait', v:800},
+            {t:'say', c:'judge', text:'犯罪事實，應依證據認定之；不能證明被告犯罪者，應諭知無罪之判決。'},
+            {t:'say', c:'judge', text:'本案檢察官所舉證據，尚未達於通常一般人均不致有所懷疑、而得確信為真實之程度。基於無罪推定原則——'},
+            {t:'wait', v:600},
+            {t:'say', c:'judge', text:'被告，韓重霖——'},
+            {t:'verdict', v:'無罪'},
+            {t:'bgm', v:'win'},
+            {t:'say', c:'judge', text:'無罪。本案得上訴。退庭。'},
+            {t:'sfx', v:'gavel'},
+            {t:'sp', v:'han', pose:'shock'},
+            {t:'say', c:'han', text:'……無罪。林律師，我……真的無罪了？'},
+            {t:'sp', v:'lin', pose:'smile'},
+            {t:'say', c:'lin', text:'是。法庭認定：檢方無法證明你犯罪。你自由了。'},
+            {t:'bg', v:'office'},
+            {t:'sp', v:'han', pose:'sad'},
+            {t:'say', c:'han', text:'我這兩年，被叫「期貨騙子」、粉專被灌爆、家人也跟著被指指點點……我只是用自己的本事、跟一群信我的人一起投資。我一直不懂，這到底錯在哪。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'你沒做的事，法律不該替你扛。但我也得說句重話——口頭約定、帳戶共用、從不簽約，這些灰色地帶，差一點就把你自己送進去。'},
+            {t:'say', c:'han', pose:'normal', text:'……我懂了。以後，該白紙黑字的，一個字都不會少。'},
+            {t:'sp', v:'mei', pose:'smile'},
+            {t:'say', c:'mei', text:'學長！這次跟前面都不一樣——沒有什麼「真兇」，對手也不是壞人。我們贏的，到底是什麼啊？'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'我們贏的，是「罪刑法定」。小梅，不是每個被告都是壞人，也不是每次起訴都是對的。'},
+            {t:'say', c:'lin', pose:'smile', text:'辯護人站在被告身邊，不是因為他一定清白——是因為，在國家舉出無可懷疑的證據之前，「任何人」都該被當成清白的。這一條線守住了，每一個人才都安全。'},
+            {t:'think', text:'（無罪，不是「好人」的獎賞。是「檢方沒能證明」時，法律給每一個人的保護。守住這條線——就是守住我們所有人。）'},
+            {t:'narr', text:'—— 第五話・完 ——'},
+            {t:'end'}
+          ]},
+        { text:'我只是按客戶的指示，處理開戶和額度。誰坐在電腦前面下單，我真的看不到。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'連負責的營業員，都無法確認「誰在操作」這個帳戶……'},
+            {t:'sp', v:'jian', pose:'normal'},
+            {t:'say', c:'jian', text:'是的。我們看得到「帳戶」在交易，但看不到「人」。'},
+            {t:'think', text:'（看得到帳戶、看不到人。那麼檢方，要怎麼證明「全權委託」只屬於被告一個人？）'}
+          ]}
+      ]
+    }
+  },
+  script:[
+    {t:'title', ep:'第五話', name:'操盤手的清白'},
+    {t:'bgm', v:null},
+    {t:'bg', v:'night'},
+    {t:'narr', text:'【改編聲明】\n本章節為虛構創作，取材自一則真實之刑事「無罪」判決並經改編，\n人物、團體、公司、帳戶與地名均為化名或虛構。\n本作旨在呈現「無罪推定」與「罪刑法定」之精神。'},
+    {t:'bgm', v:'invest'},
+    {t:'bg', v:'office'},
+    {t:'narr', text:'又過了一段時日・林辯法律事務所'},
+    {t:'sp', v:'mei', pose:'shock'},
+    {t:'say', c:'mei', text:'學長！這次的委託人，是期貨圈很紅的網紅老師——「鬼手」韓重霖！他被檢察官起訴，說他「非法經營期貨經理事業」！'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'期貨經理事業……簡單說，就是「沒有牌照，卻接受別人委託，幫人代操期貨」。這是要金管會許可的特許行業。'},
+    {t:'ev', v:'badge'},
+    {t:'ev', v:'file5'},
+    {t:'sp', v:'mei', pose:'normal'},
+    {t:'say', c:'mei', text:'檢方起訴了兩件事：一是他開「鼎峰公司」幫一群投資人代操、抽一成；二是他全權代操一位邵小姐的三百萬帳戶、講好三七分潤。'},
+    {t:'sp', v:'han', pose:'normal'},
+    {t:'say', c:'han', text:'林律師。我是韓重霖。我承認我教期貨、我操盤，但我從來沒有「替人代操、收佣金」——我每一筆，都是用「自己的錢」、跟一起投資的夥伴在拚。'},
+    {t:'say', c:'han', pose:'angry', text:'檢察官說我是騙子。可是我連一毛錢的佣金都沒收過，憑什麼？'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'（這個案子，沒有「真兇」、沒有「被害的屍體」。要打的，是「構成要件」——他做的事，到底「算不算」法律說的那個罪。）'},
+    {t:'say', c:'lin', text:'我接了。但我要把你每一筆錢的來龍去脈、每一個帳戶的使用情形，全部攤開來查清楚。辦得到嗎？'},
+    {t:'say', c:'han', pose:'normal', text:'公司登記、股東名簿、會議紀錄、對帳單……要什麼，我全給你。我沒有什麼好藏的。'},
+    {t:'choice', prompt:'兩條起訴，先從哪裡下手？', opts:[
+      {text:'從「鼎峰公司」下手——釐清是投資還是代操', s:[
+        {t:'say', c:'lin', text:'先看公司。「用自有資金共同投資」，和「收他人資金代操」，是天差地別的兩件事。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'了解！我去調公司登記和股東會資料！'}
+      ]},
+      {text:'從「告訴人帳戶」下手——釐清是否全權委託', s:[
+        {t:'say', c:'lin', text:'先看那個三百萬的帳戶。「全權委託」有嚴格的定義，不是口頭講講就算。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'我去函調帳戶的交易紀錄跟通聯！'}
+      ]}
+    ]},
+    {t:'bg', v:'trade'},
+    {t:'bgm', v:'invest'},
+    {t:'narr', text:'證據蒐集・卷證攻防'},
+    {t:'menu', prompt:'要調查哪一塊？', exit:'準備完成，前往桃園地院', auto:false, opts:[
+      {text:'調閱：公司登記與股東會紀錄', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'鼎峰公司的資料來了！設立登記表寫得清清楚楚：所營事業是「一般投資業」，依公司法發起設立、還會定期開股東會。'},
+        {t:'ev', v:'charter'},
+        {t:'say', c:'mei', pose:'smile', text:'最關鍵的是這個——股東名簿！韓老師用太太江以柔的名義出資一百萬，裡面包含他自己掏的五十萬，他「本人就是股東」！'},
+        {t:'ev', v:'roster'},
+        {t:'say', c:'mei', text:'還有股東會議紀錄跟績效獎金明細：標的是開會決議的、看盤是大家輪班的、那一成獎金也是股東會通過的。'},
+        {t:'ev', v:'minutes5'},
+        {t:'ev', v:'reward'},
+        {t:'think', text:'（自有資金、共同投資、共負盈虧……這跟「受託他人資金代操」的圖像，完全對不起來。）'}
+      ]},
+      {text:'函調：告訴人帳戶交易與通訊', once:true, s:[
+        {t:'sp', v:'mei', pose:'shock'},
+        {t:'say', c:'mei', text:'學長，凱鋒期貨回函了——告訴人那個帳戶，一個月內的交易，竟然來自「三十九組」不同的IP位址！'},
+        {t:'ev', v:'iplog'},
+        {t:'sp', v:'lin', pose:'shock'},
+        {t:'think', text:'（三十九組IP……如果真是「一個人全權代操」，怎麼會有這麼多上網位置？這個帳戶，恐怕是「多人共用」。）'},
+        {t:'say', c:'mei', pose:'normal', text:'還有更妙的——告訴人自己拉了一個三人聊天室，裡面有她、券商營業員，跟一個叫「黑桃」的人，在裡面喬額度、喬密碼解鎖。'},
+        {t:'ev', v:'chatroom'},
+        {t:'say', c:'mei', text:'另外，韓老師跟告訴人的LINE也調到了：交易標的他們是「逐筆討論、她同意了才下單」，而且帳戶「從來沒結算、沒分過潤」。'},
+        {t:'ev', v:'lineHan'},
+        {t:'think', text:'（討論後才下單、帳戶多人共用、從未分潤……這是「協力交易」，不是「全權委託」。）'}
+      ]},
+      {text:'研究：期貨經理事業的構成要件', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'我把法條跟金管會的函釋整理出來了。重點就一句：「期貨經理事業」是接受特定人委任，操作「委託人」的資產。'},
+        {t:'ev', v:'law'},
+        {t:'sp', v:'lin', pose:'normal'},
+        {t:'think', text:'（規範核心，是「他人」的資金。操作「自己的錢」不算；雙方「討論後同意」的協力交易，也不是「全權委託」。這兩條界線，就是辯方的主戰場。）'},
+        {t:'say', c:'lin', text:'記住這條線，小梅——刑法的構成要件，必須「嚴格解釋」。檢方想把界線往外拉，我們就把它，釘回原處。'}
+      ]}
+    ]},
+    {t:'bg', v:'court'},
+    {t:'bgm', v:'court'},
+    {t:'narr', text:'桃園地方法院・刑事庭\n違反期貨交易法案件・審理程序'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'現在開庭。本院112年度金訴字第1363號，被告韓重霖違反期貨交易法案件，進行審理程序。'},
+    {t:'sp', v:'yan', pose:'normal'},
+    {t:'say', c:'yan', text:'公訴檢察官嚴正雄。被告未經金管會許可，竟以鼎峰公司代客操作期貨抽成、又全權代操告訴人之帳戶——非法經營期貨經理事業，事證明確。'},
+    {t:'sp', v:'yan', pose:'smug', text:'辯護人，又是你。這回沒有「真兇」可以給你逆轉了——被告做了什麼，白紙黑字。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'think', text:'（他說得對，這案子沒有真兇。但「做了什麼」和「成不成立犯罪」，中間隔著一道叫「構成要件」的牆。今天，我來拆牆。）'},
+    {t:'say', c:'lin', text:'辯護人林辯。被告否認犯罪。辯方主張——被告的行為，根本不該當「非法經營期貨經理事業」的構成要件。'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'檢方先就「鼎峰公司」部分舉證。傳喚證人——鼎峰公司股東，莊定凱。'},
+    {t:'sp', v:'zhuang', pose:'normal'},
+    {t:'say', c:'zhuang', text:'證人莊定凱。我……是鼎峰公司的股東之一。當初也是投了一百萬進去的。'},
+    {t:'narr', text:'——詰問開始。\n\n操作說明：\n◀ ▶ 切換證言／「等一下」追問細節\n「出示證物」戳破證言與證物的矛盾！\n（出示錯誤會被法庭警告，❗歸零即辯護失敗）'},
+    {t:'bgm', v:'cross'},
+    {t:'testimony', v:'t1'}
+  ]
+};
+
 /* ===== 案件登錄 ===== */
-const CASES = [CASE1, CASE2, CASE3, CASE4];
+const CASES = [CASE1, CASE2, CASE3, CASE4, CASE5];
 
 /* ===== engine.js : script runner, testimony system, UI ===== */
 const $ = id => document.getElementById(id);
