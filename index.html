@@ -2457,6 +2457,38 @@ const G = {
   presentMode:false
 };
 
+/* ---------- progress persistence (localStorage) ---------- */
+const SAVE_KEY = 'gyakuten_save_v1';
+function saveProgress(){
+  try{
+    localStorage.setItem(SAVE_KEY, JSON.stringify({
+      v:1,
+      unlocked: G.unlocked,
+      done: G.done,
+      stars: G.stars,
+      tspeed: G.settings.tspeed,
+      bgm: AudioSys.bgmOn,
+      sfx: AudioSys.sfxOn
+    }));
+  }catch(e){ /* localStorage 不可用（如無痕模式）時靜默忽略 */ }
+}
+function loadProgress(){
+  try{
+    const raw = localStorage.getItem(SAVE_KEY);
+    if(!raw) return;
+    const s = JSON.parse(raw);
+    if(typeof s.unlocked === 'number') G.unlocked = Math.min(CASES.length, Math.max(1, s.unlocked | 0));
+    if(Array.isArray(s.done))  CASES.forEach((_, i) => { G.done[i]  = !!s.done[i];  });
+    if(Array.isArray(s.stars)) CASES.forEach((_, i) => { G.stars[i] = !!s.stars[i]; });
+    if(typeof s.tspeed === 'number') G.settings.tspeed = s.tspeed;
+    if(typeof s.bgm === 'boolean') AudioSys.setBGM(s.bgm);
+    if(typeof s.sfx === 'boolean') AudioSys.setSFX(s.sfx);
+    // 已解鎖的章節，至少要與已通關的進度一致
+    G.done.forEach((d, i) => { if(d) G.unlocked = Math.max(G.unlocked, i + 2); });
+    G.unlocked = Math.min(G.unlocked, CASES.length);
+  }catch(e){ /* 存檔毀損時忽略，使用預設值 */ }
+}
+
 /* ---------- helpers ---------- */
 function showScreen(name){
   G.screen = name;
@@ -2822,7 +2854,8 @@ function caseComplete(){
   AudioSys.stopBGM();
   G.done[G.caseIdx] = true;
   if(G.wrongs[G.caseIdx] === 0) G.stars[G.caseIdx] = true;
-  G.unlocked = Math.max(G.unlocked, G.caseIdx + 2);
+  G.unlocked = Math.min(CASES.length, Math.max(G.unlocked, G.caseIdx + 2));
+  saveProgress();
   hideTestimonyUI();
   if(G.caseIdx === CASES.length - 1) showEnding();
   else { showScreen('select'); renderSelect(); }
@@ -2877,6 +2910,7 @@ function renderSettings(){
 
 /* ---------- boot ---------- */
 function boot(){
+  loadProgress();
   renderPenalty();
   renderSelect();
   $('btn-start').onclick = () => { AudioSys.resume(); showScreen('select'); renderSelect(); };
@@ -2895,12 +2929,12 @@ function boot(){
   $('btn-settings').onclick = e => { e.stopPropagation(); AudioSys.resume(); renderSettings(); openOverlay('ov-settings'); };
   $('ov-record').querySelector('.ov-close').onclick = e => { e.stopPropagation(); closeOverlays(); };
   $('ov-settings-close').onclick = e => { e.stopPropagation(); closeOverlays(); };
-  $('set-bgm').onclick = e => { e.stopPropagation(); AudioSys.setBGM(!AudioSys.bgmOn); renderSettings(); };
-  $('set-sfx').onclick = e => { e.stopPropagation(); AudioSys.setSFX(!AudioSys.sfxOn); renderSettings(); };
+  $('set-bgm').onclick = e => { e.stopPropagation(); AudioSys.setBGM(!AudioSys.bgmOn); renderSettings(); saveProgress(); };
+  $('set-sfx').onclick = e => { e.stopPropagation(); AudioSys.setSFX(!AudioSys.sfxOn); renderSettings(); saveProgress(); };
   $('set-speed').onclick = e => { e.stopPropagation();
     G.settings.tspeed = G.settings.tspeed === 1 ? 2 : G.settings.tspeed === 2 ? 0 : 1;
-    renderSettings(); };
-  $('set-unlock').onclick = e => { e.stopPropagation(); G.unlocked = CASES.length; renderSelect(); closeOverlays(); showScreen('select'); };
+    renderSettings(); saveProgress(); };
+  $('set-unlock').onclick = e => { e.stopPropagation(); G.unlocked = CASES.length; saveProgress(); renderSelect(); closeOverlays(); showScreen('select'); };
   $('set-quit').onclick = e => { e.stopPropagation(); AudioSys.stopBGM(); closeOverlays(); hideTestimonyUI(); showScreen('title'); };
   $('go-retry').onclick = e => { e.stopPropagation(); retryTestimony(); };
   $('go-title').onclick = e => { e.stopPropagation(); AudioSys.stopBGM(); closeOverlays(); hideTestimonyUI(); showScreen('title'); };
