@@ -418,7 +418,7 @@ function makeAvatar(cfg){
 }
 
 const CHARS = {
-  lin:  { name:'林辯',   color:'#2e6fd8', voice:'m',  av: makeAvatar({skin:'#f2c9a0', hair:'spiky', hairC:'#1d1812', suit:'#274d9e', shirt:'#fff', tie:'#c0392b', badge:true}) },
+  lin:  { name:'張律',   color:'#2e6fd8', voice:'m',  av: makeAvatar({skin:'#f2c9a0', hair:'spiky', hairC:'#1d1812', suit:'#274d9e', shirt:'#fff', tie:'#c0392b', badge:true}) },
   mei:  { name:'小梅',   color:'#2da3a0', voice:'f',  av: makeAvatar({skin:'#f6d4ae', hair:'pony',  hairC:'#5a3a22', suit:'#2da3a0', shirt:'#fff'}) },
   judge:{ name:'審判長', color:'#7a5a1d', voice:'lo', av: makeAvatar({skin:'#eec39a', hair:'judgewig', hairC:'#dcdcd2', suit:'#23232c', collar:'#f2f2ea', beard:'#dcdcd2', wrinkle:true, gavel:true}) },
   yan:  { name:'嚴正雄', color:'#b8322a', voice:'m',  av: makeAvatar({skin:'#edc197', hair:'slick', hairC:'#14100c', suit:'#5e1f24', shirt:'#f2eada', tie:'#2b2b33', glasses:true}) },
@@ -756,13 +756,13 @@ const AudioSys = (() => {
 /* ===== 律師篇：辯護人視角 ===== */
 const CASE_DEF = {
   title:'辯護律師篇',
-  sub:'立場：被告辯護人・林辯',
+  sub:'立場：被告辯護人・張律',
   icon:'⚖️',
-  pId:'lin', pName:'林辯', pColor:'#2e6fd8',
+  pId:'lin', pName:'張律', pColor:'#2e6fd8',
   goTitle:'辯 護 失 敗', goText:'法庭對辯方失去了信任……<br>但真相，值得再試一次。',
-  desc:'你是辯護律師林辯。把檢方的每一項證據放到放大鏡下檢驗——縱使你贏下每一場詰問，天平，也未必傾向你。',
+  desc:'你是辯護律師張律。把檢方的每一項證據放到放大鏡下檢驗——縱使你贏下每一場詰問，天平，也未必傾向你。',
   evidence:[
-    {id:'badge',   icon:'⚖️', name:'律師徽章', desc:'林辯的律師徽章。「真相」二字面前，沒有勝負，只有檢驗。'},
+    {id:'badge',   icon:'⚖️', name:'律師徽章', desc:'張律的律師徽章。「真相」二字面前，沒有勝負，只有檢驗。'},
     {id:'file4',   icon:'📋', name:'起訴書卷宗', desc:'北都地檢起訴前市長祁文遠等十一人。罪名：違背職務收賄、圖利、公益侵占、背信四罪，對祁求刑28年6月。檢方主張金鼎城20%容積獎勵不法利益逾百億元。'},
     {id:'donate',  icon:'💴', name:'政治獻金明細', desc:'容積案審議關鍵期間，威宇集團多名「員工」以個人名義分批匯入合計210萬元政治獻金，均依法申報。檢方主張此為以獻金為名之賄賂。'},
     {id:'excel',   icon:'💾', name:'行動硬碟EXCEL', desc:'扣案行動硬碟中「工作簿」檔案第12列記載：「日期2022/11/1・姓名 小厲・數字 1500」。檢方主張此即收受1500萬元賄款之紀錄。'},
@@ -945,7 +945,7 @@ const CASE_DEF = {
             {t:'rain', v:false},
             {t:'bg', v:'hall'},
             {t:'sp', v:'qi', pose:'normal'},
-            {t:'say', c:'qi', text:'林律師。不管等一下那扇門裡念出什麼——這段日子，謝謝你。你把能檢驗的，都檢驗了。'},
+            {t:'say', c:'qi', text:'張律師。不管等一下那扇門裡念出什麼——這段日子，謝謝你。你把能檢驗的，都檢驗了。'},
             {t:'sp', v:'lin', pose:'normal'},
             {t:'think', text:'（一千五百萬，我們打掉了。傳聞證言，我們擋下了。可是210萬的對價、容積的法源、基金會的帳……法庭會怎麼稱量？）'},
             {t:'bg', v:'court'},
@@ -1042,7 +1042,7 @@ const CASE_DEF = {
             {t:'sp', v:'lin', pose:'normal'},
             {t:'say', c:'lin', text:'……辯方對這句陳述，沒有問題。'},
             {t:'sp', v:'gong', pose:'sad'},
-            {t:'say', c:'gong', text:'林律師，我知道你在做你的工作。做得很好。……只是有些帳，遲早，要算清楚的。'},
+            {t:'say', c:'gong', text:'張律師，我知道你在做你的工作。做得很好。……只是有些帳，遲早，要算清楚的。'},
             {t:'think', text:'（認罪者的懺悔，是真心，還是訴訟策略？……我分不出來。也許，兩者都是。）'}
           ]}
       ]
@@ -1055,7 +1055,7 @@ const CASE_DEF = {
     {t:'narr', text:'【改編聲明】\n本章節為虛構創作，取材自公開報導之司法案件並經改編，\n人物、團體、公司與地名均為虛構。\n現實案件一審宣判後，檢辯雙方均已提起上訴。\n在判決確定之前——無罪推定。'},
     {t:'bgm', v:'invest'},
     {t:'bg', v:'office'},
-    {t:'narr', text:'數月後・林辯法律事務所'},
+    {t:'narr', text:'數月後・張律法律事務所'},
     {t:'sp', v:'mei', pose:'shock'},
     {t:'say', c:'mei', text:'學長！！北都市那件「世紀大案」——金鼎城容積案的辯護團，正式來函邀請你加入了！'},
     {t:'sp', v:'lin', pose:'shock'},
@@ -1066,7 +1066,7 @@ const CASE_DEF = {
     {t:'say', c:'mei', text:'對方說，看了你過去幾件無罪判決的法庭表現，希望借重你「找矛盾」的詰問功力。當事人今天下午就到！'},
     {t:'think', text:'（違背職務收賄、圖利、公益侵占、背信——四罪併罰。被告是叱吒風雲的前市長。媒體早已開庭千百回……而真正的法庭，才正要開始。）'},
     {t:'sp', v:'qi', pose:'normal'},
-    {t:'say', c:'qi', text:'林律師，久仰。祁文遠。——抱歉，腳步聲有點吵，腳上這個電子腳環，走到哪響到哪。'},
+    {t:'say', c:'qi', text:'張律師，久仰。祁文遠。——抱歉，腳步聲有點吵，腳上這個電子腳環，走到哪響到哪。'},
     {t:'sp', v:'lin', pose:'normal'},
     {t:'say', c:'lin', text:'（羈押一年後高額交保、科技監控……眼前這位曾經的市長，語氣平靜得出奇。）'},
     {t:'say', c:'qi', pose:'normal', text:'我把話說在前面：那210萬，是依法申報的政治獻金，一毛都查得到。容積獎勵，是都委會十幾位委員合議的專業決議。'},
@@ -1124,7 +1124,7 @@ const CASE_DEF = {
     {t:'bgm', v:null},
     {t:'narr', text:'開庭當日・北都地方法院\n走廊上擠滿了記者與攝影機，快門聲連成一片。'},
     {t:'sp', v:'qi', pose:'normal'},
-    {t:'say', c:'qi', text:'林律師。今天外面有一萬個人已經寫好了判決——支持我的，和反對我的，各五千。'},
+    {t:'say', c:'qi', text:'張律師。今天外面有一萬個人已經寫好了判決——支持我的，和反對我的，各五千。'},
     {t:'say', c:'qi', pose:'smile', text:'幸好，法庭裡的判決，只能有一份。進去吧。'},
     {t:'bg', v:'court'},
     {t:'bgm', v:'court'},
@@ -1534,10 +1534,10 @@ const CASE_PROS = {
     {t:'bg', v:'hall'},
     {t:'narr', text:'開庭當日・北都地方法院\n走廊上擠滿了記者與攝影機，快門聲連成一片。'},
     {t:'sp', v:'lin', pose:'normal'},
-    {t:'say', c:'lin', text:'嚴檢察官，幸會。辯護人，林辯。——我拜讀過起訴書了，寫得很重。'},
+    {t:'say', c:'lin', text:'嚴檢察官，幸會。辯護人，張律。——我拜讀過起訴書了，寫得很重。'},
     {t:'say', c:'lin', pose:'smile', text:'我的習慣，是把檢方的每一項證據，都放到放大鏡底下。今天庭上，請多指教。'},
     {t:'sp', v:'yan', pose:'normal'},
-    {t:'think', text:'（林辯……連續打贏多件無罪案的「找矛盾」律師。他不虛張、不客套——這種對手，最難纏，也最值得。）'},
+    {t:'think', text:'（張律……連續打贏多件無罪案的「找矛盾」律師。他不虛張、不客套——這種對手，最難纏，也最值得。）'},
     {t:'bg', v:'court'},
     {t:'bgm', v:'court'},
     {t:'narr', text:'北都地方法院・刑事大法庭\n貪污治罪條例等案件・審理程序'},
