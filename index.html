@@ -441,7 +441,11 @@ const CHARS = {
   jian: { name:'簡曉彤', color:'#4a8ac2', voice:'f',  av: makeAvatar({skin:'#f4d0aa', hair:'pony', hairC:'#3a2c20', suit:'#3a5a7a', shirt:'#fff', badge:true}) },
   zheng:{ name:'鄭力誠', color:'#3a86c2', voice:'m',  av: makeAvatar({skin:'#f0c49a', hair:'part', hairC:'#26201a', suit:'#3a6a8a', shirt:'#fff'}) },
   hao:  { name:'顏志豪', color:'#b07a2a', voice:'lo', av: makeAvatar({skin:'#e8b884', hair:'slick', hairC:'#1a1410', suit:'#5a3a1a', shirt:'#f2eada', tie:'#d9a441', stache:'#2a1f16', wide:true}) },
-  jiang:{ name:'江俊男', color:'#3a9a6e', voice:'m',  av: makeAvatar({skin:'#eec39a', hair:'part', hairC:'#241a12', suit:'#2e7a5a', shirt:'#fff'}) }
+  jiang:{ name:'江俊男', color:'#3a9a6e', voice:'m',  av: makeAvatar({skin:'#eec39a', hair:'part', hairC:'#241a12', suit:'#2e7a5a', shirt:'#fff'}) },
+  wu:   { name:'吳家興', color:'#c2762a', voice:'m',  av: makeAvatar({skin:'#e6b07e', hair:'part', hairC:'#2a2018', suit:'#6e4a2a', shirt:'#fff', apron:'#e8e0c8', stache:'#2a2018'}) },
+  zhong:{ name:'鍾立群', color:'#8a6a2a', voice:'lo', av: makeAvatar({skin:'#e8bd92', hair:'slick', hairC:'#16120c', suit:'#33312b', shirt:'#f2eada', tie:'#b0922e', glasses:true}) },
+  shih: { name:'施順元', color:'#3a6a9a', voice:'m',  av: makeAvatar({skin:'#f0c8a0', hair:'part', hairC:'#1c1610', suit:'#2e3e5a', shirt:'#fff', tie:'#3a6a9a', badge:true}) },
+  yu:   { name:'余哲明', color:'#5a8a4a', voice:'m',  av: makeAvatar({skin:'#f0c49a', hair:'spiky', hairC:'#241c14', suit:'#4a7a4a', shirt:'#fff'}) }
 };
 
 /* ===== backgrounds ===== */
@@ -623,6 +627,25 @@ const BGS = {
       <circle cx="38" cy="84" r="16" fill="#22262c"/><circle cx="38" cy="84" r="7" fill="#8a9098"/>
       <circle cx="130" cy="84" r="16" fill="#22262c"/><circle cx="130" cy="84" r="7" fill="#8a9098"/>
     </g>
+  </svg>`,''),
+  diner: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#2a1c14"/>
+    <rect width="400" height="360" fill="#3a281c"/>
+    <rect x="0" y="0" width="400" height="46" fill="#1f140d"/>
+    <rect x="40" y="8" width="320" height="30" rx="6" fill="#7a1f14"/>
+    <text x="200" y="30" font-size="22" font-weight="900" text-anchor="middle" fill="#f0c469" font-family="sans-serif">金牛角牛排館</text>
+    <g fill="#d9a441" opacity=".9"><circle cx="70" cy="120" r="20"/><circle cx="200" cy="120" r="20"/><circle cx="330" cy="120" r="20"/></g>
+    <g stroke="#5a3a22" stroke-width="3"><path d="M70 100 L70 80 M200 100 L200 80 M330 100 L330 80"/></g>
+    <g fill="#46332450"><rect x="36" y="120" width="68" height="6"/><rect x="166" y="120" width="68" height="6"/><rect x="296" y="120" width="68" height="6"/></g>
+    <rect x="30" y="210" width="150" height="120" rx="8" fill="#5a4030"/>
+    <ellipse cx="105" cy="250" rx="52" ry="20" fill="#2a1810"/>
+    <path d="M70 248 Q105 232 140 248 Q140 262 105 268 Q70 262 70 248 Z" fill="#7a3a1a"/>
+    <path d="M84 246 L126 246 M80 254 L130 254" stroke="#3a1c0e" stroke-width="3"/>
+    <rect x="220" y="210" width="150" height="120" rx="8" fill="#5a4030"/>
+    <circle cx="250" cy="250" r="9" fill="#c0c4c8"/><rect x="246" y="250" width="8" height="40" fill="#c0c4c8"/>
+    <circle cx="340" cy="250" r="9" fill="#c0c4c8"/><rect x="336" y="250" width="8" height="40" fill="#c0c4c8"/>
+    <rect y="360" width="400" height="240" fill="#1c120c"/>
+    <rect y="356" width="400" height="8" fill="#3a281c"/>
   </svg>`,'')
 };
 
@@ -2782,8 +2805,323 @@ const CASE6 = {
   ]
 };
 
+/* ===== case7.js : 第七話「空白支票」(特別篇・取材真實無罪判決改編) ===== */
+const CASE7 = {
+  title:'空白支票',
+  sub:'金牛角牛排館・詐領支票疑雲',
+  desc:'一家牛排館的實際老闆，拿著「舊公司大小章」到銀行領了25張空白支票，被檢方以詐欺取財起訴。一審無罪、檢方上訴——這一次，辯護人要在二審法庭證明：詐欺罪的三道門檻，一道都過不去。取材自真實無罪定讞判決改編。',
+  evidence:[
+    {id:'badge',   icon:'⚖️', name:'律師徽章', desc:'張律的律師徽章。背面「真相」二字旁，這次刻的是：「構成要件」。'},
+    {id:'file7',   icon:'📋', name:'案件卷宗', desc:'桃園地院109年度易字第307號（一審無罪）；高院110年度上易字第1891號（二審）。被告吳家興被訴詐欺取財罪（刑法第339條第1項）。檢方主張：他明知公司負責人已變更、已喪失財產支配權，仍持「舊公司大小章」向中州銀行詐領25張空白支票。'},
+    {id:'trust',   icon:'📑', name:'信託登記協議書', desc:'金牛角公司與鴻元投資公司之協議：鴻元協助金牛角向銀行辦理貸款，取得55%出資額「作為擔保」，並明定——「鴻元公司不得行使任何股東權利」，僅得具名協助辦理貸款。'},
+    {id:'bailout', icon:'🤝', name:'紓困協議書', desc:'鍾立群出資代為清償金牛角借款；公司每日營收須匯入鍾指定之帳戶，惟「所有權仍歸屬金牛角公司」。其性質為債權之擔保措施，而非接手經營。'},
+    {id:'equity',  icon:'🏷️', name:'公司變更登記表', desc:'金牛角公司於105年12月12日，將登記董事由戴秀英（被告配偶）變更為鴻元指派之代表人余哲明。——僅止於「登記」。'},
+    {id:'yuwork',  icon:'🧑‍🍳', name:'余哲明任職資料', desc:'掛名董事余哲明，實際上是金牛角牛排館的「工讀生／服務生」，領的是被告發給的薪水，從未實際執行董事職務。'},
+    {id:'bankletter',icon:'🏦', name:'中州銀行函覆', desc:'中州銀行函：本行早於105年12月即經票據交換所通知公司負責人變動，並曾聯繫被告辦理印鑑變更。依「支票存款往來約定書」，帳戶未結清、未辦負責人變更前，本行「仍依原留印鑑核發空白票據」。'},
+    {id:'clerk',   icon:'🗣️', name:'承辦員證述', desc:'銀行承辦員施順元結證：案發前「就已知道」公司負責人變更，還通知過被告來改印鑑；被告領票時「並未聲稱獲得新負責人授權」；因印文與「原留印鑑相符」，才核發票據。'},
+    {id:'taxop',   icon:'🧾', name:'營業稅務資料', desc:'國稅局資料：案發期間（106年1至6月）金牛角仍正常營業、持續向廠商進貨。被告所開支票「均在20萬元以內」，與先前用途無異，係用於支付貨款。'},
+    {id:'auth',    icon:'✍️', name:'戴秀英授權說明', desc:'原掛名負責人戴秀英（被告配偶）證稱：自己只負責廚房，公司營運一向由被告負責，等同「概括授權」被告處理公司事務，包含向銀行請領空白票據。'}
+  ],
+  testimonies:{
+    t1:{
+      title:'入主的老闆', who:'zhong',
+      statements:[
+        { text:'我替金牛角還清了債務、接手了公司。從那天起，這家店就是我鴻元公司在掌控！', pose:'smug',
+          press:[
+            {t:'say', c:'lin', text:'「接手公司」——你拿到的，是「經營權」，還是「擔保」？'},
+            {t:'sp', v:'zhong', pose:'normal'},
+            {t:'say', c:'zhong', text:'我拿到55%股權！過半！過半的公司，當然是我的！'},
+            {t:'think', text:'（55%——他一直強調這個數字。但那55%，當初是用什麼名目拿到的？）'}
+          ]},
+        { text:'吳家興早就喪失了對公司財產的支配權，他根本沒資格動公司的支票！', pose:'angry',
+          ev:'trust',
+          press:[
+            {t:'say', c:'lin', text:'「喪失支配權」？這句話，有任何書面依據嗎？'},
+            {t:'sp', v:'zhong', pose:'smug'},
+            {t:'say', c:'zhong', text:'我們簽了信託登記協議書！白紙黑字，股權都過到我這了！'},
+            {t:'think', text:'（他主動提到信託協議書……那份協議書裡，關於「股東權利」，到底是怎麼寫的？）'}
+          ],
+          win:[
+            {t:'sp', v:'zhong', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'這就是你說的信託登記協議書！上面寫得清清楚楚——鴻元公司取得55%出資額，是「作為擔保」！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'而且白紙黑字明定：「鴻元公司，不得行使任何股東權利」！你連股東權利都不能行使，何來「掌控公司」、何來被告「喪失支配權」？！'},
+            {t:'sp', v:'zhong', pose:'sweat'},
+            {t:'say', c:'zhong', text:'那、那是書面！我們後來有「口頭」改過……'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'口頭改過？那麼請問——你「接手」公司之後，這六個月，金牛角的牛排是誰在煎、員工薪水是誰在發、水電房租稅金是誰在繳？'},
+            {t:'sp', v:'zhong', pose:'sweat'},
+            {t:'say', c:'zhong', text:'……那些雜事，是吳家興在處理沒錯。我只負責每天去收營業額。'},
+            {t:'say', c:'lin', pose:'angry', text:'連你自己都承認——店，是被告在經營！你拿55%是「擔保」、你只去「收錢」。被告，從來沒有喪失對這家店的支配權！'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'obj', c:'yan'},
+            {t:'say', c:'yan', pose:'angry', text:'異議！縱使被告仍在經營，但公司「登記負責人」已是余哲明！被告無權再代表公司！'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'檢察官所指「登記負責人」一節，攸關被告有無代表權，確有查明必要。傳喚登記董事——余哲明。'},
+            {t:'bgm', v:'cross'},
+            {t:'testimony', v:'t2'}
+          ]},
+        { text:'公司大小章我早就換過了，他手上那套是「舊章」，根本是廢紙！', pose:'smug',
+          press:[
+            {t:'say', c:'lin', text:'你換了「南方銀行」那套印鑑——但中州銀行的呢？'},
+            {t:'sp', v:'zhong', pose:'sweat'},
+            {t:'say', c:'zhong', text:'中州銀行……我那時候，不知道公司還有一個中州銀行的帳戶……'},
+            {t:'think', text:'（連公司有哪些帳戶都不知道——這像是「實際在掌管公司財務」的人會說的話嗎？）'}
+          ]},
+        { text:'反正負責人變更了，他就不該再用舊章！這還不夠清楚嗎？', pose:'angry',
+          press:[
+            {t:'say', c:'lin', text:'「不該用」是你的看法。但法律問的是——他用了，有沒有「騙」到誰。'},
+            {t:'sp', v:'zhong', pose:'sweat'},
+            {t:'say', c:'zhong', text:'……'},
+            {t:'think', text:'（負責人變更 ≠ 詐欺。中間還隔著「詐術」「陷於錯誤」「不法所有意圖」三道牆。）'}
+          ]}
+      ]
+    },
+    t2:{
+      title:'掛名的董事', who:'yu',
+      statements:[
+        { text:'我……我是金牛角公司的登記董事。文件上，負責人是我沒錯。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'「文件上」是你。那麼「實際上」呢——你做過哪些董事的工作？'},
+            {t:'sp', v:'yu', pose:'sweat'},
+            {t:'say', c:'yu', text:'這個……董事的工作喔……'},
+            {t:'think', text:'（他答不出來。一個「真董事」，會答不出自己做過什麼嗎？）'}
+          ]},
+        { text:'我是公司負責人，所以公司的事，都該由我作主才對。', pose:'normal',
+          ev:'yuwork',
+          press:[
+            {t:'say', c:'lin', text:'「都該由你作主」——那你每個月，從公司領多少薪水？領的是「董事報酬」嗎？'},
+            {t:'sp', v:'yu', pose:'sweat'},
+            {t:'say', c:'yu', text:'我領的是……欸，這個……'},
+            {t:'think', text:'（薪資的「名目」，會說出他真正的身分。任職資料就在我手上。）'}
+          ],
+          win:[
+            {t:'sp', v:'yu', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'這是你的任職與薪資資料——余哲明先生，你在金牛角的職務是「工讀生」、「服務生」！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'你領的，是被告吳家興發給你的「員工薪水」，不是董事報酬！你被「登記」成董事，但你一天，都沒有真正當過老闆！'},
+            {t:'sp', v:'yu', pose:'sad'},
+            {t:'sfx', v:'thud'},
+            {t:'say', c:'yu', text:'……對不起。我就是個打工的。是公司說要「借我的名字」登記董事，我才簽的。店裡的事，從頭到尾都是吳老闆在管，我連支票長怎樣都沒看過。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'所以——「登記負責人」是掛名的余哲明；「實際負責人」，自始至終都是被告吳家興。'},
+            {t:'say', c:'lin', text:'而被告的配偶戴秀英，當初也只是掛名、只管廚房，早就概括授權被告處理公司一切事務——包含向銀行請領票據。'},
+            {t:'sp', v:'yan', pose:'sweat'},
+            {t:'say', c:'yan', text:'唔……即便如此，被告是「對銀行」隱瞞了負責人變更，才領到票據的——這仍是詐術！'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'此節，須由經辦之銀行人員釐清。傳喚中州銀行承辦員——施順元。'},
+            {t:'bgm', v:'corner'},
+            {t:'testimony', v:'t3'}
+          ]},
+        { text:'公司變更登記那天，我有去簽名，所以我真的是董事啊。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'簽個名，和「實際經營一家公司」，是兩回事。你簽完名之後，回去做什麼了？'},
+            {t:'sp', v:'yu', pose:'sweat'},
+            {t:'say', c:'yu', text:'回去……回去端牛排啊。'},
+            {t:'think', text:'（端牛排的董事……這個答案，比任何證物都誠實。）'}
+          ]},
+        { text:'吳老闆要我來作證，可是……我其實不太懂這些。', pose:'sad',
+          press:[
+            {t:'say', c:'lin', text:'你只要說實話就好。實話，對被告最有利。'},
+            {t:'sp', v:'yu', pose:'normal'},
+            {t:'say', c:'yu', text:'……好。那我就照實講。'},
+            {t:'think', text:'（一個誠實的掛名董事，反而是辯方最有力的證人。）'}
+          ]}
+      ]
+    },
+    t3:{
+      title:'銀行的櫃台', who:'shih',
+      statements:[
+        { text:'被告來領空白支票時，我「誤以為」公司負責人還是戴秀英，才把票交給他的。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'「誤以為」？施先生——案發當時，銀行「知不知道」公司負責人已經變更？'},
+            {t:'sp', v:'shih', pose:'sweat'},
+            {t:'say', c:'shih', text:'這……其實，我們……'},
+            {t:'think', text:'（他遲疑了。銀行到底是「被騙」，還是「明知」？答案在那封函覆裡。）'}
+          ]},
+        { text:'我們銀行完全不知道負責人換了人，是被告刻意隱瞞，我們才會交付票據。', pose:'normal',
+          ev:'bankletter',
+          press:[
+            {t:'say', c:'lin', text:'「完全不知道」？這封中州銀行的官方函覆，要不要當庭念一遍？'},
+            {t:'sp', v:'shih', pose:'sweat'},
+            {t:'say', c:'shih', text:'函……函覆裡寫的是……'},
+            {t:'think', text:'（銀行的白紙黑字，會推翻「被蒙在鼓裡」這套說法。）'}
+          ],
+          win:[
+            {t:'sp', v:'shih', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'中州銀行的官方函覆寫得明明白白——銀行早在105年12月，就「經票據交換所通知」公司負責人變動，還主動聯繫被告來辦印鑑變更！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'函覆更載明：依「支票存款往來約定書」，帳戶未結清、未辦變更前，銀行「仍依原留印鑑核發空白票據」！施先生，這是你們的「規定」，不是被告的「詐術」！'},
+            {t:'sp', v:'shih', pose:'sad'},
+            {t:'say', c:'shih', text:'……是。我承認。案發前我們就知道負責人變了，我自己還打過電話通知被告來改印鑑。'},
+            {t:'say', c:'shih', pose:'normal', text:'那天他來領票，印章跟我們「原留印鑑」相符，我審核過、判斷符合規定，才發票給他。他……也沒有跟我說他是「新負責人授權」的。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'換句話說——銀行不是「陷於錯誤」，是「明知而依規定核發」。被告也沒有施用任何詐術。'},
+            {t:'sp', v:'lin', pose:'angry'},
+            {t:'say', c:'lin', text:'更何況，如果被告真要騙——他大可偽稱「獲得新負責人余哲明授權」、甚至偽刻余哲明的印章。但他沒有！他用的是配偶戴秀英的章、讓銀行「自己判斷」能不能發票！'},
+            {t:'sp', v:'yan', pose:'sweat'},
+            {t:'say', c:'yan', text:'……即使沒有詐術，被告領走25張支票，難道沒有「不法所有的意圖」嗎？！'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'問得好。辯方最後提示——營業稅務資料。'},
+            {t:'say', c:'lin', pose:'angry', text:'案發期間，金牛角仍正常營業、持續向廠商進貨；被告開出的支票「每一張都在20萬元以內」，與過去的用途完全一致，全部用來支付貨款！'},
+            {t:'say', c:'lin', text:'沒有異常的大額支票、沒有挪作個人使用——他領票，是為了「讓這家牛排館繼續開下去」。何來「不法所有」的意圖？'},
+            {t:'sp', v:'yan', pose:'sad'},
+            {t:'wait', v:600},
+            {t:'say', c:'yan', text:'……詐術、陷於錯誤、不法所有意圖。詐欺罪的三道門檻——檢方，一道都沒能跨過去。'},
+            {t:'say', c:'yan', pose:'normal', text:'本席是上訴方。但站在這裡，本席必須承認：一審判被告無罪，沒有錯。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'本案辯論終結。本院就檢察官之上訴，宣判如下。'},
+            {t:'bgm', v:null},
+            {t:'narr', text:'——主文——'},
+            {t:'wait', v:800},
+            {t:'say', c:'judge', text:'被告請領空白支票，未實施詐術；銀行及承辦人亦非陷於錯誤而交付；復查無不法所有之意圖。'},
+            {t:'say', c:'judge', text:'第一審為被告無罪之諭知，核無不當。檢察官之上訴——'},
+            {t:'wait', v:600},
+            {t:'say', c:'judge', text:'上訴，駁回。'},
+            {t:'verdict', v:'無罪'},
+            {t:'bgm', v:'win'},
+            {t:'say', c:'judge', text:'本案不得上訴。被告吳家興，無罪——定讞。'},
+            {t:'sfx', v:'gavel'},
+            {t:'sp', v:'wu', pose:'shock'},
+            {t:'say', c:'wu', text:'……定讞？張律師，是不是說……這件事，到此為止，再也不會有人來告我了？'},
+            {t:'sp', v:'lin', pose:'smile'},
+            {t:'say', c:'lin', text:'是。一審無罪、二審駁回、不得上訴。塵埃落定了，吳老闆。'},
+            {t:'bg', v:'diner'},
+            {t:'sp', v:'wu', pose:'sad'},
+            {t:'say', c:'wu', text:'這四、五年，我一邊煎牛排，一邊跑法院。客人問我「老闆你是不是詐欺犯」，我連解釋都不知道從何說起……'},
+            {t:'say', c:'wu', pose:'normal', text:'我只是想保住這家店、把貨款付一付、讓員工有薪水可以領。我從頭到尾，沒想過要騙誰。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'我知道。所以我們做的，不是把你「講成好人」——是讓法庭看清楚：你做的事，根本不符合詐欺罪的每一個要件。'},
+            {t:'sp', v:'mei', pose:'normal'},
+            {t:'say', c:'mei', text:'學長，這個案子好難喔……沒有翻供、沒有真兇，全程都在拆「構成要件」。可是拆完，人就自由了。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'小梅，這就是刑事辯護的硬功夫。詐欺罪要成立，得同時備齊「詐術」「陷於錯誤」「不法所有意圖」——'},
+            {t:'say', c:'lin', pose:'smile', text:'只要其中一道門檻過不去，犯罪就不成立。我們的工作，就是把每一道門檻，都釘在原地，不讓它被「想當然耳」推過去。'},
+            {t:'think', text:'（「他一定是想騙」——這種直覺，正是冤案的起點。對抗它的，不是雄辯，是把構成要件一格一格，量回去。）'},
+            {t:'narr', text:'—— 第七話・完 ——'},
+            {t:'end'}
+          ]},
+        { text:'就算我們知道負責人變了，被告用舊章來領票，總是不對吧？', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'「對不對」是行政問題。但「詐欺」要問的是——他有沒有讓你「陷於錯誤」？'},
+            {t:'sp', v:'shih', pose:'sweat'},
+            {t:'say', c:'shih', text:'我……我是審核過印鑑相符才發的，並不是被他騙……'},
+            {t:'think', text:'（他自己說溜了——「審核過才發」。這正是「未陷於錯誤」的鐵證。）'}
+          ]},
+        { text:'被告領票的時候，有沒有說他是新負責人授權的，我……記不太清楚了。', pose:'sweat',
+          press:[
+            {t:'say', c:'lin', text:'你在偵查與一審都證述過：他「沒有」聲稱獲得新負責人授權。今天，要改口嗎？'},
+            {t:'sp', v:'shih', pose:'normal'},
+            {t:'say', c:'shih', text:'……沒有。他沒有那樣說。我照實講，他沒有。'},
+            {t:'think', text:'（沒有積極的不實表示，就沒有詐術。最關鍵的一塊拼圖，他親口補上了。）'}
+          ]}
+      ]
+    }
+  },
+  script:[
+    {t:'title', ep:'第七話', name:'空白支票'},
+    {t:'bgm', v:null},
+    {t:'bg', v:'night'},
+    {t:'narr', text:'【改編聲明】\n本章節為虛構創作，取材自一則真實之刑事「無罪定讞」判決並經改編，\n人物、團體、公司、銀行與地名均為化名或虛構。\n本作旨在呈現「無罪推定」與「構成要件嚴格解釋」之精神。'},
+    {t:'bgm', v:'invest'},
+    {t:'bg', v:'office'},
+    {t:'narr', text:'又一通求助電話・張律法律事務所'},
+    {t:'sp', v:'mei', pose:'normal'},
+    {t:'say', c:'mei', text:'學長，這個案子有點特別——委託人一審已經「無罪」了，可是檢察官不服，上訴到高院。我們要打的是「二審」。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'一審無罪、檢方上訴……那我們的任務，就是守住這個無罪，讓它「定讞」。委託人被告什麼罪？'},
+    {t:'ev', v:'badge'},
+    {t:'ev', v:'file7'},
+    {t:'sp', v:'mei', pose:'normal'},
+    {t:'say', c:'mei', text:'詐欺取財。檢方說，他明知牛排館的負責人換人了、自己沒權限了，還拿「舊公司大小章」去銀行騙領了25張空白支票。'},
+    {t:'sp', v:'wu', pose:'sad'},
+    {t:'say', c:'wu', text:'張律師……我是吳家興，金牛角牛排館的老闆。那家店是我一手煎牛排煎起來的。我拿支票，是要付貨款啊，我招誰惹誰了？'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'別急。詐欺罪不是「做了讓人不舒服的事」就成立。它有三道很硬的門檻——慢慢說，那家店，到底發生了什麼事？'},
+    {t:'say', c:'wu', pose:'normal', text:'幾年前店周轉不靈，我找了鍾立群的鴻元公司幫忙還債、辦貸款。條件是把股權過給他們「當擔保」、每天營業額交給他收。但店，還是我在顧。'},
+    {t:'say', c:'wu', pose:'sad', text:'後來他們把登記負責人換成一個叫余哲明的——其實那只是我店裡的工讀生。我手上有舊章，中州銀行的票，我就照以前的方式去領了……我真的不知道這樣會變成「詐欺」。'},
+    {t:'sp', v:'lin', pose:'shock'},
+    {t:'think', text:'（股權只是「擔保」、負責人是「掛名」、支票拿去「付貨款」……如果屬實，這根本構不成詐欺。關鍵，是把每一塊都用證據釘死。）'},
+    {t:'say', c:'lin', text:'吳老闆，協議書、公司登記、銀行往來、稅務資料……所有文件，都給我。這一仗，要用「文件」來打。'},
+    {t:'say', c:'wu', pose:'normal', text:'都在這了！一審我就是這樣才贏的，麻煩張律師，再幫我守一次！'},
+    {t:'choice', prompt:'二審的攻防，先鞏固哪個基礎？', opts:[
+      {text:'先證明「被告仍是實際負責人」——有權限就無詐術', s:[
+        {t:'say', c:'lin', text:'詐欺的第一道門檻是「詐術」。先證明他「本來就有權限」，所謂的欺騙就不存在。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'了解！我把協議書跟公司登記資料整理出來！'}
+      ]},
+      {text:'先釐清「銀行有沒有被騙」——沒陷於錯誤就無詐欺', s:[
+        {t:'say', c:'lin', text:'詐欺要有人「陷於錯誤」。先問清楚——銀行，到底是被騙，還是明知而核發。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'我去函調銀行的往來約定跟承辦員筆錄！'}
+      ]}
+    ]},
+    {t:'bg', v:'diner'},
+    {t:'bgm', v:'invest'},
+    {t:'narr', text:'證據蒐集・牛排館裡的卷宗'},
+    {t:'menu', prompt:'要釐清哪一塊？', exit:'準備完成，前往高等法院', auto:false, opts:[
+      {text:'梳理：協議書與公司登記', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'學長，兩份協議書都在——信託登記協議書寫明：鴻元拿55%股權「作為擔保」，而且「不得行使任何股東權利」！'},
+        {t:'ev', v:'trust'},
+        {t:'ev', v:'bailout'},
+        {t:'say', c:'mei', pose:'normal', text:'公司變更登記表也調到了：105年12月把董事換成余哲明——可是余哲明……我一查，他根本是店裡的工讀生！'},
+        {t:'ev', v:'equity'},
+        {t:'ev', v:'yuwork'},
+        {t:'think', text:'（股權是擔保、鴻元不得行使股東權、董事是掛名工讀生……「被告喪失支配權」這個前提，整個崩了。）'}
+      ]},
+      {text:'函調：銀行往來與承辦員證述', once:true, s:[
+        {t:'sp', v:'mei', pose:'shock'},
+        {t:'say', c:'mei', text:'學長，中州銀行的函覆是關鍵！銀行「早就知道」負責人變更，還通知過被告來改印鑑——但依約定，帳戶沒結清前，仍依「原留印鑑」核發支票！'},
+        {t:'ev', v:'bankletter'},
+        {t:'sp', v:'lin', pose:'shock'},
+        {t:'think', text:'（銀行明知而依規定核發……「陷於錯誤」這道門檻，銀行自己就把它關上了。）'},
+        {t:'say', c:'mei', pose:'normal', text:'承辦員施順元的筆錄也一致：他知道負責人變了、被告也沒聲稱「獲新負責人授權」，是印鑑相符才發票的。'},
+        {t:'ev', v:'clerk'},
+        {t:'think', text:'（沒有積極的不實表示，就沒有詐術；銀行明知而核發，就沒有陷於錯誤。兩道門檻，一起倒。）'}
+      ]},
+      {text:'盤點：支票流向與營業實況', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'稅務資料顯示：案發那半年金牛角還在正常營業、一直在進貨。被告開的票全都在20萬以內，跟以前一樣，都是付貨款用的。'},
+        {t:'ev', v:'taxop'},
+        {t:'sp', v:'lin', pose:'normal'},
+        {t:'think', text:'（沒有異常大額、沒有挪為私用——「不法所有意圖」這第三道門檻，也站不住。三道門檻，全數封死。）'},
+        {t:'say', c:'mei', pose:'normal', text:'對了，被告配偶戴秀英的證述也補進來了——她只管廚房，公司一向是被告在當家，早就把事情都交給他處理了。'},
+        {t:'ev', v:'auth'},
+        {t:'think', text:'（戴秀英的概括授權，是被告「有權領票」的最後一塊拼圖。文件，齊了。）'}
+      ]}
+    ]},
+    {t:'bg', v:'court'},
+    {t:'bgm', v:'court'},
+    {t:'narr', text:'臺灣高等法院・刑事庭\n詐欺案件・第二審審理程序'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'現在開庭。本院110年度上易字第1891號，檢察官不服第一審無罪判決提起上訴，進行審理。'},
+    {t:'sp', v:'yan', pose:'normal'},
+    {t:'say', c:'yan', text:'上訴檢察官嚴正雄。一審判決認事用法尚有未洽。被告明知公司負責人已變更、喪失財產支配權，竟持舊章詐領空白支票，自應構成詐欺取財罪。'},
+    {t:'sp', v:'yan', pose:'smug', text:'辯護人，又是你。一審讓你僥倖過關——但二審，本席會把每一個漏洞補上。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'think', text:'（一審不是僥倖，是證據。二審要做的，是把同樣的證據，再紮實地、一道門檻一道門檻地，釘一次。）'},
+    {t:'say', c:'lin', text:'辯護人張律。被告否認犯罪。辯方主張——詐欺罪的詐術、陷於錯誤、不法所有意圖，三者皆不該當。'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'檢方先就「被告已喪失公司支配權」一節舉證。傳喚告訴人——鴻元投資公司，鍾立群。'},
+    {t:'sp', v:'zhong', pose:'smug'},
+    {t:'say', c:'zhong', text:'告訴人鍾立群。我花了大錢替這家爛攤子還債，結果被告還拿公司支票——我才是受害者！'},
+    {t:'narr', text:'——詰問開始。\n\n操作說明：\n◀ ▶ 切換證言／「等一下」追問細節\n「出示證物」戳破證言與證物的矛盾！\n（出示錯誤會被法庭警告，❗歸零即辯護失敗）'},
+    {t:'bgm', v:'cross'},
+    {t:'testimony', v:'t1'}
+  ]
+};
+
 /* ===== 案件登錄 ===== */
-const CASES = [CASE1, CASE2, CASE3, CASE4, CASE5, CASE6];
+const CASES = [CASE1, CASE2, CASE3, CASE4, CASE5, CASE6, CASE7];
 
 /* ===== engine.js : script runner, testimony system, UI ===== */
 const $ = id => document.getElementById(id);
