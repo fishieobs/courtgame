@@ -438,7 +438,10 @@ const CHARS = {
   han:  { name:'韓重霖', color:'#2e7d6e', voice:'m',  av: makeAvatar({skin:'#e8bd92', hair:'slick', hairC:'#100d0a', suit:'#1f2630', shirt:'#f2eada', tie:'#2e7d6e', glasses:true}) },
   shao: { name:'邵雅婷', color:'#c25888', voice:'f',  av: makeAvatar({skin:'#f6d2ac', hair:'long', hairC:'#3a2820', suit:'#7a4a64', shirt:'#f4ecf0'}) },
   zhuang:{name:'莊定凱', color:'#9a7a3a', voice:'m',  av: makeAvatar({skin:'#ecc096', hair:'part', hairC:'#2a2018', suit:'#4a4636', shirt:'#f2eada', tie:'#9a7a3a'}) },
-  jian: { name:'簡曉彤', color:'#4a8ac2', voice:'f',  av: makeAvatar({skin:'#f4d0aa', hair:'pony', hairC:'#3a2c20', suit:'#3a5a7a', shirt:'#fff', badge:true}) }
+  jian: { name:'簡曉彤', color:'#4a8ac2', voice:'f',  av: makeAvatar({skin:'#f4d0aa', hair:'pony', hairC:'#3a2c20', suit:'#3a5a7a', shirt:'#fff', badge:true}) },
+  zheng:{ name:'鄭力誠', color:'#3a86c2', voice:'m',  av: makeAvatar({skin:'#f0c49a', hair:'part', hairC:'#26201a', suit:'#3a6a8a', shirt:'#fff'}) },
+  hao:  { name:'顏志豪', color:'#b07a2a', voice:'lo', av: makeAvatar({skin:'#e8b884', hair:'slick', hairC:'#1a1410', suit:'#5a3a1a', shirt:'#f2eada', tie:'#d9a441', stache:'#2a1f16', wide:true}) },
+  jiang:{ name:'江俊男', color:'#3a9a6e', voice:'m',  av: makeAvatar({skin:'#eec39a', hair:'part', hairC:'#241a12', suit:'#2e7a5a', shirt:'#fff'}) }
 };
 
 /* ===== backgrounds ===== */
@@ -601,6 +604,25 @@ const BGS = {
     </g>
     <rect y="380" width="400" height="220" fill="#12161e"/>
     <rect y="376" width="400" height="6" fill="#2a3242"/>
+  </svg>`,''),
+  showroom: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#e6eaef"/>
+    <rect width="400" height="360" fill="#eef2f6"/>
+    <g fill="#cdd6df"><rect x="20" y="30" width="110" height="320"/><rect x="150" y="30" width="110" height="320"/><rect x="280" y="30" width="110" height="320"/></g>
+    <g stroke="#aeb8c2" stroke-width="3"><path d="M20 30 L20 350 M130 30 L130 350 M150 30 L150 350 M260 30 L260 350 M280 30 L280 350 M390 30 L390 350"/></g>
+    <rect x="40" y="44" width="320" height="44" rx="6" fill="#1f2d3a"/>
+    <text x="200" y="74" font-size="26" font-weight="900" text-anchor="middle" fill="#f0c469" font-family="sans-serif">宏勝汽車</text>
+    <rect x="56" y="100" width="288" height="22" rx="4" fill="#b8322a"/>
+    <text x="200" y="117" font-size="14" font-weight="700" text-anchor="middle" fill="#fff" font-family="sans-serif">車王大聯盟・嚴選中古車</text>
+    <rect y="360" width="400" height="240" fill="#9aa4ae"/>
+    <rect y="356" width="400" height="8" fill="#7a8590"/>
+    <g transform="translate(118,300)">
+      <path d="M0 70 L18 36 Q24 26 40 24 L120 24 Q138 26 150 40 L168 70 Z" fill="#2e6fd8"/>
+      <path d="M28 40 L44 30 L108 30 L122 42 Z" fill="#bcd9f2"/>
+      <rect x="0" y="68" width="168" height="14" rx="6" fill="#1f2630"/>
+      <circle cx="38" cy="84" r="16" fill="#22262c"/><circle cx="38" cy="84" r="7" fill="#8a9098"/>
+      <circle cx="130" cy="84" r="16" fill="#22262c"/><circle cx="130" cy="84" r="7" fill="#8a9098"/>
+    </g>
   </svg>`,'')
 };
 
@@ -2439,8 +2461,329 @@ const CASE5 = {
   ]
 };
 
+/* ===== case6.js : 第六話「鍵盤上的天平」(特別篇・取材真實無罪判決改編) ===== */
+const CASE6 = {
+  title:'鍵盤上的天平',
+  sub:'宏勝汽車・爆料貼文誹謗案',
+  desc:'一名消費者把買中古車的糾紛PO上「爆料廣場」，卻被車商以加重誹謗、妨害信用提告。一台說好的灰車、一份沒簽的合約、一枚被代刻的印章——這一次，辯護人要守的，是「把真話說出來」的權利。取材自真實無罪判決改編。',
+  evidence:[
+    {id:'badge',    icon:'⚖️', name:'律師徽章', desc:'林辯的律師徽章。這一次「真相」二字旁，多了四個字：「言論自由」。'},
+    {id:'file6',    icon:'📋', name:'案件卷宗', desc:'桃園地院113年度易字第1172號。被告鄭力誠被訴加重誹謗罪（刑法第310條第2項）及以網際網路妨害信用罪（刑法第313條第2項）。告訴人顏志豪（宏勝汽車商行負責人）指被告於臉書「爆料廣場」張貼不實貼文，貶損其商譽與信用。'},
+    {id:'post',     icon:'📝', name:'爆料廣場貼文', desc:'被告張貼的本案文章：控訴中古車商「賣A交B」——在中古車網看的是灰車，車商卻以「先幫你做額度評估」為由取得證件，幾天後竟變成貸款過件、車子過戶到名下，「連合約都沒簽、印章也沒給」。'},
+    {id:'line',     icon:'💬', name:'LINE對話紀錄', desc:'被告先傳「灰車」照片問月付金，業代答「貸款以本身條件來算」；被告提供證件後，業代回「明天幫你做額度評估」；其後業代傳來「白車」照片，被告再三確認「用這台幫我做額度評估對吧」，業代回覆——「交給我」。'},
+    {id:'contract', icon:'📄', name:'汽車買賣契約書', desc:'卷附買賣契約書：賣方欄位填的是「顏志豪（宏勝汽車）」。業代江俊男於審理時自承：「合約不是我簽的，上面寫的是顏志豪，我沒有經手簽立合約的過程。」'},
+    {id:'seal',     icon:'🔖', name:'印章與過戶資料', desc:'過戶所用之印章係業代「代刻」，被告未曾簽署任何刻章同意書；然動產抵押設定與車輛過戶，卻均已完成。'},
+    {id:'loan',     icon:'🏦', name:'車貸照會紀錄', desc:'華信車貸文件與照會紀錄：被告以為僅是「貸款評估」，實際上貸款業已核准撥付。被告事後於LINE質疑業代：「為什麼只是評估，卻變成貸款過了？」'},
+    {id:'diff',     icon:'🔀', name:'證人偵審筆錄', desc:'業代江俊男供述前後不一：偵查時稱「被告同意買白車、有親自簽約」；審理時改稱「合約不是我簽的、我沒經手」、「『交給我』那句是老闆顏志豪教我這樣回的」、「被告有質疑為何評估變成過件」。'},
+    {id:'law509',   icon:'📜', name:'釋字第509號', desc:'司法院釋字第509號暨刑法第311條：行為人雖不能證明言論「全屬真實」，但依其證據資料有「相當理由確信為真實」、非故意捏造、非重大輕率者，不罰；基於事實、善意所為之適當評論，亦不罰。'},
+    {id:'credit',   icon:'⚖️', name:'妨害信用罪要件', desc:'刑法第313條妨害信用罪，須「散布流言」——即無稽之言、毫無事實根據之資訊。基於真實交易經驗所為之指述，並非流言，不該當本罪。'}
+  ],
+  testimonies:{
+    t1:{
+      title:'被毀掉的商譽', who:'hao',
+      statements:[
+        { text:'我經營宏勝汽車十幾年，童叟無欺！這個鄭力誠憑空捏造，把我說成詐騙集團！', pose:'angry',
+          press:[
+            {t:'say', c:'lin', text:'「憑空捏造」——他貼文裡寫的每一件事，都和事實不符嗎？'},
+            {t:'sp', v:'hao', pose:'normal'},
+            {t:'say', c:'hao', text:'反正……反正他講的就是讓我難看！我生意都掉了三成！'},
+            {t:'think', text:'（避開了「是不是事實」，只談「難看」……誹謗罪的關鍵，恰恰就在「真實與否」。）'}
+          ]},
+        { text:'他寫什麼「賣A交B」、「沒簽約就過戶」——這種抹黑，我一定要他負刑責！', pose:'angry',
+          press:[
+            {t:'say', c:'lin', text:'你說是抹黑。那麼——他買的「到底是哪一台車」？'},
+            {t:'sp', v:'hao', pose:'sweat'},
+            {t:'say', c:'hao', text:'當、當然是他開回去的那台白車啊！'},
+            {t:'think', text:'（他咬定「白車」。可是這位委託人說，他在網路上看上的，明明是「灰車」。）'}
+          ]},
+        { text:'他一開始就是要買那台白車，貸款也是他自己點頭辦的，純粹是反悔了才上網報復！', pose:'smug',
+          ev:'line',
+          press:[
+            {t:'say', c:'lin', text:'「他自己點頭辦貸款」——這句話，有任何白紙黑字嗎？'},
+            {t:'sp', v:'hao', pose:'smug'},
+            {t:'say', c:'hao', text:'我們業代都跟他用LINE confirm 過了！對話紀錄你儘管去調！'},
+            {t:'think', text:'（他主動要我去看LINE……好，那就把那串對話，一個字一個字攤在法庭上。）'}
+          ],
+          win:[
+            {t:'sp', v:'hao', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'這就是你說的LINE對話紀錄！被告最早傳給業代的，是一台「灰車」的照片，問的是「這台辦貸款一個月大概要多少」！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'業代回他「貸款以本身條件來算」、要他證件「做額度評估」——之後才換成白車！被告還再三確認：「用這台幫我做『額度評估』對吧」！'},
+            {t:'say', c:'lin', text:'從頭到尾，被告講的都是「評估」二字。哪來的「他一開始就要買白車、自己點頭辦貸款」？！'},
+            {t:'sp', v:'hao', pose:'sweat'},
+            {t:'say', c:'hao', text:'評、評估歸評估，他最後不是還是接了銀行照會電話嗎……'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'obj', c:'yan'},
+            {t:'say', c:'yan', pose:'angry', text:'異議！縱然一開始談的是灰車，被告事後接了照會、簽了文件——貼文稱「沒簽約就過戶」，仍屬不實！'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'檢察官所指「簽約」一節，攸關貼文真偽，確有調查必要。本庭傳喚經手本案之業代到庭。'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'……檢方亦同意。傳喚宏勝汽車業務員，江俊男。'},
+            {t:'bgm', v:'cross'},
+            {t:'testimony', v:'t2'}
+          ]},
+        { text:'再說，他貼文裡又沒寫我名字，憑什麼告我？……欸不對，我是說，大家一看就知道是我！', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'你自己都遲疑了——貼文「沒有指名道姓」。這一點，等一下會很重要。'},
+            {t:'sp', v:'hao', pose:'sweat'},
+            {t:'say', c:'hao', text:'反正、反正同行都認得出來啦！'},
+            {t:'think', text:'（連被指述的對象是否「特定」都有疑問……這是誹謗罪的另一道門檻。先記著。）'}
+          ]}
+      ]
+    },
+    t2:{
+      title:'業代的兩套說法', who:'jiang',
+      statements:[
+        { text:'我是宏勝的業務。鄭先生同意買白車、也同意辦貸款，這些我偵查時都講得很清楚。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'「偵查時講得很清楚」——那麼今天，在這個法庭上，你還是同樣的說法嗎？'},
+            {t:'sp', v:'jiang', pose:'sweat'},
+            {t:'say', c:'jiang', text:'這……今天……有些事，我想說得更清楚一點。'},
+            {t:'think', text:'（「想說得更清楚」……證人的口風，鬆動了。他偵查與審理的兩套說法之間，有縫。）'}
+          ]},
+        { text:'買賣合約是鄭先生本人簽的，我親眼看著他簽下去的，流程完全正常。', pose:'normal',
+          ev:'contract',
+          press:[
+            {t:'say', c:'lin', text:'「親眼看著他簽」？這份合約，現在就在卷裡。我們一起看看上面的字。'},
+            {t:'sp', v:'jiang', pose:'sweat'},
+            {t:'say', c:'jiang', text:'上面……上面的字……'},
+            {t:'think', text:'（他開始冒汗了。這份合約上的「賣方」欄位，寫的根本不是被告。）'}
+          ],
+          win:[
+            {t:'sp', v:'jiang', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'這份買賣契約書——「賣方」欄位，寫的是「顏志豪」！而且證人，你方才在本院已經自承：'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'「合約不是我簽的，上面寫的是顏志豪，我沒有經手簽立合約的過程」！那你剛剛說「親眼看著被告簽」，是怎麼回事？！'},
+            {t:'sp', v:'jiang', pose:'sad'},
+            {t:'sfx', v:'thud'},
+            {t:'say', c:'jiang', text:'……對不起。簽約的過程，我真的沒有經手。偵查的時候，我講得太順了。'},
+            {t:'say', c:'jiang', pose:'sad', text:'還有……「交給我」那句話，是老闆顏志豪「教我這樣回」的。被告問「用這台幫我做評估對吧」，老闆叫我就回「交給我」，不要把話講死。'},
+            {t:'sp', v:'hao', pose:'shock'},
+            {t:'say', c:'hao', text:'江俊男！你在亂講什麼——！'},
+            {t:'sp', v:'judge', pose:'angry'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'肅靜！告訴人不得干擾證人作證！'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'證人，最後一個問題——過戶用的印章，是誰刻的？被告簽過刻章同意書嗎？'},
+            {t:'sp', v:'jiang', pose:'sad'},
+            {t:'say', c:'jiang', text:'……印章是我們「代刻」的。同意書……他沒有簽。被告後來收到貸款通過的通知，還打來問我「為什麼只是評估，卻變成貸款過了」。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'think', text:'（沒簽約、沒給印章、評估變過件——被告貼文寫的每一個字，正在被「對方的業代」親口證實。）'},
+            {t:'say', c:'lin', text:'審判長。辯方請求調閱車貸的照會與撥款紀錄——被告口中那場「變成真的」的貸款，究竟發生了沒有？'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'准許。並命告訴人就「貸款評估」與「正式過戶」之經過，接受詰問。'},
+            {t:'bgm', v:'corner'},
+            {t:'testimony', v:'t3'}
+          ]},
+        { text:'「交給我」那句，是我自己臨場判斷講的，跟老闆沒關係……', pose:'sweat',
+          press:[
+            {t:'say', c:'lin', text:'是嗎？一句「交給我」，就把「貸款評估」變成了「買車成交」——這麼大的事，你「自己判斷」就敢回？'},
+            {t:'sp', v:'jiang', pose:'sweat'},
+            {t:'say', c:'jiang', text:'……'},
+            {t:'think', text:'（他沉默了。這句「交給我」背後是誰的劇本，呼之欲出。）'}
+          ]},
+        { text:'反正最後車子是過戶到鄭先生名下了，這就表示他買了啊。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'「過戶了」就等於「他同意買」？那要看——這個過戶，是怎麼「過」出來的。'},
+            {t:'sp', v:'jiang', pose:'sweat'},
+            {t:'say', c:'jiang', text:'這……'},
+            {t:'think', text:'（用「結果」反推「同意」，正是這整套「賣A交B」手法的核心話術。）'}
+          ]}
+      ]
+    },
+    t3:{
+      title:'流言與真相', who:'hao',
+      statements:[
+        { text:'就算貸款的流程……有一點誤會，他也不該寫出來害我！害我商譽掃地、生意大跌！', pose:'sad',
+          press:[
+            {t:'say', c:'lin', text:'「有一點誤會」——所以你也承認，這場交易的流程，確實出了問題？'},
+            {t:'sp', v:'hao', pose:'sweat'},
+            {t:'say', c:'hao', text:'我沒這麼說！我是說「就算」！這只是假設！'},
+            {t:'think', text:'（連他自己都改口成「就算有誤會」……貼文描述的，根本不是「無中生有」。）'}
+          ]},
+        { text:'他根本沒搞清楚就在網路上亂寫！那明明只是「貸款評估」，哪有什麼直接過戶！', pose:'angry',
+          ev:'loan',
+          press:[
+            {t:'say', c:'lin', text:'「哪有直接過戶」——這份車貸照會與撥款紀錄，你要不要親眼看看？'},
+            {t:'sp', v:'hao', pose:'sweat'},
+            {t:'say', c:'hao', text:'那、那是銀行的文件，跟我沒關係……'},
+            {t:'think', text:'（評估、還是過戶？被告當時就在問了。答案，全寫在這份紀錄裡。）'}
+          ],
+          win:[
+            {t:'sp', v:'hao', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'這份華信車貸的紀錄白紙黑字——被告以為的「貸款評估」，實際上「貸款已經核准、撥款、車輛過戶」！'},
+            {t:'flash'}, {t:'shake'},
+            {t:'say', c:'lin', pose:'angry', text:'而被告當下就在LINE裡質疑：「為什麼只是評估，卻變成貸款過了？」——他貼文寫的「評估變過件、過戶到名下」，每一個字，都是真的！'},
+            {t:'sp', v:'hao', pose:'sweat'},
+            {t:'say', c:'hao', text:'就算是真的……他把家醜外揚，害我名譽受損，這總有罪了吧！'},
+            {t:'sp', v:'yan', pose:'angry'},
+            {t:'obj', c:'yan'},
+            {t:'say', c:'yan', pose:'angry', text:'異議！縱使內容大致屬實，被告刻意PO上爆料社團、廣為散布，主觀上仍有貶損商譽的惡意，構成妨害信用！'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'嚴檢察官，這正是本案最後、也最重要的問題——「把真話說出來」，是不是犯罪？'},
+            {t:'say', c:'lin', pose:'angry', text:'請看司法院釋字第509號！行為人只要有「相當理由確信其為真實」、非故意捏造、非重大輕率——縱使不能證明句句百分之百為真，也不成立誹謗罪！'},
+            {t:'say', c:'lin', text:'被告寫的，是他「親身經歷」的交易：灰車變白車、評估變過件、印章被代刻——每一項，都有LINE、有合約、有照會紀錄佐證。這不是憑空捏造，這是「有憑有據」！'},
+            {t:'sp', v:'yan', pose:'sweat'},
+            {t:'say', c:'yan', text:'唔……但妨害信用罪呢？被告散布的言論，損及了告訴人的商業信用——'},
+            {t:'say', c:'lin', pose:'angry', text:'妨害信用罪，處罰的是「散布流言」——無稽之言、毫無根據的謠言！但被告寫的是「真實的消費經驗」，不是流言，根本不該當妨害信用的構成要件！'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'更何況——本案貼文，自始至終「沒有指名道姓」。它通篇在描述一段交易的經過與感受，沒有謾罵、沒有人身攻擊，未逾越主張自身權益的範圍——這是刑法第311條的「善意發表言論」。'},
+            {t:'say', c:'lin', pose:'angry', text:'如果一個消費者，把自己「真實遭遇」的消費糾紛說出來，就要被判刑——那麼從今以後，還有誰敢揭發黑心交易？！'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'wait', v:600},
+            {t:'say', c:'yan', text:'……辯護人。本席承辦公訴，求的是「真實惡意」之人，不是「說真話」之人。'},
+            {t:'say', c:'yan', pose:'sad', text:'被告的言論基於親身經歷、有合理查證、未刻意捏造——依釋字第509號，檢方……無法證明他有誹謗的犯意。這一點，本席認了。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'兩造辯論終結。本庭就被告鄭力誠被訴加重誹謗及妨害信用案件，宣判如下。'},
+            {t:'bgm', v:null},
+            {t:'narr', text:'——主文——'},
+            {t:'wait', v:800},
+            {t:'say', c:'judge', text:'被告所發表之言論，係基於其親身經歷之交易事實，有相當理由確信為真實，屬善意發表之適當言論；其內容亦非無稽之流言。'},
+            {t:'say', c:'judge', text:'檢察官所舉證據，尚未達於使本院形成有罪確信之程度。依無罪推定原則——'},
+            {t:'wait', v:600},
+            {t:'say', c:'judge', text:'被告，鄭力誠——'},
+            {t:'verdict', v:'無罪'},
+            {t:'bgm', v:'win'},
+            {t:'say', c:'judge', text:'無罪。本案得上訴。退庭。'},
+            {t:'sfx', v:'gavel'},
+            {t:'sp', v:'zheng', pose:'shock'},
+            {t:'say', c:'zheng', text:'……無罪。林律師，我只是把我遇到的事，老實說出來而已……我真的，沒事了？'},
+            {t:'sp', v:'lin', pose:'smile'},
+            {t:'say', c:'lin', text:'沒事了。法庭認定：你說的是真話，而說真話——不是罪。'},
+            {t:'bg', v:'office'},
+            {t:'sp', v:'zheng', pose:'sad'},
+            {t:'say', c:'zheng', text:'這一年，我被告到不敢上網、不敢跟人提買車的事，連家人都問我是不是真的亂講話……原來，把真相講出來，要付這麼大的代價。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'代價不該由你來付。但我也提醒你——說真話的力量，來自「有憑有據」。你留下的那些LINE、那些文件，就是今天救你的東西。'},
+            {t:'say', c:'zheng', pose:'normal', text:'我懂了。以後不管遇到什麼，先把證據留好……謝謝你，讓我敢再相信一次「講道理」這件事。'},
+            {t:'sp', v:'mei', pose:'normal'},
+            {t:'say', c:'mei', text:'學長，這次的對手不是什麼大魔王，就是一個……愛面子的車商。可是打起來，怎麼覺得比哪一次都重要？'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'因為這一仗，守的不只是他一個人，小梅。'},
+            {t:'say', c:'lin', pose:'smile', text:'誹謗罪要是被濫用，有錢有勢的人，就能用「告到你怕」讓所有人閉嘴。我們守住的，是每一個平凡人「把真話說出來」的權利。'},
+            {t:'think', text:'（言論自由不是任意傷人的免死金牌——但它必須保護「有憑有據的真話」。否則，沉默的就會是真相本身。）'},
+            {t:'narr', text:'—— 第六話・完 ——'},
+            {t:'end'}
+          ]},
+        { text:'他大可以私下找我處理，幹嘛PO上爆料廣場，給幾十萬人看？！', pose:'angry',
+          press:[
+            {t:'say', c:'lin', text:'他PO文之前，打過你們客訴專線、也問過加盟總部——得到正面回覆了嗎？'},
+            {t:'sp', v:'hao', pose:'sweat'},
+            {t:'say', c:'hao', text:'這……那是客服的事，我不清楚……'},
+            {t:'think', text:'（私下求助無門，才公開發問。而且——他事後還主動要求平台把貼文刪掉了。）'}
+          ]},
+        { text:'我做的是信用生意！被他這樣一搞，我的商業信用全毀了！', pose:'sad',
+          press:[
+            {t:'say', c:'lin', text:'參與市場交易的人，他的商業信用，本來就該受公眾檢驗——尤其是面對「真實」的批評。'},
+            {t:'sp', v:'hao', pose:'sweat'},
+            {t:'say', c:'hao', text:'……'},
+            {t:'think', text:'（真實有據的負評，反而能健全市場。法律要罰的，是「流言」，不是「真話」。）'}
+          ]}
+      ]
+    }
+  },
+  script:[
+    {t:'title', ep:'第六話', name:'鍵盤上的天平'},
+    {t:'bgm', v:null},
+    {t:'bg', v:'night'},
+    {t:'narr', text:'【改編聲明】\n本章節為虛構創作，取材自一則真實之刑事「無罪」判決並經改編，\n人物、團體、公司、平台與地名均為化名或虛構。\n本作旨在呈現「言論自由」與「無罪推定」之精神。'},
+    {t:'bgm', v:'invest'},
+    {t:'bg', v:'office'},
+    {t:'narr', text:'又一個案子・林辯法律事務所'},
+    {t:'sp', v:'mei', pose:'shock'},
+    {t:'say', c:'mei', text:'學長，這次的委託人好可憐……他只是把買中古車被騙的事PO到網路上，結果被車商告「加重誹謗」跟「妨害信用」！'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'網路發文被告誹謗……這幾年愈來愈多。麻煩的是——刑法的誹謗罪，是真的「會關人」的。'},
+    {t:'ev', v:'badge'},
+    {t:'ev', v:'file6'},
+    {t:'sp', v:'zheng', pose:'sad'},
+    {t:'say', c:'zheng', text:'林律師……我是鄭力誠。我發誓，我貼文裡寫的，每一個字都是我「真的遇到」的事。我沒有亂編啊……'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'別急。從頭講給我聽——你到底，買了一台什麼樣的車？'},
+    {t:'say', c:'zheng', pose:'normal', text:'我在中古車網看上一台「灰色」的喜美，私訊問業代貸款要多少。他叫我給證件「做額度評估」，我就給了。'},
+    {t:'say', c:'zheng', pose:'sad', text:'結果他說灰車有問題，改推一台白車，說用白車「評估」比較容易過。我一直以為只是評估……過幾天，他竟然通知我「貸款過件、車子過戶到我名下了」！我合約沒簽、印章也沒給過他啊！'},
+    {t:'sp', v:'lin', pose:'shock'},
+    {t:'think', text:'（沒簽約、沒給印章，車卻過到名下……如果屬實，這是典型的「賣A交B」。而他把這件事PO出來——是「誹謗」，還是「自保」？）'},
+    {t:'say', c:'lin', text:'你跟業代的對話、那些文件，都還留著嗎？'},
+    {t:'say', c:'zheng', pose:'normal', text:'都在！LINE一句都沒刪。我……我只剩這些了。'},
+    {t:'ev', v:'post'},
+    {t:'choice', prompt:'這一仗，要先站穩哪個立足點？', opts:[
+      {text:'先證明「貼文是真的」——事實是誹謗的命門', s:[
+        {t:'say', c:'lin', text:'誹謗罪的核心，是「真實與否」。先把他貼文裡的每一句，對回證據。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'了解！我把LINE跟交易文件整理成對照表！'}
+      ]},
+      {text:'先研究「言論自由」的法律界線', s:[
+        {t:'say', c:'lin', text:'光是「真的」還不夠。要弄清楚——說真話的人，法律保護到哪裡。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'釋字509號跟妨害信用的要件，我來整理！'}
+      ]}
+    ]},
+    {t:'bg', v:'showroom'},
+    {t:'bgm', v:'invest'},
+    {t:'narr', text:'證據蒐集・交易重建'},
+    {t:'menu', prompt:'要調查哪一塊？', exit:'準備完成，前往桃園地院', auto:false, opts:[
+      {text:'比對：LINE 對話與交易文件', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'學長，LINE對話一字排開——委託人最早傳的是「灰車」照片，問貸款月付；業代要他證件「做額度評估」；後來才換白車，他還一直確認「用這台幫我做評估對吧」。'},
+        {t:'ev', v:'line'},
+        {t:'say', c:'mei', pose:'shock', text:'然後是這個！買賣契約書上的「賣方」竟然寫「顏志豪」；過戶的印章還是車行「代刻」的，根本沒有委託人的簽名同意！'},
+        {t:'ev', v:'contract'},
+        {t:'ev', v:'seal'},
+        {t:'think', text:'（灰車變白車、評估變過件、印章被代刻……貼文裡的指控，正在一條一條被文件證實。）'}
+      ]},
+      {text:'調閱：車貸照會與證人筆錄', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'華信車貸的照會與撥款紀錄來了——委託人以為的「評估」，實際上貸款早就核准撥款、車也過戶了。他當下就在LINE質疑「為什麼變成貸款過了」。'},
+        {t:'ev', v:'loan'},
+        {t:'sp', v:'lin', pose:'shock'},
+        {t:'think', text:'（他不是事後才喊冤——「評估怎麼變過件」，他在第一時間就問了。這個時間點，很關鍵。）'},
+        {t:'say', c:'mei', pose:'normal', text:'還有業代江俊男的筆錄——偵查時說「被告同意買、有簽約」，可是審理時整個改口：「合約不是我簽的」、「『交給我』是老闆教的」！'},
+        {t:'ev', v:'diff'},
+        {t:'think', text:'（證人偵審不一致……檢方最重要的人證，自己站不穩。這是一道大裂縫。）'}
+      ]},
+      {text:'研究：言論自由與誹謗法理', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'法理整理好了。釋字第509號：只要有「相當理由確信為真實」、不是故意捏造，就算不能證明句句屬實，也不成立誹謗。'},
+        {t:'ev', v:'law509'},
+        {t:'sp', v:'lin', pose:'normal'},
+        {t:'think', text:'（這就是「合理查證」與「真實惡意」的分界。委託人有LINE、有文件——他不是憑空捏造的人。）'},
+        {t:'say', c:'mei', pose:'normal', text:'還有妨害信用罪——它處罰的是「散布流言」，也就是「無稽之言」。如果講的是真實經驗，就不是流言。'},
+        {t:'ev', v:'credit'},
+        {t:'think', text:'（兩條防線都清楚了：誹謗，看「真實與善意」；妨害信用，看「是不是流言」。把真相釘上去，兩罪都站不住。）'}
+      ]}
+    ]},
+    {t:'bg', v:'court'},
+    {t:'bgm', v:'court'},
+    {t:'narr', text:'桃園地方法院・刑事庭\n加重誹謗及妨害信用案件・審理程序'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'現在開庭。本院113年度易字第1172號，被告鄭力誠加重誹謗等案件，進行審理程序。'},
+    {t:'sp', v:'yan', pose:'normal'},
+    {t:'say', c:'yan', text:'公訴檢察官嚴正雄。被告明知所述非事實，竟於臉書「爆料廣場」散布貶損告訴人商譽、信用之文字，犯加重誹謗及妨害信用罪。'},
+    {t:'sp', v:'yan', pose:'smug', text:'辯護人，又是你。網路上發文，一字一句都有截圖存證——這次，可沒有「記錯」的空間。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'think', text:'（沒錯，截圖俱在。但問題從來不是「他有沒有講」——是「他講的，是不是真的」。一字一句有存證，對辯方反而是好事。）'},
+    {t:'say', c:'lin', text:'辯護人林辯。被告否認犯罪。辯方主張——被告所言，句句基於親身經歷，有憑有據，屬「善意發表的真實言論」。'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'檢方先就告訴人受損部分舉證。傳喚告訴人——宏勝汽車商行負責人，顏志豪。'},
+    {t:'sp', v:'hao', pose:'angry'},
+    {t:'say', c:'hao', text:'告訴人顏志豪。我做生意這麼多年，第一次被人這樣糟蹋！這個鄭力誠，一定要給我關起來！'},
+    {t:'narr', text:'——詰問開始。\n\n操作說明：\n◀ ▶ 切換證言／「等一下」追問細節\n「出示證物」戳破證言與證物的矛盾！\n（出示錯誤會被法庭警告，❗歸零即辯護失敗）'},
+    {t:'bgm', v:'cross'},
+    {t:'testimony', v:'t1'}
+  ]
+};
+
 /* ===== 案件登錄 ===== */
-const CASES = [CASE1, CASE2, CASE3, CASE4, CASE5];
+const CASES = [CASE1, CASE2, CASE3, CASE4, CASE5, CASE6];
 
 /* ===== engine.js : script runner, testimony system, UI ===== */
 const $ = id => document.getElementById(id);
