@@ -58,6 +58,9 @@ button{font-family:inherit;border:none;cursor:pointer;}
 .case-card .stars{position:absolute;top:12px;right:14px;font-size:13px;color:var(--gold2);}
 .case-card.locked{opacity:.45;filter:grayscale(.6);}
 .case-card.locked h3::after{content:"　🔒";}
+.case-card.interlude{border-color:#6a5a2a;background:linear-gradient(135deg,#2a2412,#1a160c);}
+.case-card.interlude .ep{color:#e2a84a;}
+.case-card.interlude .done-badge{color:#e2a84a;}
 .case-card .done-badge{display:inline-block;margin-top:8px;font-size:11px;color:var(--testi);letter-spacing:2px;}
 .back-btn{align-self:center;margin-top:4px;background:none;color:#9c8c70;font-size:13px;letter-spacing:3px;padding:10px;}
 
@@ -208,6 +211,24 @@ button{font-family:inherit;border:none;cursor:pointer;}
 #ov-gameover h2{font-size:40px;font-weight:900;letter-spacing:6px;color:#ff6b5e;text-shadow:0 0 30px rgba(255,80,60,.4);}
 #ov-gameover p{font-size:13.5px;line-height:2;color:#cdbfa4;}
 
+/* roach minigame */
+#ov-roach{background:rgba(20,14,10,.32);}
+#roach-hud{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;
+  font-size:18px;font-weight:900;letter-spacing:2px;color:#f0c469;
+  text-shadow:0 2px 4px #000;background:linear-gradient(180deg,rgba(0,0,0,.45),transparent);z-index:2;}
+#roach-goal{font-size:12px;color:#e8dcc2;letter-spacing:1px;}
+#roach-field{position:absolute;inset:0;top:50px;overflow:hidden;z-index:1;}
+.roach{position:absolute;left:0;top:0;font-size:38px;line-height:1;cursor:pointer;
+  user-select:none;-webkit-user-select:none;will-change:transform;
+  transition:transform linear;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5));}
+.roach.dead{transition:none;font-size:42px;}
+#roach-result{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:14px;text-align:center;
+  background:rgba(8,6,4,.82);backdrop-filter:blur(2px);}
+#roach-result.hidden{display:none;}
+#roach-result h2{font-size:28px;font-weight:900;letter-spacing:4px;}
+#roach-result p{font-size:15px;line-height:1.9;color:#e8dcc2;}
+
 /* settings */
 #ov-settings{justify-content:center;align-items:center;}
 #set-card{width:84%;max-width:360px;background:#241a11;border:1px solid #4a3520;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px;}
@@ -324,6 +345,13 @@ button{font-family:inherit;border:none;cursor:pointer;}
       <p>法庭對辯方失去了信任……<br>但真相，值得再試一次。</p>
       <button id="go-retry" class="menu-btn">重新詰問（罰則回滿）</button>
       <button id="go-title" class="back-btn">回標題畫面</button>
+    </div>
+
+    <!-- ===== 小遊戲：打蟑螂 ===== -->
+    <div id="ov-roach" class="overlay hidden">
+      <div id="roach-hud"><span id="roach-time">⏱ 30</span><span id="roach-goal"></span><span id="roach-score">🪳 0</span></div>
+      <div id="roach-field"></div>
+      <div id="roach-result" class="hidden"></div>
     </div>
   </section>
 
@@ -445,7 +473,8 @@ const CHARS = {
   wu:   { name:'吳家興', color:'#c2762a', voice:'m',  av: makeAvatar({skin:'#e6b07e', hair:'part', hairC:'#2a2018', suit:'#6e4a2a', shirt:'#fff', apron:'#e8e0c8', stache:'#2a2018'}) },
   zhong:{ name:'鍾立群', color:'#8a6a2a', voice:'lo', av: makeAvatar({skin:'#e8bd92', hair:'slick', hairC:'#16120c', suit:'#33312b', shirt:'#f2eada', tie:'#b0922e', glasses:true}) },
   shih: { name:'施順元', color:'#3a6a9a', voice:'m',  av: makeAvatar({skin:'#f0c8a0', hair:'part', hairC:'#1c1610', suit:'#2e3e5a', shirt:'#fff', tie:'#3a6a9a', badge:true}) },
-  yu:   { name:'余哲明', color:'#5a8a4a', voice:'m',  av: makeAvatar({skin:'#f0c49a', hair:'spiky', hairC:'#241c14', suit:'#4a7a4a', shirt:'#fff'}) }
+  yu:   { name:'余哲明', color:'#5a8a4a', voice:'m',  av: makeAvatar({skin:'#f0c49a', hair:'spiky', hairC:'#241c14', suit:'#4a7a4a', shirt:'#fff'}) },
+  kid:  { name:'小寶',   color:'#e2884a', voice:'f',  av: makeAvatar({skin:'#f6d2ac', hair:'bowl', hairC:'#241a12', suit:'#e2884a', shirt:'#fff'}) }
 };
 
 /* ===== backgrounds ===== */
@@ -646,6 +675,24 @@ const BGS = {
     <circle cx="340" cy="250" r="9" fill="#c0c4c8"/><rect x="336" y="250" width="8" height="40" fill="#c0c4c8"/>
     <rect y="360" width="400" height="240" fill="#1c120c"/>
     <rect y="356" width="400" height="8" fill="#3a281c"/>
+  </svg>`,''),
+  hotel: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#d8cdbb"/>
+    <rect width="400" height="380" fill="#e6dcc8"/>
+    <rect x="40" y="40" width="150" height="150" rx="6" fill="#2a3a52"/>
+    <rect x="48" y="48" width="134" height="134" fill="#3e5a82"/>
+    <circle cx="150" cy="80" r="16" fill="#f0e8c8" opacity=".8"/>
+    <g stroke="#1f2d3e" stroke-width="6"><path d="M115 48 L115 182 M48 115 L182 115"/></g>
+    <rect x="240" y="70" width="120" height="110" rx="4" fill="#8a6a3a"/>
+    <rect x="252" y="84" width="96" height="20" rx="3" fill="#c8a86a"/>
+    <rect x="252" y="116" width="96" height="20" rx="3" fill="#c8a86a"/>
+    <rect x="252" y="148" width="96" height="20" rx="3" fill="#c8a86a"/>
+    <rect y="300" width="400" height="300" fill="#9a7a52"/>
+    <rect y="296" width="400" height="8" fill="#7a5e3e"/>
+    <rect x="20" y="330" width="360" height="180" rx="10" fill="#c8b896"/>
+    <rect x="20" y="330" width="360" height="44" rx="10" fill="#e8dcc2"/>
+    <rect x="40" y="300" width="120" height="34" rx="6" fill="#f2ece0"/>
+    <rect x="240" y="300" width="120" height="34" rx="6" fill="#f2ece0"/>
   </svg>`,'')
 };
 
@@ -3123,6 +3170,71 @@ const CASE7 = {
 /* ===== 案件登錄 ===== */
 const CASES = [CASE1, CASE2, CASE3, CASE4, CASE5, CASE6, CASE7];
 
+/* ===== 幕間支線（穿插事件・含小遊戲） ===== */
+const INTERLUDE_ROACH = {
+  title:'蟑螂大作戰', sub:'幕間・張律的渡假惡夢', icon:'🪳',
+  desc:'難得結案後的休假，張律帶小寶出國玩。沒想到飯店一開燈——滿地蟑螂！律師魂能對付得了小強嗎？（休閒小遊戲）',
+  evidence:[],
+  script:[
+    {t:'title', ep:'幕間', name:'蟑螂大作戰'},
+    {t:'bgm', v:'invest'},
+    {t:'bg', v:'night'},
+    {t:'narr', text:'連續七場法庭硬仗之後——\n張律，總算給自己放了一個假。'},
+    {t:'sp', v:'kid', pose:'smile'},
+    {t:'say', c:'kid', text:'把拔！這次出國玩，你說好整個禮拜都不准講「異議」喔！'},
+    {t:'sp', v:'lin', pose:'smile'},
+    {t:'say', c:'lin', text:'好好好，爸爸放假。今晚先在飯店好好睡一覺，明天帶妳去樂園。'},
+    {t:'bg', v:'hotel'},
+    {t:'narr', text:'深夜・海外某飯店客房\n張律伸手，按下了電燈開關——'},
+    {t:'sfx', v:'swoosh'},
+    {t:'flash'},
+    {t:'sp', v:'kid', pose:'shock'},
+    {t:'sfx', v:'shock'},
+    {t:'say', c:'kid', text:'呀啊啊啊——！把拔！地上！牆上！到、到處都是蟑螂啦！！'},
+    {t:'sp', v:'lin', pose:'shock'},
+    {t:'shake'},
+    {t:'say', c:'lin', text:'這是什麼五星級的數量……！小寶別怕，站到床上去！'},
+    {t:'think', text:'（身為律師，我的直覺是先「蒐證」、再寄存證信函求償……但現在，當務之急是——把這些小強，全部拍扁！）'},
+    {t:'say', c:'lin', pose:'angry', text:'蟑螂們，聽好了——本律師，對你們，提起「現行犯」逮捕！'},
+    {t:'narr', text:'【打蟑螂小遊戲】\n點擊畫面上亂竄的蟑螂🪳把牠們拍扁！\n在時間內達到目標數量就獲勝！'},
+    {t:'minigame', v:'roach', dur:30, goal:14,
+      win:[
+        {t:'bg', v:'hotel'},
+        {t:'sp', v:'lin', pose:'smile'},
+        {t:'sfx', v:'correct'},
+        {t:'say', c:'lin', text:'呼……清場完畢。三十秒，戰果豐碩。'},
+        {t:'sp', v:'kid', pose:'smile'},
+        {t:'say', c:'kid', text:'把拔好厲害！像打地鼠一樣，啪啪啪！'},
+        {t:'sp', v:'lin', pose:'normal'},
+        {t:'say', c:'lin', text:'好了，蒐證時間。（拿出手機，喀嚓喀嚓）這些照片、房號、入住紀錄……明天，飯店經理會很「想」見我的。'},
+        {t:'say', c:'lin', pose:'smile', text:'消費者保護法、旅宿業管理規則、債務不履行……小寶，看爸爸幫我們把這晚的房錢「要」回來，外加升等海景套房。'},
+        {t:'sp', v:'kid', pose:'smile'},
+        {t:'say', c:'kid', text:'耶！把拔最強了！那……我們現在可以換房間了嗎？這間我不要睡啦！'},
+        {t:'say', c:'lin', pose:'smile', text:'走，換房去。假期，重新開始。'},
+        {t:'think', text:'（休假果然還是會變成工作……但能護著女兒、把不合理的事討回公道——這份本事，放假也關不掉。）'},
+        {t:'narr', text:'—— 幕間・完 ——'},
+        {t:'end'}
+      ],
+      lose:[
+        {t:'bg', v:'hotel'},
+        {t:'sp', v:'lin', pose:'sweat'},
+        {t:'say', c:'lin', text:'可惡……牠們的數量，超出我的處理速度了。這場「官司」，暫時打不贏。'},
+        {t:'sp', v:'kid', pose:'sad'},
+        {t:'say', c:'kid', text:'把拔，我們快逃啦！我今天絕對不要睡這裡！'},
+        {t:'sp', v:'lin', pose:'normal'},
+        {t:'say', c:'lin', text:'……同意。撤退也是一種策略。走，連夜換飯店。'},
+        {t:'say', c:'lin', pose:'angry', text:'不過這筆帳，我記下了。明早一封存證信函寄過去——蟑螂打不完，律師函，可是寫不完的。'},
+        {t:'sp', v:'kid', pose:'smile'},
+        {t:'say', c:'kid', text:'噗，把拔你連蟑螂都要告喔！'},
+        {t:'think', text:'（沒能當場全殲，有點不甘心……改天再來挑戰一次吧。）'},
+        {t:'narr', text:'—— 幕間・完（要不要再挑戰一次？）——'},
+        {t:'end'}
+      ]
+    }
+  ]
+};
+const INTERLUDES = [INTERLUDE_ROACH];
+
 /* ===== engine.js : script runner, testimony system, UI ===== */
 const $ = id => document.getElementById(id);
 
@@ -3135,7 +3247,8 @@ const G = {
   ev:[], curSprite:null,
   unlocked:1, done:CASES.map(()=>false), stars:CASES.map(()=>false),
   settings:{tspeed:1},
-  presentMode:false
+  presentMode:false,
+  isInterlude:false, roachBest:0
 };
 
 /* ---------- progress persistence (localStorage) ---------- */
@@ -3149,7 +3262,8 @@ function saveProgress(){
       stars: G.stars,
       tspeed: G.settings.tspeed,
       bgm: AudioSys.bgmOn,
-      sfx: AudioSys.sfxOn
+      sfx: AudioSys.sfxOn,
+      roachBest: G.roachBest
     }));
   }catch(e){ /* localStorage 不可用（如無痕模式）時靜默忽略 */ }
 }
@@ -3164,6 +3278,7 @@ function loadProgress(){
     if(typeof s.tspeed === 'number') G.settings.tspeed = s.tspeed;
     if(typeof s.bgm === 'boolean') AudioSys.setBGM(s.bgm);
     if(typeof s.sfx === 'boolean') AudioSys.setSFX(s.sfx);
+    if(typeof s.roachBest === 'number') G.roachBest = s.roachBest | 0;
     // 已解鎖的章節，至少要與已通關的進度一致
     G.done.forEach((d, i) => { if(d) G.unlocked = Math.max(G.unlocked, i + 2); });
     G.unlocked = Math.min(G.unlocked, CASES.length);
@@ -3372,6 +3487,20 @@ function exec(e, fr){
       enterTestimony(e.v);
       return true;
     }
+    case 'minigame': {
+      fr.i++;
+      if(e.v === 'roach'){
+        startRoach({dur: e.dur || 30, goal: e.goal || 14}, (score, passed) => {
+          closeOverlays();
+          if(score > G.roachBest){ G.roachBest = score; saveProgress(); }
+          const follow = passed ? (e.win || []) : (e.lose || []);
+          if(follow.length) pushScript(follow);
+          step();
+        });
+        return true;   // 暫停腳本，等小遊戲結束
+      }
+      return false;
+    }
     case 'end': {
       fr.i++;
       caseComplete();
@@ -3510,15 +3639,79 @@ function showEvDetail(id){
   det.appendChild(back);
 }
 
+/* ---------- 打蟑螂小遊戲 ---------- */
+function startRoach(opts, done){
+  const field = $('roach-field'), result = $('roach-result');
+  field.innerHTML = '';
+  result.classList.add('hidden');
+  let score = 0, timeLeft = opts.dur, alive = true;
+  const roaches = new Set();
+  $('roach-score').textContent = '🪳 ' + score;
+  $('roach-time').textContent = '⏱ ' + timeLeft;
+  $('roach-goal').textContent = '目標 ' + opts.goal + ' 隻';
+  openOverlay('ov-roach');
+
+  function spawn(){
+    if(!alive) return;
+    const r = document.createElement('div');
+    r.className = 'roach'; r.textContent = '🪳';
+    const W = field.clientWidth || 340, H = field.clientHeight || 460;
+    const x0 = Math.random() * (W - 40), y0 = Math.random() * (H - 40);
+    r.style.transitionDuration = '0s';
+    r.style.transform = `translate(${x0}px,${y0}px) rotate(${Math.random()*360}deg)`;
+    field.appendChild(r);
+    roaches.add(r);
+    requestAnimationFrame(() => {
+      if(!roaches.has(r)) return;
+      const dur = 1.1 + Math.random() * 1.7;
+      const x1 = Math.random() * (W - 40), y1 = Math.random() * (H - 40);
+      r.style.transitionDuration = dur + 's';
+      r.style.transform = `translate(${x1}px,${y1}px) rotate(${Math.random()*360}deg)`;
+      r._esc = setTimeout(() => { if(roaches.has(r)){ roaches.delete(r); r.remove(); } }, dur*1000 + 150);
+    });
+    r.addEventListener('click', ev => {
+      ev.stopPropagation();
+      if(!roaches.has(r)) return;
+      roaches.delete(r); clearTimeout(r._esc);
+      r.classList.add('dead'); r.textContent = '💥';
+      AudioSys.sfx.thud();
+      score++; $('roach-score').textContent = '🪳 ' + score;
+      setTimeout(() => r.remove(), 170);
+    });
+  }
+  function finish(){
+    if(!alive) return;
+    alive = false;
+    clearInterval(spawnTimer); clearInterval(tickTimer);
+    roaches.forEach(r => { clearTimeout(r._esc); r.remove(); });
+    roaches.clear();
+    const passed = score >= opts.goal;
+    const best = Math.max(G.roachBest, score);
+    result.innerHTML = `<div style="font-size:60px">${passed ? '🏆' : '🪳'}</div>
+      <h2 style="color:${passed ? '#7ee08a' : '#ff6b5e'}">${passed ? '蟑螂肅清成功！' : '蟑螂逃走了……'}</h2>
+      <p>這一回合打到 <b style="color:#f0c469">${score}</b> 隻（目標 ${opts.goal} 隻）<br>最佳紀錄：${best} 隻</p>
+      <button id="roach-go" class="menu-btn">繼續</button>`;
+    result.classList.remove('hidden');
+    $('roach-go').onclick = ev => { ev.stopPropagation(); AudioSys.resume(); done(score, passed); };
+  }
+  const spawnTimer = setInterval(spawn, 650);
+  const tickTimer = setInterval(() => {
+    timeLeft--; $('roach-time').textContent = '⏱ ' + Math.max(0, timeLeft);
+    if(timeLeft <= 0) finish();
+  }, 1000);
+  spawn(); spawn();
+  G._roachFinish = finish;   // 測試/緊急結束用
+}
+
 /* ---------- overlays ---------- */
-const OVERLAYS = ['ov-record','ov-settings','ov-choice','ov-toast','ov-title','ov-verdict','ov-gameover'];
+const OVERLAYS = ['ov-record','ov-settings','ov-choice','ov-toast','ov-title','ov-verdict','ov-gameover','ov-roach'];
 function openOverlay(id){ closeOverlays(); $(id).classList.remove('hidden'); }
 function closeOverlays(){ OVERLAYS.forEach(o => $(o).classList.add('hidden')); }
 function anyOverlayOpen(){ return OVERLAYS.some(o => !$(o).classList.contains('hidden')); }
 
 /* ---------- case lifecycle ---------- */
 function startCase(i){
-  G.caseIdx = i;
+  G.caseIdx = i; G.isInterlude = false;
   G.kase = structuredClone(CASES[i]);
   G.frames = []; G.cont = null;
   G.mode = 'script'; G.testimony = null; G.tIdx = 0;
@@ -3531,8 +3724,28 @@ function startCase(i){
   pushScript(G.kase.script);
   step();
 }
+function startInterlude(i){
+  G.caseIdx = -1; G.isInterlude = true;
+  G.kase = structuredClone(INTERLUDES[i]);
+  G.frames = []; G.cont = null;
+  G.mode = 'script'; G.testimony = null; G.tIdx = 0;
+  G.penaltyPending = false; G.ev = []; G.presentMode = false;
+  hideTestimonyUI(); closeOverlays();
+  $('penalty').innerHTML = '';   // 幕間沒有罰則
+  setSprite(null); setBG('office'); setRain(false);
+  setText('', {});
+  showScreen('game');
+  pushScript(G.kase.script);
+  step();
+}
 function caseComplete(){
   AudioSys.stopBGM();
+  if(G.isInterlude){
+    G.isInterlude = false;
+    hideTestimonyUI(); renderPenalty();
+    showScreen('select'); renderSelect();
+    return;
+  }
   G.done[G.caseIdx] = true;
   if(G.wrongs[G.caseIdx] === 0) G.stars[G.caseIdx] = true;
   G.unlocked = Math.min(CASES.length, Math.max(G.unlocked, G.caseIdx + 2));
@@ -3571,6 +3784,15 @@ function renderSelect(){
       ${G.stars[i] ? '<div class="stars">★ 完美辯護</div>' : ''}
       ${G.done[i] ? '<div class="done-badge">✓ 已結案（可重新挑戰）</div>' : ''}`;
     if(!locked) b.onclick = ev => { ev.stopPropagation(); AudioSys.resume(); startCase(i); };
+    wrap.appendChild(b);
+  });
+  INTERLUDES.forEach((c, i) => {
+    const b = document.createElement('button');
+    b.className = 'case-card interlude';
+    b.innerHTML = `<div class="ep">${c.icon || '🎬'}　幕間 INTERLUDE</div><h3>${c.title}</h3><p>${c.desc}</p>
+      ${G.roachBest > 0 ? `<div class="stars">最佳 ${G.roachBest} 隻</div>` : ''}
+      <div class="done-badge">＞ 休閒小遊戲・隨時可玩</div>`;
+    b.onclick = ev => { ev.stopPropagation(); AudioSys.resume(); startInterlude(i); };
     wrap.appendChild(b);
   });
 }
@@ -3626,7 +3848,8 @@ document.addEventListener('DOMContentLoaded', boot);
 
 /* test hooks */
 window.Game = { G, tap, navStatement, pressStatement, presentEvidence, startCase,
-  showScreen, retryTestimony, closeOverlays, openRecord };
+  showScreen, retryTestimony, closeOverlays, openRecord, startInterlude,
+  roachFinish: () => { if(G._roachFinish) G._roachFinish(); } };
 
 </script>
 </body>
