@@ -229,6 +229,36 @@ button{font-family:inherit;border:none;cursor:pointer;}
 #roach-result h2{font-size:28px;font-weight:900;letter-spacing:4px;}
 #roach-result p{font-size:15px;line-height:1.9;color:#e8dcc2;}
 
+/* soccer minigame */
+#ov-soccer{background:rgba(20,30,20,.30);}
+#soccer-hud{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;
+  font-size:18px;font-weight:900;letter-spacing:2px;color:#fff;
+  text-shadow:0 2px 4px #000;background:linear-gradient(180deg,rgba(0,0,0,.45),transparent);z-index:2;}
+#soccer-goal{font-size:12px;color:#d7ffd9;letter-spacing:1px;}
+#soccer-field{position:absolute;inset:0;top:50px;overflow:hidden;z-index:1;cursor:pointer;}
+#soccer-goalframe{position:absolute;left:10%;top:6%;width:80%;height:24%;
+  border:7px solid #f4f8f4;border-bottom:none;border-radius:4px 4px 0 0;
+  box-shadow:0 0 0 2px rgba(0,0,0,.25);
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 2px,transparent 2px 16px),
+             repeating-linear-gradient(0deg,rgba(255,255,255,.10) 0 2px,transparent 2px 16px);}
+#soccer-keeper{position:absolute;top:13%;left:0;font-size:40px;line-height:1;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.5));will-change:transform;pointer-events:none;}
+#soccer-ball{position:absolute;font-size:34px;line-height:1;left:0;top:0;
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,.5));will-change:transform;pointer-events:none;}
+#soccer-flash{position:absolute;top:34%;left:0;width:100%;text-align:center;
+  font-size:46px;font-weight:900;font-style:italic;letter-spacing:4px;z-index:4;
+  text-shadow:3px 3px 0 rgba(0,0,0,.4);pointer-events:none;
+  animation:slam .4s cubic-bezier(.2,2,.4,1);}
+#soccer-flash.hidden{display:none;}
+#soccer-hint{position:absolute;bottom:7%;left:0;width:100%;text-align:center;
+  font-size:13px;letter-spacing:2px;color:#eafff0;text-shadow:0 2px 4px #000;pointer-events:none;}
+#soccer-result{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:14px;text-align:center;
+  background:rgba(8,14,8,.82);backdrop-filter:blur(2px);}
+#soccer-result.hidden{display:none;}
+#soccer-result h2{font-size:28px;font-weight:900;letter-spacing:4px;}
+#soccer-result p{font-size:15px;line-height:1.9;color:#e8f4e8;}
+
 /* settings */
 #ov-settings{justify-content:center;align-items:center;}
 #set-card{width:84%;max-width:360px;background:#241a11;border:1px solid #4a3520;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px;}
@@ -352,6 +382,19 @@ button{font-family:inherit;border:none;cursor:pointer;}
       <div id="roach-hud"><span id="roach-time">⏱ 30</span><span id="roach-goal"></span><span id="roach-score">🪳 0</span></div>
       <div id="roach-field"></div>
       <div id="roach-result" class="hidden"></div>
+    </div>
+
+    <!-- ===== 小遊戲：射門 ===== -->
+    <div id="ov-soccer" class="overlay hidden">
+      <div id="soccer-hud"><span id="soccer-shots">⚽ 5</span><span id="soccer-goal"></span><span id="soccer-score">🥅 0</span></div>
+      <div id="soccer-field">
+        <div id="soccer-goalframe"></div>
+        <div id="soccer-keeper">🧤</div>
+        <div id="soccer-ball">⚽</div>
+        <div id="soccer-flash" class="hidden"></div>
+        <div id="soccer-hint">點擊球門位置射門！</div>
+      </div>
+      <div id="soccer-result" class="hidden"></div>
     </div>
   </section>
 
@@ -693,6 +736,26 @@ const BGS = {
     <rect x="20" y="330" width="360" height="44" rx="10" fill="#e8dcc2"/>
     <rect x="40" y="300" width="120" height="34" rx="6" fill="#f2ece0"/>
     <rect x="240" y="300" width="120" height="34" rx="6" fill="#f2ece0"/>
+  </svg>`,''),
+  stadium: _bgWrap(`<svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+    <rect width="400" height="600" fill="#1e2a3a"/>
+    <rect width="400" height="150" fill="#26344a"/>
+    <g fill="#3a4a64"><rect x="0" y="20" width="400" height="40"/></g>
+    <g fill="#d9a441" opacity=".5"><circle cx="60" cy="30" r="6"/><circle cx="140" cy="26" r="6"/><circle cx="220" cy="30" r="6"/><circle cx="300" cy="26" r="6"/><circle cx="370" cy="30" r="6"/></g>
+    <g opacity=".85"><rect x="0" y="64" width="400" height="74" fill="#2f4258"/>
+      <g fill="#5a6a82"><rect x="6" y="70" width="20" height="10"/><rect x="34" y="70" width="20" height="10"/><rect x="62" y="70" width="20" height="10"/><rect x="90" y="70" width="20" height="10"/><rect x="118" y="70" width="20" height="10"/><rect x="146" y="70" width="20" height="10"/><rect x="174" y="70" width="20" height="10"/><rect x="202" y="70" width="20" height="10"/><rect x="230" y="70" width="20" height="10"/><rect x="258" y="70" width="20" height="10"/><rect x="286" y="70" width="20" height="10"/><rect x="314" y="70" width="20" height="10"/><rect x="342" y="70" width="20" height="10"/><rect x="370" y="70" width="24" height="10"/></g>
+      <g fill="#e8554a"><rect x="20" y="86" width="18" height="10"/><rect x="76" y="86" width="18" height="10"/><rect x="160" y="86" width="18" height="10"/><rect x="244" y="86" width="18" height="10"/><rect x="328" y="86" width="18" height="10"/></g>
+      <g fill="#4a86c8"><rect x="48" y="102" width="18" height="10"/><rect x="132" y="102" width="18" height="10"/><rect x="216" y="102" width="18" height="10"/><rect x="300" y="102" width="18" height="10"/><rect x="356" y="102" width="18" height="10"/></g>
+    </g>
+    <rect y="138" width="400" height="462" fill="#2f8a3e"/>
+    <g fill="#37a049" opacity=".7"><rect y="138" width="400" height="56"/><rect y="250" width="400" height="56"/><rect y="362" width="400" height="56"/><rect y="474" width="400" height="56"/></g>
+    <g stroke="#eef6ee" stroke-width="4" fill="none" opacity=".85">
+      <rect x="60" y="150" width="280" height="120" rx="2"/>
+      <rect x="130" y="150" width="140" height="60" rx="2"/>
+      <circle cx="200" cy="300" r="56"/>
+      <path d="M0 300 L400 300"/>
+    </g>
+    <circle cx="200" cy="300" r="5" fill="#eef6ee"/>
   </svg>`,'')
 };
 
@@ -3233,7 +3296,61 @@ const INTERLUDE_ROACH = {
     }
   ]
 };
-const INTERLUDES = [INTERLUDE_ROACH];
+const INTERLUDE_SOCCER = {
+  title:'世足射門挑戰', sub:'幕間・美國世界盃之旅', icon:'⚽',
+  desc:'世足賽正熱！張律帶女兒小寶飛到美國朝聖。賽前的球迷體驗區，有個 PK 射門挑戰——律師的腳法，能騙過門將嗎？（休閒小遊戲）',
+  evidence:[],
+  script:[
+    {t:'title', ep:'幕間', name:'世足射門挑戰'},
+    {t:'bgm', v:'invest'},
+    {t:'bg', v:'stadium'},
+    {t:'narr', text:'四年一度的世界盃，這次在美國開踢。\n張律履行了對女兒的承諾——飛越太平洋，朝聖去！'},
+    {t:'sp', v:'kid', pose:'smile'},
+    {t:'say', c:'kid', text:'把拔你看！好大的球場喔！那邊有「射門挑戰」耶，五球進三球就有限定球衣！'},
+    {t:'sp', v:'lin', pose:'smile'},
+    {t:'say', c:'lin', text:'限定球衣？……交給爸爸。我雖然只在法庭上「攻防」，但射門嘛，總是踢過幾腳的。'},
+    {t:'sp', v:'kid', pose:'normal'},
+    {t:'say', c:'kid', text:'把拔，門將超強的喔，一直在門線上跑來跑去！要看準他撲不到的地方再射！'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'think', text:'（看準對手的破綻、抓住空檔出手——這跟詰問，其實是同一回事。）'},
+    {t:'say', c:'lin', pose:'angry', text:'門將先生，本律師要對你的球門，提起「攻勢」了！'},
+    {t:'narr', text:'【世足射門小遊戲】\n門將會左右移動防守，\n點擊球門上你想射的位置出手！\n門將撲不到 ➜ GOAL！五球內進球達標就獲勝！'},
+    {t:'minigame', v:'soccer', shots:5, goal:3,
+      win:[
+        {t:'bg', v:'stadium'},
+        {t:'sp', v:'lin', pose:'smile'},
+        {t:'sfx', v:'correct'},
+        {t:'say', c:'lin', text:'呼……進球達標！門將的重心，全被我讀出來了。'},
+        {t:'sp', v:'kid', pose:'smile'},
+        {t:'say', c:'kid', text:'哇——把拔你超強的！我要跟全班同學說，我爸是律師，還是射門高手！'},
+        {t:'sp', v:'lin', pose:'normal'},
+        {t:'say', c:'lin', pose:'smile', text:'拿去，限定球衣，背號就印妳的名字。今天爸爸不是律師，是妳的隊友。'},
+        {t:'sp', v:'kid', pose:'smile'},
+        {t:'say', c:'kid', text:'耶——！那等一下進場看球，你要陪我一起唱加油歌喔！'},
+        {t:'say', c:'lin', pose:'smile', text:'沒問題。今天，只當一個爸爸。'},
+        {t:'think', text:'（贏一場官司的成就感，和女兒這個笑容比起來……還是差了一點。）'},
+        {t:'narr', text:'—— 幕間・完 ——'},
+        {t:'end'}
+      ],
+      lose:[
+        {t:'bg', v:'stadium'},
+        {t:'sp', v:'lin', pose:'sweat'},
+        {t:'say', c:'lin', text:'唔……門將比我想像中難纏。進球數，差了臨門一腳。'},
+        {t:'sp', v:'kid', pose:'normal'},
+        {t:'say', c:'kid', text:'把拔沒關係啦！你在法庭都贏，足球輸一下下，剛剛好啦，嘻嘻。'},
+        {t:'sp', v:'lin', pose:'normal'},
+        {t:'say', c:'lin', text:'……被女兒安慰了。好，爸爸不服氣，等等再來挑戰一次！'},
+        {t:'say', c:'lin', pose:'smile', text:'不過先說好——球衣，爸爸用「買」的也會買給妳。'},
+        {t:'sp', v:'kid', pose:'smile'},
+        {t:'say', c:'kid', text:'把拔最好了！'},
+        {t:'think', text:'（差一點點……這股不甘心，跟敗訴時一模一樣。再來一次吧。）'},
+        {t:'narr', text:'—— 幕間・完（要不要再挑戰一次？）——'},
+        {t:'end'}
+      ]
+    }
+  ]
+};
+const INTERLUDES = [INTERLUDE_ROACH, INTERLUDE_SOCCER];
 
 /* ===== engine.js : script runner, testimony system, UI ===== */
 const $ = id => document.getElementById(id);
@@ -3248,7 +3365,7 @@ const G = {
   unlocked:1, done:CASES.map(()=>false), stars:CASES.map(()=>false),
   settings:{tspeed:1},
   presentMode:false,
-  isInterlude:false, roachBest:0
+  isInterlude:false, roachBest:0, soccerBest:0
 };
 
 /* ---------- progress persistence (localStorage) ---------- */
@@ -3263,7 +3380,8 @@ function saveProgress(){
       tspeed: G.settings.tspeed,
       bgm: AudioSys.bgmOn,
       sfx: AudioSys.sfxOn,
-      roachBest: G.roachBest
+      roachBest: G.roachBest,
+      soccerBest: G.soccerBest
     }));
   }catch(e){ /* localStorage 不可用（如無痕模式）時靜默忽略 */ }
 }
@@ -3279,6 +3397,7 @@ function loadProgress(){
     if(typeof s.bgm === 'boolean') AudioSys.setBGM(s.bgm);
     if(typeof s.sfx === 'boolean') AudioSys.setSFX(s.sfx);
     if(typeof s.roachBest === 'number') G.roachBest = s.roachBest | 0;
+    if(typeof s.soccerBest === 'number') G.soccerBest = s.soccerBest | 0;
     // 已解鎖的章節，至少要與已通關的進度一致
     G.done.forEach((d, i) => { if(d) G.unlocked = Math.max(G.unlocked, i + 2); });
     G.unlocked = Math.min(G.unlocked, CASES.length);
@@ -3499,6 +3618,16 @@ function exec(e, fr){
         });
         return true;   // 暫停腳本，等小遊戲結束
       }
+      if(e.v === 'soccer'){
+        startSoccer({shots: e.shots || 5, goal: e.goal || 3}, (score, passed) => {
+          closeOverlays();
+          if(score > G.soccerBest){ G.soccerBest = score; saveProgress(); }
+          const follow = passed ? (e.win || []) : (e.lose || []);
+          if(follow.length) pushScript(follow);
+          step();
+        });
+        return true;   // 暫停腳本，等小遊戲結束
+      }
       return false;
     }
     case 'end': {
@@ -3703,8 +3832,93 @@ function startRoach(opts, done){
   G._roachFinish = finish;   // 測試/緊急結束用
 }
 
+/* ---------- 世足射門小遊戲 ---------- */
+function startSoccer(opts, done){
+  const field = $('soccer-field'), result = $('soccer-result');
+  const keeper = $('soccer-keeper'), ball = $('soccer-ball'), flash = $('soccer-flash');
+  result.classList.add('hidden'); flash.classList.add('hidden');
+  let shotsLeft = opts.shots, score = 0, canShoot = true, alive = true, raf = null;
+  $('soccer-score').textContent = '🥅 ' + score;
+  $('soccer-shots').textContent = '⚽ ' + shotsLeft;
+  $('soccer-goal').textContent = '目標 ' + opts.goal + ' 球';
+  openOverlay('ov-soccer');
+
+  function geom(){
+    const w = field.clientWidth || 340, h = field.clientHeight || 460;
+    const goalLeft = w * 0.12, goalRight = w * 0.88;
+    const keeperW = (goalRight - goalLeft) * 0.18;
+    return { w, h, goalLeft, goalRight, keeperW,
+      kMin: goalLeft + keeperW/2, kMax: goalRight - keeperW/2,
+      goalY: h * 0.16, ballStartX: w/2, ballStartY: h * 0.80 };
+  }
+  function placeBall(){
+    const g = geom();
+    ball.style.transition = 'none';
+    ball.style.transform = `translate(${g.ballStartX-17}px,${g.ballStartY-17}px)`;
+  }
+  placeBall();
+
+  let kx = geom().w * 0.5, dir = 1;
+  function loop(){
+    if(!alive) return;
+    const g = geom(), speed = Math.max(1.6, g.w * 0.012);
+    kx += dir * speed;
+    if(kx < g.kMin){ kx = g.kMin; dir = 1; }
+    if(kx > g.kMax){ kx = g.kMax; dir = -1; }
+    keeper.style.transform = `translateX(${kx - 20}px)`;
+    raf = requestAnimationFrame(loop);
+  }
+  raf = requestAnimationFrame(loop);
+
+  field.onclick = (ev) => {
+    if(!alive || !canShoot) return;
+    canShoot = false;
+    const g = geom();
+    const rect = field.getBoundingClientRect ? field.getBoundingClientRect() : { left:0 };
+    let tx = (ev && ev.clientX != null) ? ev.clientX - rect.left : g.w/2;
+    tx = Math.max(g.goalLeft + 10, Math.min(g.goalRight - 10, tx));
+    const keeperAtShoot = kx;
+    ball.style.transition = 'transform .36s ease-out';
+    ball.style.transform = `translate(${tx-17}px,${g.goalY-17}px) scale(.55)`;
+    setTimeout(() => {
+      if(!alive) return;
+      const saved = Math.abs(tx - keeperAtShoot) < (g.keeperW/2 + 18);
+      shotsLeft--; $('soccer-shots').textContent = '⚽ ' + shotsLeft;
+      flash.textContent = saved ? 'SAVED!' : 'GOAL!!';
+      flash.style.color = saved ? '#ff6b5e' : '#7ee08a';
+      flash.classList.remove('hidden');
+      flash.style.animation = 'none'; void flash.offsetWidth;
+      flash.style.animation = 'slam .4s cubic-bezier(.2,2,.4,1)';
+      if(saved){ AudioSys.sfx.wrong(); }
+      else { score++; $('soccer-score').textContent = '🥅 ' + score; AudioSys.sfx.correct(); }
+      setTimeout(() => {
+        if(!alive) return;
+        flash.classList.add('hidden');
+        if(shotsLeft <= 0){ finish(); return; }
+        placeBall(); canShoot = true;
+      }, 700);
+    }, 380);
+  };
+
+  function finish(){
+    if(!alive) return;
+    alive = false;
+    if(raf && typeof cancelAnimationFrame === 'function') cancelAnimationFrame(raf);
+    field.onclick = null;
+    const passed = score >= opts.goal;
+    const best = Math.max(G.soccerBest, score);
+    result.innerHTML = `<div style="font-size:60px">${passed ? '🏆' : '⚽'}</div>
+      <h2 style="color:${passed ? '#7ee08a' : '#ff6b5e'}">${passed ? '射門高手！' : '再接再厲！'}</h2>
+      <p>本回合射進 <b style="color:#f0c469">${score}</b> 球 / 共 ${opts.shots} 球（目標 ${opts.goal} 球）<br>最佳紀錄：${best} 球</p>
+      <button id="soccer-go" class="menu-btn">繼續</button>`;
+    result.classList.remove('hidden');
+    $('soccer-go').onclick = ev => { ev.stopPropagation(); AudioSys.resume(); done(score, passed); };
+  }
+  G._soccerFinish = finish;   // 測試/緊急結束用
+}
+
 /* ---------- overlays ---------- */
-const OVERLAYS = ['ov-record','ov-settings','ov-choice','ov-toast','ov-title','ov-verdict','ov-gameover','ov-roach'];
+const OVERLAYS = ['ov-record','ov-settings','ov-choice','ov-toast','ov-title','ov-verdict','ov-gameover','ov-roach','ov-soccer'];
 function openOverlay(id){ closeOverlays(); $(id).classList.remove('hidden'); }
 function closeOverlays(){ OVERLAYS.forEach(o => $(o).classList.add('hidden')); }
 function anyOverlayOpen(){ return OVERLAYS.some(o => !$(o).classList.contains('hidden')); }
@@ -3849,7 +4063,8 @@ document.addEventListener('DOMContentLoaded', boot);
 /* test hooks */
 window.Game = { G, tap, navStatement, pressStatement, presentEvidence, startCase,
   showScreen, retryTestimony, closeOverlays, openRecord, startInterlude,
-  roachFinish: () => { if(G._roachFinish) G._roachFinish(); } };
+  roachFinish: () => { if(G._roachFinish) G._roachFinish(); },
+  soccerFinish: () => { if(G._soccerFinish) G._soccerFinish(); } };
 
 </script>
 </body>
