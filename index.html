@@ -3235,7 +3235,7 @@ const CASES = [CASE1, CASE2, CASE3, CASE4, CASE5, CASE6, CASE7];
 
 /* ===== 幕間支線（穿插事件・含小遊戲） ===== */
 const INTERLUDE_ROACH = {
-  title:'蟑螂大作戰', sub:'幕間・張律的渡假惡夢', icon:'🪳',
+  title:'蟑螂大作戰', sub:'幕間・張律的渡假惡夢', icon:'🪳', bestKey:'roachBest', unit:'隻',
   desc:'難得結案後的休假，張律帶小寶出國玩。沒想到飯店一開燈——滿地蟑螂！律師魂能對付得了小強嗎？（休閒小遊戲）',
   evidence:[],
   script:[
@@ -3297,7 +3297,7 @@ const INTERLUDE_ROACH = {
   ]
 };
 const INTERLUDE_SOCCER = {
-  title:'世足射門挑戰', sub:'幕間・美國世界盃之旅', icon:'⚽',
+  title:'世足射門挑戰', sub:'幕間・美國世界盃之旅', icon:'⚽', bestKey:'soccerBest', unit:'球',
   desc:'世足賽正熱！張律帶女兒小寶飛到美國朝聖。賽前的球迷體驗區，有個 PK 射門挑戰——律師的腳法，能騙過門將嗎？（休閒小遊戲）',
   evidence:[],
   script:[
@@ -3858,45 +3858,74 @@ function startSoccer(opts, done){
   }
   placeBall();
 
-  let kx = geom().w * 0.5, dir = 1;
+  // 門將「不規律」移動：隨機目標、隨機速度、偶爾停頓、偶爾假動作
+  let kx = geom().w * 0.5, targetX = kx, kSpeed = 2, dwell = 0, diving = false;
+  function pickTarget(){
+    const g = geom();
+    targetX = g.kMin + Math.random() * (g.kMax - g.kMin);
+    kSpeed = 1.5 + Math.random() * 4.2;          // 速度時快時慢
+    dwell  = Math.floor(Math.random() * 26);     // 偶爾原地停頓（假動作）
+  }
+  pickTarget();
   function loop(){
     if(!alive) return;
-    const g = geom(), speed = Math.max(1.6, g.w * 0.012);
-    kx += dir * speed;
-    if(kx < g.kMin){ kx = g.kMin; dir = 1; }
-    if(kx > g.kMax){ kx = g.kMax; dir = -1; }
-    keeper.style.transform = `translateX(${kx - 20}px)`;
+    if(!diving){
+      const g = geom();
+      if(dwell > 0){ dwell--; }
+      else {
+        const d = targetX - kx;
+        if(Math.abs(d) <= kSpeed){ kx = targetX; pickTarget(); }
+        else kx += Math.sign(d) * kSpeed;
+      }
+      kx = Math.max(g.kMin, Math.min(g.kMax, kx));
+      keeper.style.transition = 'none';
+      keeper.style.transform = `translateX(${kx - 20}px)`;
+    }
     raf = requestAnimationFrame(loop);
   }
   raf = requestAnimationFrame(loop);
 
   field.onclick = (ev) => {
-    if(!alive || !canShoot) return;
-    canShoot = false;
+    if(!alive || !canShoot || diving) return;
+    canShoot = false; diving = true;
     const g = geom();
     const rect = field.getBoundingClientRect ? field.getBoundingClientRect() : { left:0 };
     let tx = (ev && ev.clientX != null) ? ev.clientX - rect.left : g.w/2;
-    tx = Math.max(g.goalLeft + 10, Math.min(g.goalRight - 10, tx));
+    tx = Math.max(g.goalLeft + 6, Math.min(g.goalRight - 6, tx));
     const keeperAtShoot = kx;
+    const diveReach = (g.goalRight - g.goalLeft) * 0.26;   // 門將撲救能及的範圍
+    const saved = Math.abs(tx - keeperAtShoot) <= diveReach;
+    const sign = tx >= keeperAtShoot ? 1 : -1;
+    const diveEndCenter = saved ? tx : keeperAtShoot + sign * diveReach;
+    // 門將撲救動作：朝球的方向魚躍（位移＋旋轉＋放大）
+    keeper.style.transition = 'transform .34s cubic-bezier(.25,.9,.4,1)';
+    keeper.style.transform = `translate(${diveEndCenter - 20}px, 18px) rotate(${sign*55}deg) scale(1.15)`;
+    // 球飛向射門點
     ball.style.transition = 'transform .36s ease-out';
     ball.style.transform = `translate(${tx-17}px,${g.goalY-17}px) scale(.55)`;
     setTimeout(() => {
       if(!alive) return;
-      const saved = Math.abs(tx - keeperAtShoot) < (g.keeperW/2 + 18);
       shotsLeft--; $('soccer-shots').textContent = '⚽ ' + shotsLeft;
       flash.textContent = saved ? 'SAVED!' : 'GOAL!!';
       flash.style.color = saved ? '#ff6b5e' : '#7ee08a';
       flash.classList.remove('hidden');
       flash.style.animation = 'none'; void flash.offsetWidth;
       flash.style.animation = 'slam .4s cubic-bezier(.2,2,.4,1)';
-      if(saved){ AudioSys.sfx.wrong(); }
+      if(saved){ AudioSys.sfx.thud(); }
       else { score++; $('soccer-score').textContent = '🥅 ' + score; AudioSys.sfx.correct(); }
       setTimeout(() => {
         if(!alive) return;
         flash.classList.add('hidden');
         if(shotsLeft <= 0){ finish(); return; }
-        placeBall(); canShoot = true;
-      }, 700);
+        // 門將站回中央、恢復不規律走動
+        const gg = geom();
+        kx = gg.w * 0.5;
+        keeper.style.transition = 'transform .2s ease-out';
+        keeper.style.transform = `translateX(${kx - 20}px)`;
+        pickTarget();
+        placeBall();
+        diving = false; canShoot = true;
+      }, 760);
     }, 380);
   };
 
@@ -4003,8 +4032,9 @@ function renderSelect(){
   INTERLUDES.forEach((c, i) => {
     const b = document.createElement('button');
     b.className = 'case-card interlude';
+    const best = c.bestKey ? (G[c.bestKey] || 0) : 0;
     b.innerHTML = `<div class="ep">${c.icon || '🎬'}　幕間 INTERLUDE</div><h3>${c.title}</h3><p>${c.desc}</p>
-      ${G.roachBest > 0 ? `<div class="stars">最佳 ${G.roachBest} 隻</div>` : ''}
+      ${best > 0 ? `<div class="stars">最佳 ${best} ${c.unit || ''}</div>` : ''}
       <div class="done-badge">＞ 休閒小遊戲・隨時可玩</div>`;
     b.onclick = ev => { ev.stopPropagation(); AudioSys.resume(); startInterlude(i); };
     wrap.appendChild(b);
