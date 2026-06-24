@@ -517,7 +517,8 @@ const CHARS = {
   zhong:{ name:'鍾立群', color:'#8a6a2a', voice:'lo', av: makeAvatar({skin:'#e8bd92', hair:'slick', hairC:'#16120c', suit:'#33312b', shirt:'#f2eada', tie:'#b0922e', glasses:true}) },
   shih: { name:'施順元', color:'#3a6a9a', voice:'m',  av: makeAvatar({skin:'#f0c8a0', hair:'part', hairC:'#1c1610', suit:'#2e3e5a', shirt:'#fff', tie:'#3a6a9a', badge:true}) },
   yu:   { name:'余哲明', color:'#5a8a4a', voice:'m',  av: makeAvatar({skin:'#f0c49a', hair:'spiky', hairC:'#241c14', suit:'#4a7a4a', shirt:'#fff'}) },
-  kid:  { name:'小寶',   color:'#e2884a', voice:'f',  av: makeAvatar({skin:'#f6d2ac', hair:'bowl', hairC:'#241a12', suit:'#e2884a', shirt:'#fff'}) }
+  kid:  { name:'小寶',   color:'#e2884a', voice:'f',  av: makeAvatar({skin:'#f6d2ac', hair:'bowl', hairC:'#241a12', suit:'#e2884a', shirt:'#fff'}) },
+  yi:   { name:'陳怡蓁', color:'#8a7a9a', voice:'f',  av: makeAvatar({skin:'#eccaa6', hair:'shortf', hairC:'#241a14', suit:'#5a5260', shirt:'#e8e4ea'}) }
 };
 
 /* ===== backgrounds ===== */
@@ -3231,7 +3232,293 @@ const CASE7 = {
 };
 
 /* ===== 案件登錄 ===== */
-const CASES = [CASE1, CASE2, CASE3, CASE4, CASE5, CASE6, CASE7];
+/* ===== case8.js : 第八話「天平的重量」(特別篇・取材真實有罪判決改編) ===== */
+const CASE8 = {
+  title:'天平的重量',
+  sub:'法扶辯護・製毒案的量刑攻防',
+  desc:'當事人坦承製造第二級毒品，法定刑十年起跳。沒有無罪可爭、沒有真兇可找——身為法扶律師，張律唯一能守護的，是「罪刑相當」，與一個重新做人的機會。取材自真實有罪判決改編。',
+  evidence:[
+    {id:'badge',   icon:'⚖️', name:'律師徽章', desc:'張律的律師徽章。法律扶助指派的案件，他一樣別在胸前。徽章背面：「為弱勢者辯護，也是辯護人的天職。」'},
+    {id:'file8',   icon:'📋', name:'案件卷宗', desc:'桃園地院115年度訴字第207號。被告陳怡蓁被訴毒品危害防制條例第4條第2項「製造第二級毒品罪」（依托咪酯）。法定刑：無期徒刑或十年以上有期徒刑。被告已坦承犯行。'},
+    {id:'confess', icon:'📝', name:'自白筆錄', desc:'被告於警詢、偵查、本院準備程序及審理中，就客觀犯罪過程「始終坦承不諱」、並自白製造犯行——係法定減刑事由之基礎。'},
+    {id:'art172',  icon:'📜', name:'毒防條例§17 II', desc:'犯第4條之罪，於「偵查及審判中均自白」者，減輕其刑。立法目的：鼓勵被告坦承、節省司法資源。'},
+    {id:'nosale',  icon:'🔍', name:'卷證（查無販賣）', desc:'遍查全卷，並無任何證據顯示被告所製造之依托咪酯曾「用於販賣或轉讓」。不得以「意圖營利散布」作為加重量刑之事由。'},
+    {id:'art171',  icon:'📑', name:'毒防條例§17 I', desc:'供出毒品「來源」因而查獲者，減輕或免除其刑。重點：須為「上游來源」。僅供出共犯、下游或同夥，而未指出上游者，不符本項要件。'},
+    {id:'source',  icon:'⚗️', name:'來源與角色認定', desc:'本案毒品原料係「被告提供」，被告居主導地位、指使共犯行事。換言之，共犯並非被告之「上游來源」——§17 I於本案無從適用。誠實面對，是辯護人的底線。'},
+    {id:'mitig',   icon:'🧩', name:'科刑審酌事項', desc:'刑法§57量刑因子：犯後坦承、查無販賣轉讓、犯罪動機與角色分工、智識程度、家庭經濟與生活狀況、素行等——請求法院為「罪刑相當」之衡量。'},
+    {id:'probation',icon:'🌱', name:'緩刑要件§74', desc:'受「二年以下」有期徒刑、拘役或罰金之宣告，並符合條件者，得宣告緩刑、給予自新機會。惟宣告刑逾二年者，即不符要件。'}
+  ],
+  testimonies:{
+    t1:{
+      title:'檢方的求刑', who:'yan',
+      statements:[
+        { text:'被告陳怡蓁共同製造第二級毒品，戕害國民健康，惡性重大，國家明令禁絕。', pose:'normal',
+          press:[
+            {t:'say', c:'lin', text:'製造毒品的危害，辯護人從不否認，當事人也已全部坦承。'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'坦承是應該的。但這不會改變她的罪。'},
+            {t:'think', text:'（這一仗沒有無罪可打。我能做的，是讓每一個「依法該減」的，都被算進去。）'}
+          ]},
+        { text:'製造第二級毒品，法定刑十年以上、甚至無期徒刑。本案毫無從輕之餘地，請從重量處！', pose:'angry',
+          ev:'confess',
+          press:[
+            {t:'say', c:'lin', text:'「毫無從輕餘地」？檢察官，您是不是漏看了卷裡最關鍵的一份筆錄？'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'什麼筆錄？被告的犯行，事證明確。'},
+            {t:'think', text:'（從警詢到審判，她一個字都沒推託。這份「自白」，是法律白紙黑字寫明的減刑事由。）'}
+          ],
+          win:[
+            {t:'sp', v:'yan', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'這是被告的自白筆錄——警詢、偵查、準備程序、審理，她「始終坦承不諱」！'},
+            {t:'flash'},
+            {t:'say', c:'lin', text:'依毒品危害防制條例第17條第2項：犯第4條之罪，於偵查及審判中均自白者，「應」減輕其刑！'},
+            {t:'say', c:'lin', pose:'angry', text:'這不是辯護人求情——這是法律的「強制減刑」規定。何來「毫無從輕之餘地」？！'},
+            {t:'sp', v:'yan', pose:'sweat'},
+            {t:'say', c:'yan', text:'……被告偵查中，檢方確實未及訊問其認罪與否。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'但她在警詢就已坦承客觀過程、審理中明白認罪。審判長，自白減刑的要件，宜從寬認定。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'被告自白之經過，本院已記明在卷。第17條第2項減刑事由，本院將予審酌。檢察官，請續為量刑論告。'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'……即便如此。製造的「數量」，仍足以證明被告所圖非小。'},
+            {t:'bgm', v:'cross'},
+            {t:'testimony', v:'t2'}
+          ]},
+        { text:'被告甚至有施用毒品的前科，素行不良，更應嚴懲以儆效尤。', pose:'smug',
+          press:[
+            {t:'say', c:'lin', text:'前科是量刑審酌的一環，辯護人不迴避。但「曾是施用者」與「罪該加倍」，是兩件事。'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'……哼。'},
+            {t:'think', text:'（曾經沉淪的人，更需要的是一條走得出來的路，而不是把門徹底關上。這點，留到最後說。）'}
+          ]}
+      ]
+    },
+    t2:{
+      title:'數量與意圖', who:'yan',
+      statements:[
+        { text:'被告所製造的依托咪酯菸油，多達二十四公克。這個數量，絕非自用！', pose:'angry',
+          press:[
+            {t:'say', c:'lin', text:'數量，辯護人不爭執。但「數量」能直接推論出「意圖」嗎？'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'量這麼大，不是要賣，是要做什麼？'},
+            {t:'think', text:'（「不是要賣是要幹嘛」——這是檢方的推測。推測，要由證據來補強。）'}
+          ]},
+        { text:'如此大量，被告顯係意圖「販賣牟利、散布毒害」，依此應大幅加重其刑！', pose:'smug',
+          ev:'nosale',
+          press:[
+            {t:'say', c:'lin', text:'「意圖販賣」——卷裡，有任何一筆交易紀錄、金流、買家、議價對話嗎？'},
+            {t:'sp', v:'yan', pose:'sweat'},
+            {t:'say', c:'yan', text:'這……偵查中尚未查得具體販賣事證……'},
+            {t:'think', text:'（沒有。一筆都沒有。那麼「販賣牟利」這四個字，就不能寫進量刑的天平裡。）'}
+          ],
+          win:[
+            {t:'sp', v:'yan', pose:'shock'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'辯方請庭上明鑒——遍查全卷，「查無任何證據」顯示本案毒品曾用於販賣或轉讓！'},
+            {t:'flash'},
+            {t:'say', c:'lin', text:'刑事審判，認定事實須憑證據，不能以「數量大」就「推定」意圖販賣。'},
+            {t:'say', c:'lin', pose:'angry', text:'沒有販賣事證，就不能用「營利散布」這頂大帽子，去加重一個人的刑期！'},
+            {t:'sp', v:'yan', pose:'sweat'},
+            {t:'say', c:'yan', text:'……公訴人，對販賣部分，無法提出補強證據。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'本案查無販賣、轉讓之證據，本院量刑時不以營利散布之意圖相繩。此節，記明筆錄。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'think', text:'（一層一層，把不該背的，從她肩上卸下。剩下的，是她真正該承擔的那一份。）'},
+            {t:'bgm', v:'corner'},
+            {t:'testimony', v:'t3'}
+          ]},
+        { text:'別忘了，是被告供出共犯陳柏宏，警方才循線查獲。辯護人該不會想用這個，再減一次刑吧？', pose:'smug',
+          press:[
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'……辯護人，不會。'},
+            {t:'sp', v:'yan', pose:'shock'},
+            {t:'say', c:'yan', text:'哦？你不主張第17條第1項的「供出來源」減刑？'},
+            {t:'say', c:'lin', text:'§17條第1項，要供出的是「上游來源」。本案的原料，是我的當事人提供的——陳柏宏，不是她的上游。這一項，於法不該用，我就不會用。'},
+            {t:'think', text:'（辯護人可以為當事人爭到底，但不能說謊。誠實，是這身法袍最後的底線。）'}
+          ]}
+      ]
+    },
+    t3:{
+      title:'最後的天平', who:'yan',
+      statements:[
+        { text:'既然只能依自白減一次刑，那也請從減輕後的範圍「頂格」量處，以彰顯製毒之惡！', pose:'angry',
+          press:[
+            {t:'say', c:'lin', text:'「彰顯惡性」不該是量刑的全部。刑法第57條要審酌的，是「這個人」的全部。'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'那你說，她有什麼好酌減的？'},
+            {t:'think', text:'（該說的，現在一次說完。為了她，也為了那個還能回頭的可能。）'}
+          ]},
+        { text:'一個製造毒品的人，憑什麼求法院從輕？請辯護人給個理由！', pose:'smug',
+          ev:'mitig',
+          press:[
+            {t:'say', c:'lin', text:'理由，全寫在這份科刑審酌裡。請容辯護人，一項一項陳明。'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'……說。'},
+            {t:'think', text:'（罪，要罰；但人，不能只被看成一個罪名。）'}
+          ],
+          win:[
+            {t:'sp', v:'lin', pose:'angry'},
+            {t:'sfx', v:'shock'},
+            {t:'say', c:'lin', pose:'angry', text:'審判長，辯方最後陳述——請依刑法第57條，整體審酌！'},
+            {t:'flash'},
+            {t:'say', c:'lin', text:'一、被告自始至終坦承犯行，依§17條第2項應減其刑；二、查無販賣、轉讓，犯罪情節非屬最重之列。'},
+            {t:'say', c:'lin', text:'三、被告智識、家庭與經濟狀況、犯罪動機與角色，均請納入衡量。她不是冷血的毒梟，是一個一步步走錯、如今願意誠實面對的人。'},
+            {t:'say', c:'lin', pose:'angry', text:'辯護人請求的，從來不是縱放——是「罪刑相當」。請給她一個與她的罪相稱、且看得見終點的刑度！'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'……公訴人對科刑範圍，敬表尊重，請庭上依法審酌。'},
+            {t:'sp', v:'judge', pose:'normal'},
+            {t:'sfx', v:'gavel'},
+            {t:'say', c:'judge', text:'本案事證明確，被告自白犯行。兩造就量刑之意見，本院均已聽取。本件宣判——'},
+            {t:'bgm', v:null},
+            {t:'narr', text:'——主文——'},
+            {t:'wait', v:800},
+            {t:'say', c:'judge', text:'被告陳怡蓁，共同犯製造第二級毒品罪。'},
+            {t:'say', c:'judge', text:'審酌其偵查及審判中均自白，依毒品危害防制條例第17條第2項，減輕其刑；併依刑法第57條一切情狀——'},
+            {t:'wait', v:700},
+            {t:'say', c:'judge', text:'處有期徒刑「五年二月」。'},
+            {t:'verdict', v:'有罪', guilty:true},
+            {t:'sfx', v:'thud'},
+            {t:'bgm', v:'sad'},
+            {t:'say', c:'judge', text:'另被告及辯護人請求宣告緩刑——惟本案宣告刑已逾二年，不合緩刑要件，自無從宣告。全案得上訴。'},
+            {t:'sp', v:'yi', pose:'sad'},
+            {t:'say', c:'yi', text:'五年……兩個月。張律師……謝謝你。我知道，這已經是……能爭到的最好的結果了。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'製造第二級毒品，法定最低是「十年」。妳的自白，讓它少了將近一半。'},
+            {t:'bg', v:'detention'},
+            {t:'sp', v:'yi', pose:'sad'},
+            {t:'say', c:'yi', text:'我毀了自己的人生……如果當初有人攔住我就好了。'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'五年二月不是終點，是一段距離。把毒戒掉、把書讀一點、把身體養好——刑期會走完，路還在。'},
+            {t:'say', c:'lin', pose:'normal', text:'法律給了願意誠實面對的人一道門。剩下的，要靠妳自己走出去。我會等妳走出來的那一天。'},
+            {t:'sp', v:'yi', pose:'normal'},
+            {t:'say', c:'yi', text:'……嗯。我會的。'},
+            {t:'bg', v:'office'},
+            {t:'sp', v:'mei', pose:'sad'},
+            {t:'say', c:'mei', text:'學長，這個案子……我們明明很努力，最後還是「有罪」。這樣，算贏嗎？'},
+            {t:'sp', v:'lin', pose:'normal'},
+            {t:'say', c:'lin', text:'小梅，辯護人不是只在「無罪」的時候才有意義。'},
+            {t:'say', c:'lin', text:'有人犯了罪，但他依然有權利——被依法審判、被公平量刑、被當成一個「人」來看待。守住這些，就是法扶律師存在的理由。'},
+            {t:'think', text:'（天平的一端是罪，另一端是罰。我們做的，是讓它「剛好」——不多一分苛刻，也不少一分公道。）'},
+            {t:'narr', text:'—— 第八話・完 ——'},
+            {t:'end'}
+          ]},
+        { text:'就算判了刑，這種人出來還不是再犯？根本不值得給機會！', pose:'angry',
+          press:[
+            {t:'say', c:'lin', text:'如果我們先認定一個人「不會變好」，那刑罰就只剩報復，不再有「教化」。'},
+            {t:'sp', v:'yan', pose:'normal'},
+            {t:'say', c:'yan', text:'……'},
+            {t:'think', text:'（相信人能改變，不是天真。那是整個刑事制度，願意給出的最後一份溫度。）'}
+          ]}
+      ]
+    }
+  },
+  script:[
+    {t:'title', ep:'第八話', name:'天平的重量'},
+    {t:'bgm', v:null},
+    {t:'bg', v:'night'},
+    {t:'narr', text:'【改編聲明】\n本章節為虛構創作，取材自一則真實之刑事「有罪」判決並經改編，\n人物、團體與地名均為化名或虛構。\n本作呈現司法程序與毒品犯罪之法律後果，無意美化任何犯罪。\n珍愛生命，請遠離毒品。'},
+    {t:'bgm', v:'invest'},
+    {t:'bg', v:'office'},
+    {t:'narr', text:'法律扶助基金會・指派案件\n張律法律事務所'},
+    {t:'sp', v:'mei', pose:'normal'},
+    {t:'say', c:'mei', text:'學長，法扶指派的新案子……是「製造第二級毒品」。當事人陳怡蓁，已經全部認罪了。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'製造第二級毒品……法定刑，無期徒刑或十年以上。'},
+    {t:'ev', v:'badge'},
+    {t:'ev', v:'file8'},
+    {t:'sp', v:'mei', pose:'sad'},
+    {t:'say', c:'mei', text:'她都認了，事證也明確……學長，這種案子，我們還能做什麼？'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'這一仗，沒有「無罪」可打，也沒有「真兇」可找。但辯護人的工作，不會因為當事人有罪就結束。'},
+    {t:'say', c:'lin', pose:'normal', text:'我們要守的，是「罪刑相當」——讓她背她該背的，但一分都不多。這，叫量刑辯護。'},
+    {t:'bg', v:'detention'},
+    {t:'bgm', v:'sad'},
+    {t:'narr', text:'桃園看守所・律見室'},
+    {t:'sp', v:'yi', pose:'sad'},
+    {t:'say', c:'yi', text:'張律師……我沒什麼好辯的。是我做的，我認。我只是……不知道自己會被關多久。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'say', c:'lin', text:'妳願意誠實，這很重要——對法律，對妳自己。把過程從頭告訴我，一個細節都別漏。'},
+    {t:'say', c:'yi', pose:'normal', text:'……警察來問的時候，我就全說了。後來檢察官、法官問，我也都承認。我不想再演了，好累。'},
+    {t:'sp', v:'lin', pose:'shock'},
+    {t:'think', text:'（從警詢到審判，全程自白——這正是毒品條例§17條第2項的「強制減刑」事由。這是她最大的籌碼。）'},
+    {t:'say', c:'lin', text:'妳的「坦白」，法律會回報妳。還有——警察是因為妳的供述，才抓到陳柏宏的嗎？'},
+    {t:'say', c:'yi', pose:'sad', text:'是……可是那批料，是我拿給他的。是我找他一起做的。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'think', text:'（原料是她提供、她主導……那麼陳柏宏是「共犯」，不是她的「上游來源」。§17條第1項的「供出來源」減刑，恐怕用不上。這一點，我不能對法院說謊。）'},
+    {t:'say', c:'lin', text:'我明白了。能減的，我會替妳每一分都爭到；不能減的，我不會用假的去騙法官。這樣，妳信得過我嗎？'},
+    {t:'say', c:'yi', pose:'normal', text:'……信。謝謝你，願意接我這種案子。'},
+    {t:'choice', prompt:'量刑辯護，先鞏固哪個基礎？', opts:[
+      {text:'主攻「自白減刑」——法定的強制減輕', s:[
+        {t:'say', c:'lin', text:'先把§17條第2項的自白減刑釘死。這是法律「應」減，不是法官「可」減。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'我把警詢到審理的筆錄整理成自白歷程表！'}
+      ]},
+      {text:'主攻「查無販賣」——擋下加重事由', s:[
+        {t:'say', c:'lin', text:'先擋下檢方的「意圖販賣」。沒有金流、沒有買家，就不能拿來加重。'},
+        {t:'sp', v:'mei', pose:'smile'},
+        {t:'say', c:'mei', text:'我去把全卷的金流與通訊，逐筆清查！'}
+      ]}
+    ]},
+    {t:'bg', v:'office'},
+    {t:'bgm', v:'invest'},
+    {t:'narr', text:'開庭前・量刑辯護準備'},
+    {t:'menu', prompt:'要準備哪一塊？', exit:'準備完成，前往桃園地院', auto:false, opts:[
+      {text:'整理：自白歷程與減刑條文', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'自白歷程表做好了——警詢、偵查、準備程序、審理，當事人「全程坦承」，一次都沒翻供！'},
+        {t:'ev', v:'confess'},
+        {t:'say', c:'mei', text:'對應的條文也找出來了：毒品危害防制條例第17條第2項，偵查及審判中均自白者，「減輕其刑」。'},
+        {t:'ev', v:'art172'},
+        {t:'think', text:'（這是法律明定的減刑。把它牢牢釘在卷上，誰都拿不走。）'}
+      ]},
+      {text:'清查：金流與販賣事證', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'全卷清查完畢——沒有交易紀錄、沒有金流、沒有買家、沒有議價對話。「查無販賣或轉讓」的事證！'},
+        {t:'ev', v:'nosale'},
+        {t:'think', text:'（沒有販賣，就不能用「營利散布」加重。檢方要加重，舉證責任在他們。）'}
+      ]},
+      {text:'釐清：供出來源的界線', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'學長，我研究了§17條第1項的「供出來源」減刑……'},
+        {t:'ev', v:'art171'},
+        {t:'sp', v:'lin', pose:'normal'},
+        {t:'say', c:'lin', text:'但我們的當事人，是原料的提供者、是主導的人。陳柏宏是共犯，不是她的上游來源。'},
+        {t:'ev', v:'source'},
+        {t:'think', text:'（這一項，於法不適用。辯護人可以不主張，但絕不能造假主張——這是底線。）'}
+      ]},
+      {text:'準備：科刑審酌與緩刑請求', once:true, s:[
+        {t:'sp', v:'mei', pose:'normal'},
+        {t:'say', c:'mei', text:'刑法第57條的量刑因子，我整理成一份清單：坦承、查無販賣、動機、角色、智識、家庭與經濟狀況……'},
+        {t:'ev', v:'mitig'},
+        {t:'say', c:'mei', pose:'sad', text:'還有緩刑——可是學長，緩刑要「二年以下」才行，這案子……'},
+        {t:'ev', v:'probation'},
+        {t:'think', text:'（緩刑恐怕無望，但仍要為當事人請求、留下紀錄。能爭的是刑度——把它壓到罪刑相當的最低。）'}
+      ]}
+    ]},
+    {t:'bg', v:'court'},
+    {t:'bgm', v:'court'},
+    {t:'narr', text:'桃園地方法院・刑事庭\n製造第二級毒品案件・審理程序（量刑辯論）'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'本院115年度訴字第207號。被告陳怡蓁業已自白犯行，事證明確。今日進行量刑辯論。'},
+    {t:'sp', v:'yan', pose:'normal'},
+    {t:'say', c:'yan', text:'公訴檢察官嚴正雄。被告共同製造第二級毒品，法定刑十年以上。檢方主張——從重量處。'},
+    {t:'sp', v:'lin', pose:'normal'},
+    {t:'think', text:'（嚴正雄……連這種「鐵案」也親自來。好。這一場，比的不是無罪，是一個人該背多重的十字架。）'},
+    {t:'say', c:'lin', text:'辯護人張律（法扶律師）。被告坦承犯行。辯方就「量刑」，請求法院依法減輕、罪刑相當。'},
+    {t:'sp', v:'judge', pose:'normal'},
+    {t:'sfx', v:'gavel'},
+    {t:'say', c:'judge', text:'請檢察官先為量刑論告。'},
+    {t:'narr', text:'——量刑辯論開始。\n\n操作說明：\n◀ ▶ 切換檢方論點／「等一下」追問\n「出示證物」用「減刑事由・量刑因子」反駁檢方過重的主張！\n（出示錯誤會被法庭提醒，❗歸零即辯護失敗）'},
+    {t:'bgm', v:'cross'},
+    {t:'testimony', v:'t1'}
+  ]
+};
+
+const CASES = [CASE1, CASE2, CASE3, CASE4, CASE5, CASE6, CASE7, CASE8];
 
 /* ===== 幕間支線（穿插事件・含小遊戲） ===== */
 const INTERLUDE_ROACH = {
